@@ -1,7 +1,7 @@
 import { Theme } from 'theme-ui'
 
 const theme: Theme = {
-  space: ['1rem', '2rem', '4rem', '8rem'],
+  space: ['0.5em', '1em', '2em', '4em', '8em'],
   breakpoints: ['40rem', '60rem', '80rem', '90rem', '120rem'],
   colors: {
     text: 'black',
@@ -10,6 +10,7 @@ const theme: Theme = {
     secondary: 'rgb(234,131,94)',
     accent: 'rgb(234,182,105)',
     highlight: 'rgb(217,76,79)',
+    muted: 'white',
   },
   fontWeights: {
     body: 400,
@@ -35,7 +36,7 @@ const theme: Theme = {
   },
   links: {
     nav: {
-      ml: 0,
+      ml: 1,
       fontFamily: 'body',
       fontWeight: 'semi',
       cursor: 'pointer',
@@ -51,6 +52,43 @@ const theme: Theme = {
     },
     h1: {
       fontSize: [3, 3, 3, 4, 4],
+      my: 0,
+    },
+    h2: {
+      fontSize: 2,
+      my: 0,
+    },
+    h3: {
+      fontSize: 1,
+      my: 0,
+    },
+    a: {
+      fontSize: 0,
+      fontWeight: 'semi',
+      color: 'text',
+      textDecoration: 'none',
+      ':hover': {
+        color: 'highlight',
+      },
+    },
+    ul: {
+      listStyleType: 'square',
+      pl: 1,
+      ul: {
+        listStyleType: 'disc',
+      },
+    },
+    ol: {
+      p: '0rem',
+      listStyle: 'none',
+      counterReset: 'orderedlist',
+      'li::before': {
+        display: 'inline-block',
+        width: 0,
+        mr: 1,
+        counterIncrement: 'orderedlist',
+        content: 'counter(orderedlist)',
+      },
     },
   },
 }
