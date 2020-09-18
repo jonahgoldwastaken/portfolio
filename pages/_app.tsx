@@ -1,10 +1,10 @@
+import { Global } from '@emotion/core'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'theme-ui'
 import Layout from '../src/components/Layout'
 import components from '../src/components/MDXComponents'
 import theme from '../theme'
-import { Global } from '@emotion/core'
 
 const App: React.FC<AppProps> = ({ pageProps, Component }) => (
   <ThemeProvider theme={theme} components={components}>

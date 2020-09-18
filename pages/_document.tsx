@@ -1,9 +1,9 @@
 import Document, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript,
+    DocumentContext,
+    Head,
+    Html,
+    Main,
+    NextScript
 } from 'next/document'
 import { InitializeColorMode } from 'theme-ui'
 

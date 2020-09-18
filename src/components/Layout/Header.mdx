@@ -10,16 +10,18 @@ import { ToggleColorButton } from './ToggleColorButton'
     px="1"
     sx={{
       width: '100%',
-      flexDirection: ['column', 'column', 'row', 'row', 'row'],
+      flexDirection: ['column', 'column', 'column', 'row', 'row', 'row'],
       alignItems: 'center',
-      maxWidth: ['80rem', '80rem', '60rem', '80rem', '120rem'],
+      flexWrap: 'nowrap',
+      justifyContent: ['space-between','space-between','space-between','stretch'],
+      maxWidth: ['100%', null, null, null, '80rem', '120rem'],
     }}
   >
     <Heading
       as="h1"
       px="0.25em"
-      mr={['0em', '0em', 'auto', 'auto', 'auto']}
-      mb={[0, 0, '0rem', '0rem', '0rem']}
+      mr={[null, null, null, 'auto']}
+      mb={[0, null, null, '0rem']}
     >
       Jonah Meijers
     </Heading>

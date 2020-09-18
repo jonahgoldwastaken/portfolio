@@ -1,13 +1,13 @@
 import { Theme } from 'theme-ui'
 
 const theme: Theme = {
-  space: ['0.5em', '1em', '2em', '4em', '8em', '16em', '24em'],
+  space: ['0.5em', '1em', '2em', '4em', '8em', '12em', '16em', '20em', '24em'],
   radii: ['2px', '5px', '0.5em', '1em'],
   sizes: ['8rem', '40rem', '60rem', '80rem', '120rem', '100%'],
   shadows: {
     card: '0px 5px 5px -2.5px rgba(0, 0, 0, 0.5)',
   },
-  breakpoints: ['40rem', '60rem', '80rem', '90rem', '120rem'],
+  breakpoints: ['21rem', '40rem', '60rem', '80rem', '90rem', '120rem'],
   colors: {
     text: 'black',
     background: 'rgb(250,235,200)',
@@ -48,11 +48,8 @@ const theme: Theme = {
       fontWeight: 'heading',
       lineHeight: 'heading',
     },
-    aboutParagraph: {
-      fontSize: [1, 3, 3, 3, 3],
-      fontFamily: 'heading',
-      fontWeight: 'body',
-      my: [3, 3, 3, 4, 4],
+    largeParagraph: {
+      fontSize: 1,
     },
   },
   styles: {
@@ -64,21 +61,21 @@ const theme: Theme = {
       lineHeight: 'body',
     },
     h1: {
-      fontSize: [3, 3, 3, 4, 4],
+      fontSize: [3, null, null, 4],
       my: 0,
       ':first-of-type': {
         mt: '0rem',
       },
     },
     h2: {
-      fontSize: [2, 2, 2, 3, 3],
+      fontSize: [2, null, null, 3],
       my: 0,
       ':first-of-type': {
         mt: '0rem',
       },
     },
     h3: {
-      fontSize: [1, 1, 1, 2, 2],
+      fontSize: [1, null, null, 2],
       my: 0,
       ':first-of-type': {
         mt: '0rem',
@@ -172,20 +169,15 @@ const theme: Theme = {
       objectFit: 'cover',
     },
   },
-  cards: {
-    primary: {
-      padding: 1,
-      gridColumn: 'span 1',
-      gridRow: 'span 1',
-      borderRadius: '2',
-      backgroundColor: 'muted',
-      boxShadow: 'card',
-      transition: 'box-shadow 0.1s ease-in-out',
+  layout: {
+    sectionLayout: {
+      my: 3,
     },
   },
   grids: {
     cardGrid: {
       gridTemplateColumns: [
+        '1fr',
         '1fr',
         '1fr 1fr',
         '1fr 1fr',
@@ -198,15 +190,27 @@ const theme: Theme = {
       padding: 1,
       marginTop: 1,
       marginX: 'auto',
-      maxWidth: ['80rem', '80rem', '60rem', '80rem', '120rem'],
+      maxWidth: ['60rem', null, null, '80rem', '120rem'],
       width: '100%',
       gridTemplateColumns: [
         '1fr',
         '1fr',
         '8rem 1fr',
+        '8rem 1fr',
         '10rem 10rem 1fr',
         '10rem 10rem 1fr',
       ],
+    },
+  },
+  cards: {
+    primary: {
+      padding: 1,
+      gridColumn: 'span 1',
+      gridRow: 'span 1',
+      borderRadius: '2',
+      backgroundColor: 'muted',
+      boxShadow: 'card',
+      transition: 'box-shadow 0.1s ease-in-out',
     },
   },
 }
