@@ -16,6 +16,15 @@ const theme: Theme = {
     accent: 'rgb(234,182,105)',
     highlight: 'rgb(217,76,79)',
     muted: 'white',
+    modes: {
+      dark: {
+        text: 'white',
+        background: 'rgb(77, 69, 54)',
+        accent: 'rgb(120, 92, 52)',
+        highlight: 'rgb(255, 145, 147)',
+        muted: 'black',
+      },
+    },
   },
   fontWeights: {
     body: 400,
@@ -37,30 +46,6 @@ const theme: Theme = {
       fontFamily: 'heading',
       fontWeight: 'heading',
       lineHeight: 'heading',
-    },
-  },
-  links: {
-    nav: {
-      position: 'relative',
-      ml: 1,
-      fontFamily: 'body',
-      fontWeight: 'semi',
-      textDecoration: 'none',
-      ':hover': {
-        color: 'highlight',
-        '::before': {
-          backgroundColor: 'highlight',
-        },
-      },
-      '::before': {
-        content: '""',
-        width: '100%',
-        height: '2px',
-        position: 'absolute',
-        bottom: '1px',
-        left: '0px',
-        backgroundColor: 'text',
-      },
     },
   },
   styles: {
@@ -127,15 +112,40 @@ const theme: Theme = {
       },
     },
   },
-  cards: {
-    primary: {
-      padding: 1,
-      gridColumn: 'span 1',
-      gridRow: 'span 1',
-      borderRadius: '2',
-      backgroundColor: 'muted',
-      boxShadow: 'card',
-      transition: 'box-shadow 0.1s ease-in-out',
+  links: {
+    nav: {
+      position: 'relative',
+      ml: 1,
+      fontFamily: 'body',
+      fontWeight: 'semi',
+      textDecoration: 'none',
+      ':hover': {
+        color: 'highlight',
+        '::before': {
+          backgroundColor: 'highlight',
+        },
+      },
+      '::before': {
+        content: '""',
+        width: '100%',
+        height: '2px',
+        position: 'absolute',
+        bottom: '1px',
+        left: '0px',
+        backgroundColor: 'text',
+      },
+    },
+  },
+  buttons: {
+    icon: {
+      'svg *': {
+        fill: 'text',
+      },
+      ':hover': {
+        '> svg *': {
+          fill: 'highlight',
+        },
+      },
     },
   },
   images: {
@@ -145,6 +155,17 @@ const theme: Theme = {
       width: 5,
       height: 0,
       objectFit: 'cover',
+    },
+  },
+  cards: {
+    primary: {
+      padding: 1,
+      gridColumn: 'span 1',
+      gridRow: 'span 1',
+      borderRadius: '2',
+      backgroundColor: 'muted',
+      boxShadow: 'card',
+      transition: 'box-shadow 0.1s ease-in-out',
     },
   },
   grids: {
