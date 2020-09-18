@@ -99,9 +99,10 @@ const theme: Theme = {
       'li::before': {
         display: 'inline-block',
         width: 0,
-        mr: 1,
+        fontWeight: 'bold',
+        mr: '1.5rem',
         counterIncrement: 'orderedlist',
-        content: 'counter(orderedlist)',
+        content: 'counter(orderedlist)"."',
       },
     },
   },
