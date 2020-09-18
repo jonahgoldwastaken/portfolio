@@ -63,12 +63,26 @@ const theme: Theme = {
       my: 0,
     },
     a: {
+      display: 'inline-block',
+      position: 'relative',
       fontSize: 0,
       fontWeight: 'semi',
       color: 'text',
       textDecoration: 'none',
       ':hover': {
         color: 'highlight',
+        '::before': {
+          backgroundColor: 'highlight',
+        },
+      },
+      '::before': {
+        content: '""',
+        width: '100%',
+        height: '2px',
+        position: 'absolute',
+        bottom: '1px',
+        left: '0px',
+        backgroundColor: 'text',
       },
     },
     ul: {
