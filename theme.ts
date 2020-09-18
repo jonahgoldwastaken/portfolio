@@ -188,9 +188,9 @@ const theme: Theme = {
       gridTemplateColumns: [
         '1fr',
         '1fr',
-        '1fr 1fr',
-        '1fr 1fr 1fr',
-        '1fr 1fr 1fr 1fr',
+        '8rem 1fr',
+        '10rem 10rem 1fr',
+        '10rem 10rem 1fr',
       ],
     },
   },

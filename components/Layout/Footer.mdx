@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Box, Grid, Flex, NavLink } from 'theme-ui'
+import NextLink from 'next/link'
+import { Box, Grid, Flex, Link } from 'theme-ui'
 
 <Box
   as="footer"
@@ -13,10 +13,9 @@ import { Box, Grid, Flex, NavLink } from 'theme-ui'
 
 ### Links
 
-<nav>
-  <Link href="/"><NavLink>Home</NavLink></Link>
-  <Link href="/about"><NavLink>About</NavLink></Link>
-</nav>
+- <NextLink passHref href="/"><Link>Home</Link></NextLink>
+- <NextLink passHref href="/about"><Link>About</Link></NextLink>
+- [GitHub](https://github.com/theonejonahgold)
 
 </Box>
 
@@ -26,7 +25,7 @@ import { Box, Grid, Flex, NavLink } from 'theme-ui'
 
 - [LinkedIn](https://www.linkedin.com/in/jonahmeijers/)
 - [E-Mail](mailto:jonahmeijers97@gmail.com)
-- [Telefoontje plegen](tel:+31623267536)
+- [Telefoon](tel:+31623267536)
 
 </Box>
 
@@ -34,7 +33,7 @@ import { Box, Grid, Flex, NavLink } from 'theme-ui'
 sx={{
   alignItems: 'flex-end',
   justifyContent: 'flex-end',
-  gridColumn: ['1', '1', '2', '3', '4'],
+  gridColumn: ['1', '1', '2', '3', '3'],
 }}>
 
 © Jonah Meijers, 2020
