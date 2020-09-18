@@ -1,7 +1,12 @@
 import { Theme } from 'theme-ui'
 
 const theme: Theme = {
-  space: ['1rem', '2rem', '4rem', '8rem'],
+  space: ['0.5em', '1em', '2em', '4em', '8em'],
+  radii: ['2px', '5px', '0.5em', '1em'],
+  sizes: ['8rem', '40rem', '60rem', '80rem', '120rem', '100%'],
+  shadows: {
+    card: '0px 5px 5px -2.5px rgba(0, 0, 0, 0.5)',
+  },
   breakpoints: ['40rem', '60rem', '80rem', '90rem', '120rem'],
   colors: {
     text: 'black',
@@ -10,6 +15,16 @@ const theme: Theme = {
     secondary: 'rgb(234,131,94)',
     accent: 'rgb(234,182,105)',
     highlight: 'rgb(217,76,79)',
+    muted: 'white',
+    modes: {
+      dark: {
+        text: 'white',
+        background: 'rgb(77, 69, 54)',
+        accent: 'rgb(120, 92, 52)',
+        highlight: 'rgb(255, 145, 147)',
+        muted: 'black',
+      },
+    },
   },
   fontWeights: {
     body: 400,
@@ -33,14 +48,6 @@ const theme: Theme = {
       lineHeight: 'heading',
     },
   },
-  links: {
-    nav: {
-      ml: 0,
-      fontFamily: 'body',
-      fontWeight: 'semi',
-      cursor: 'pointer',
-    },
-  },
   styles: {
     root: {
       margin: '0rem',
@@ -51,6 +58,140 @@ const theme: Theme = {
     },
     h1: {
       fontSize: [3, 3, 3, 4, 4],
+      my: 0,
+    },
+    h2: {
+      fontSize: 2,
+      my: 0,
+    },
+    h3: {
+      fontSize: 1,
+      my: 0,
+    },
+    a: {
+      display: 'inline-block',
+      position: 'relative',
+      fontSize: 0,
+      fontWeight: 'semi',
+      color: 'text',
+      textDecoration: 'none',
+      ':hover': {
+        color: 'highlight',
+        '::before': {
+          backgroundColor: 'highlight',
+        },
+      },
+      '::before': {
+        content: '""',
+        width: '100%',
+        height: '2px',
+        position: 'absolute',
+        bottom: '1px',
+        left: '0px',
+        backgroundColor: 'text',
+      },
+    },
+    ul: {
+      listStyleType: 'square',
+      pl: 1,
+      ul: {
+        listStyleType: 'disc',
+      },
+    },
+    ol: {
+      p: '0rem',
+      listStyle: 'none',
+      counterReset: 'orderedlist',
+      'li::before': {
+        display: 'inline-block',
+        width: '0rem',
+        fontWeight: 'bold',
+        mr: '1.5rem',
+        counterIncrement: 'orderedlist',
+        content: 'counter(orderedlist)"."',
+      },
+    },
+  },
+  links: {
+    nav: {
+      position: 'relative',
+      ml: 1,
+      fontFamily: 'body',
+      fontWeight: 'semi',
+      textDecoration: 'none',
+      ':hover': {
+        color: 'highlight',
+        '::before': {
+          backgroundColor: 'highlight',
+        },
+      },
+      '::before': {
+        content: '""',
+        width: '100%',
+        height: '2px',
+        position: 'absolute',
+        bottom: '1px',
+        left: '0px',
+        backgroundColor: 'text',
+      },
+    },
+  },
+  buttons: {
+    icon: {
+      'svg *': {
+        fill: 'text',
+      },
+      ':hover': {
+        '> svg *': {
+          fill: 'highlight',
+        },
+      },
+    },
+  },
+  images: {
+    default: {},
+    cardImage: {
+      borderRadius: 2,
+      width: 5,
+      height: 0,
+      objectFit: 'cover',
+    },
+  },
+  cards: {
+    primary: {
+      padding: 1,
+      gridColumn: 'span 1',
+      gridRow: 'span 1',
+      borderRadius: '2',
+      backgroundColor: 'muted',
+      boxShadow: 'card',
+      transition: 'box-shadow 0.1s ease-in-out',
+    },
+  },
+  grids: {
+    cardGrid: {
+      gridTemplateColumns: [
+        '1fr',
+        '1fr 1fr',
+        '1fr 1fr',
+        '1fr 1fr 1fr',
+        '1fr 1fr 1fr 1fr',
+      ],
+      gap: 2,
+    },
+    footerGrid: {
+      padding: 1,
+      marginTop: 1,
+      marginX: 'auto',
+      maxWidth: ['80rem', '80rem', '60rem', '80rem', '120rem'],
+      width: '100%',
+      gridTemplateColumns: [
+        '1fr',
+        '1fr',
+        '8rem 1fr',
+        '10rem 10rem 1fr',
+        '10rem 10rem 1fr',
+      ],
     },
   },
 }
