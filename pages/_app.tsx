@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'theme-ui'
-import Layout from '../components/Layout'
-import components from '../components/MDXComponents'
+import Layout from '../src/components/Layout'
+import components from '../src/components/MDXComponents'
 import theme from '../theme'
 import { Global } from '@emotion/core'
 

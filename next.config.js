@@ -7,7 +7,7 @@ const path = require('path')
 module.exports = withReactSvg(
   withMDX({
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-    include: path.resolve(__dirname, 'assets/svg'),
+    include: path.resolve(__dirname, 'src/assets/svg'),
     webpack(config, options) {
       return config
     },
