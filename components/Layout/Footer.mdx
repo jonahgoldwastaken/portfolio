@@ -1,0 +1,48 @@
+import NextLink from 'next/link'
+import { Box, Grid, Flex, Link } from 'theme-ui'
+
+<Box
+  as="footer"
+  bg="accent"
+  mt={[2,3,3,3,4]}
+  pt="0"
+  pb="0"
+  sx={{ position: 'sticky', top: '100vh', left: 0 }}
+>
+
+<Grid variant="footerGrid">
+
+<Box>
+
+### Links
+
+- <NextLink passHref href="/"><Link>Home</Link></NextLink>
+- <NextLink passHref href="/about"><Link>About</Link></NextLink>
+- [GitHub](https://github.com/theonejonahgold)
+
+</Box>
+
+<Box>
+
+### Contact
+
+- [LinkedIn](https://www.linkedin.com/in/jonahmeijers/)
+- [E-Mail](mailto:jonahmeijers97@gmail.com)
+- [Telefoon](tel:+31623267536)
+
+</Box>
+
+<Flex
+sx={{
+  alignItems: 'flex-end',
+  justifyContent: 'flex-end',
+  gridColumn: ['1', '1', '2', '3', '3'],
+}}>
+
+© Jonah Meijers, 2020
+
+</Flex>
+
+</Grid>
+
+</Box>

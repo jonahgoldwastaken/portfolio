@@ -1,10 +1,10 @@
 import Document, {
   DocumentContext,
+  Head,
   Html,
   Main,
   NextScript,
 } from 'next/document'
-import Head from 'next/head'
 import { InitializeColorMode } from 'theme-ui'
 
 export default class extends Document {
@@ -16,13 +16,15 @@ export default class extends Document {
   render() {
     return (
       <Html lang="nl">
-        <Head>
-          <title>Jonah Meijers</title>
-        </Head>
+        <Head />
         <body>
           <InitializeColorMode />
           <Main />
           <NextScript />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&family=Merriweather:wght@400;500;700&display=swap"
+            rel="stylesheet"
+          />
         </body>
       </Html>
     )
