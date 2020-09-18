@@ -6,7 +6,7 @@ export const Content: React.FC = ({ children }) => (
     as="main"
     mx="auto"
     px="1"
-    sx={{ maxWidth: ['80rem', '80rem', '60rem', '80rem', '120rem'] }}
+    sx={{ maxWidth: ['80rem', '80rem', '60rem', '80rem', '100rem'] }}
   >
     {children}
   </Box>

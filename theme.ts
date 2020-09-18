@@ -1,7 +1,7 @@
 import { Theme } from 'theme-ui'
 
 const theme: Theme = {
-  space: ['0.5em', '1em', '2em', '4em', '8em'],
+  space: ['0.5em', '1em', '2em', '4em', '8em', '16em', '24em'],
   radii: ['2px', '5px', '0.5em', '1em'],
   sizes: ['8rem', '40rem', '60rem', '80rem', '120rem', '100%'],
   shadows: {
@@ -29,6 +29,7 @@ const theme: Theme = {
   fontWeights: {
     body: 400,
     heading: 700,
+    medium: 500,
     semi: 600,
     bold: 700,
   },
@@ -47,6 +48,12 @@ const theme: Theme = {
       fontWeight: 'heading',
       lineHeight: 'heading',
     },
+    aboutParagraph: {
+      fontSize: [1, 3, 3, 3, 3],
+      fontFamily: 'heading',
+      fontWeight: 'body',
+      my: [3, 3, 3, 4, 4],
+    },
   },
   styles: {
     root: {
@@ -59,19 +66,27 @@ const theme: Theme = {
     h1: {
       fontSize: [3, 3, 3, 4, 4],
       my: 0,
+      ':first-child': {
+        mt: '0rem',
+      },
     },
     h2: {
-      fontSize: 2,
+      fontSize: [2, 2, 2, 3, 3],
       my: 0,
+      ':first-child': {
+        mt: '0rem',
+      },
     },
     h3: {
-      fontSize: 1,
+      fontSize: [1, 1, 1, 2, 2],
       my: 0,
+      ':first-child': {
+        mt: '0rem',
+      },
     },
     a: {
       display: 'inline-block',
       position: 'relative',
-      fontSize: 0,
       fontWeight: 'semi',
       color: 'text',
       textDecoration: 'none',
