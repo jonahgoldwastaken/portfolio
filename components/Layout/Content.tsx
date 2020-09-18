@@ -1,4 +1,5 @@
-import { Box } from 'theme-ui'
+/** @jsx jsx */
+import { Box, jsx } from 'theme-ui'
 
 export const Content: React.FC = ({ children }) => (
   <Box

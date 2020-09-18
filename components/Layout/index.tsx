@@ -1,6 +1,6 @@
 import { Content } from './Content'
-import { Footer } from './Footer'
-import { Header } from './Header'
+import Footer from './Footer.mdx'
+import Header from './Header.mdx'
 
 const Layout: React.FC = ({ children }) => (
   <>

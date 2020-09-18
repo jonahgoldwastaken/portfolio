@@ -9,6 +9,9 @@ const App: React.FC<AppProps> = ({ pageProps, Component }) => (
   <ThemeProvider theme={theme} components={components}>
     <Global
       styles={_ => ({
+        body: {
+          fontSize: '16px',
+        },
         '*': {
           boxSizing: 'border-box',
         },
