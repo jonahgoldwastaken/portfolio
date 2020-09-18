@@ -19,10 +19,10 @@ const theme: Theme = {
     modes: {
       dark: {
         text: 'white',
-        background: 'rgb(77, 69, 54)',
+        muted: 'rgb(77, 69, 54)',
         accent: 'rgb(120, 92, 52)',
         highlight: 'rgb(255, 145, 147)',
-        muted: 'black',
+        background: 'black',
       },
     },
   },
@@ -66,21 +66,21 @@ const theme: Theme = {
     h1: {
       fontSize: [3, 3, 3, 4, 4],
       my: 0,
-      ':first-child': {
+      ':first-of-type': {
         mt: '0rem',
       },
     },
     h2: {
       fontSize: [2, 2, 2, 3, 3],
       my: 0,
-      ':first-child': {
+      ':first-of-type': {
         mt: '0rem',
       },
     },
     h3: {
       fontSize: [1, 1, 1, 2, 2],
       my: 0,
-      ':first-child': {
+      ':first-of-type': {
         mt: '0rem',
       },
     },

@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app'
+import Head from 'next/head'
 import { ThemeProvider } from 'theme-ui'
 import Layout from '../components/Layout'
 import components from '../components/MDXComponents'
@@ -7,6 +8,9 @@ import { Global } from '@emotion/core'
 
 const App: React.FC<AppProps> = ({ pageProps, Component }) => (
   <ThemeProvider theme={theme} components={components}>
+    <Head>
+      <title>Jonah Meijers</title>
+    </Head>
     <Global
       styles={_ => ({
         body: {
