@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { IconButton, useColorMode, jsx } from 'theme-ui'
-import Sun from '../../assets/svg/sun.svg'
+import { IconButton, jsx, useColorMode } from 'theme-ui'
 import Moon from '../../assets/svg/moon.svg'
+import Sun from '../../assets/svg/sun.svg'
 
 export const ToggleColorButton: React.FC = () => {
   const [colorMode, setColorMode] = useColorMode()
