@@ -199,7 +199,10 @@ const theme: Theme = {
   },
   layout: {
     sectionLayout: {
-      my: 3,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      height: ['1', null, null, '80vh'],
     },
   },
   grids: {
