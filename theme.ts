@@ -204,6 +204,7 @@ const theme: Theme = {
       justifyContent: 'center',
       minHeight: ['1', null, null, '80vh'],
       height: 'min-content',
+      my: 3,
     },
   },
   grids: {
