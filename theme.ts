@@ -8,23 +8,25 @@ const theme: Theme = {
     card: '0px 5px 5px -2.5px rgba(0, 0, 0, 0.5)',
   },
   breakpoints: ['21rem', '40rem', '60rem', '80rem', '90rem', '120rem'],
+  zIndices: [0, 1, 10, 100],
   colors: {
     text: 'black',
+    altText: 'white',
     background: 'rgb(250,235,200)',
-    primary: 'rgb(244,146,52)',
-    secondary: 'rgb(234,131,94)',
-    accent: 'rgb(234,182,105)',
-    highlight: 'rgb(217,76,79)',
+    primary: 'rgb(232, 146, 65)',
+    secondary: 'rgb(230, 148, 71)',
+    highlight: 'rgb(217, 76, 79)',
     muted: 'white',
-    modes: {
-      dark: {
-        text: 'white',
-        muted: 'rgb(77, 69, 54)',
-        accent: 'rgb(120, 92, 52)',
-        highlight: 'rgb(255, 145, 147)',
-        background: 'black',
-      },
-    },
+    // modes: {
+    //   dark: {
+    //     altText: 'black',
+    //     text: 'white',
+    //     muted: 'rgb(77, 69, 54)',
+    //     accent: 'rgb(120, 92, 52)',
+    //     highlight: 'rgb(255, 145, 147)',
+    //     background: 'black',
+    //   },
+    // },
   },
   fontWeights: {
     body: 400,
@@ -149,6 +151,32 @@ const theme: Theme = {
     },
   },
   buttons: {
+    link: {
+      padding: '0rem',
+      background: 'none',
+      display: 'inline-block',
+      position: 'relative',
+      fontWeight: 'semi',
+      color: 'text',
+      fontFamily: 'body',
+      textDecoration: 'none',
+      cursor: 'pointer',
+      ':hover': {
+        color: 'highlight',
+        '::before': {
+          backgroundColor: 'highlight',
+        },
+      },
+      '::before': {
+        content: '""',
+        width: '100%',
+        height: '2px',
+        position: 'absolute',
+        bottom: '1px',
+        left: '0px',
+        backgroundColor: 'text',
+      },
+    },
     icon: {
       'svg *': {
         fill: 'text',
@@ -192,18 +220,13 @@ const theme: Theme = {
       marginX: 'auto',
       maxWidth: ['60rem', null, null, '80rem', '120rem'],
       width: '100%',
-      gridTemplateColumns: [
-        '1fr',
-        '1fr',
-        '8rem 1fr',
-        '8rem 1fr',
-        '10rem 10rem 1fr',
-        '10rem 10rem 1fr',
-      ],
+      gridTemplateColumns: ['1fr', null, '1fr 1fr'],
+      gap: '1rem',
     },
   },
   cards: {
     primary: {
+      position: 'relative',
       padding: 1,
       gridColumn: 'span 1',
       gridRow: 'span 1',
@@ -211,6 +234,29 @@ const theme: Theme = {
       backgroundColor: 'muted',
       boxShadow: 'card',
       transition: 'box-shadow 0.1s ease-in-out',
+      overflow: 'hidden',
+      '> *': {
+        position: 'relative',
+        zIndex: 2,
+      },
+      '::before, ::after': {
+        content: '""',
+        position: 'absolute',
+        top: '0rem',
+        left: '0rem',
+        width: '100%',
+        height: '100%',
+      },
+      '::before': {
+        filter: 'brightness(0.5) grayscale(1)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center 60%',
+        zIndex: 1,
+      },
+      '::after': {
+        backgroundColor: 'primary',
+        zIndex: 0,
+      },
     },
   },
 }
