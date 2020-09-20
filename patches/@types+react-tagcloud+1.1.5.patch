@@ -1,0 +1,20 @@
+diff --git a/node_modules/@types/react-tagcloud/index.d.ts b/node_modules/@types/react-tagcloud/index.d.ts
+index 39babf6..bbf80d5 100644
+--- a/node_modules/@types/react-tagcloud/index.d.ts
++++ b/node_modules/@types/react-tagcloud/index.d.ts
+@@ -17,6 +17,7 @@ declare namespace ReactTagCloud {
+         className?: string;
+         onClick?: Function;
+         disableRandomColor?: boolean;
++        style?: CSSProperties;
+     }
+     interface TagCloudClass extends React.ComponentClass<TagCloudProps> { }
+ 
+@@ -39,6 +40,7 @@ declare namespace ReactTagCloud {
+ declare module reactTagCloud {
+     const TagCloud: ReactTagCloud.TagCloudClass;
+     const DefaultRenderer: ReactTagCloud.DefaultRendererFactory;
++    const TagCloudProps: ReactTagCloud.TagCloudProps
+ }
+ 
+ declare module "react-tagcloud" {

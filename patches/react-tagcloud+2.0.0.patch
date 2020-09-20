@@ -1,0 +1,26 @@
+diff --git a/node_modules/react-tagcloud/lib/TagCloud.js b/node_modules/react-tagcloud/lib/TagCloud.js
+index 2dce73d..9cf87b1 100644
+--- a/node_modules/react-tagcloud/lib/TagCloud.js
++++ b/node_modules/react-tagcloud/lib/TagCloud.js
+@@ -118,7 +118,7 @@ function TagCloud(props) {
+     setData(randomize(props));
+   }, [props.colorOptions, props.shuffle, props.disableRandomColor, tagsComparison]);
+   var other = (0, _helpers.omit)(props, [].concat(cloudPropNames, handlersPropNames));
+-  return _react["default"].createElement("div", other, renderTags(props, data));
++  return _react["default"].createElement("ul", other, renderTags(props, data));
+ }
+ 
+ TagCloud.propTypes = {
+diff --git a/node_modules/react-tagcloud/src/TagCloud.js b/node_modules/react-tagcloud/src/TagCloud.js
+index ba41c7f..988be32 100644
+--- a/node_modules/react-tagcloud/src/TagCloud.js
++++ b/node_modules/react-tagcloud/src/TagCloud.js
+@@ -74,7 +74,7 @@ export function TagCloud(props) {
+     tagsComparison,
+   ])
+   const other = omit(props, [...cloudPropNames, ...handlersPropNames])
+-  return <div {...other}>{renderTags(props, data)}</div>
++  return <ul {...other}>{renderTags(props, data)}</ul>
+ }
+ 
+ TagCloud.propTypes = {

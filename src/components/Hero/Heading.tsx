@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import { HeadingOne } from '../Text'
 
 export const HeroHeading: React.FC = props => (

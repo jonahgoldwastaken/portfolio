@@ -199,6 +199,11 @@ const theme: Theme = {
   },
   layout: {
     sectionLayout: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      minHeight: ['1', null, null, '80vh'],
+      height: 'min-content',
       my: 3,
     },
   },
