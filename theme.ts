@@ -202,7 +202,8 @@ const theme: Theme = {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      height: ['1', null, null, '80vh'],
+      minHeight: ['1', null, null, '80vh'],
+      height: 'min-content',
     },
   },
   grids: {
