@@ -1,10 +1,28 @@
-import { Container } from 'theme-ui'
-import { Cloud } from './Cloud'
+import { Container, Grid, Box } from 'theme-ui'
+import { DevelopmentCloud, DesignCloud } from './Clouds'
 
 <Container variant="sectionLayout" as="section">
 
-# Skills
+# Skills en tools
 
-<Cloud />
+<Grid columns={[null, null, null, '1fr 1fr']}>
+
+<Box>
+
+## Design
+
+<DesignCloud />
+
+</Box>
+
+<Box>
+
+## Development
+
+<DevelopmentCloud />
+
+</Box>
+
+</Grid>
 
 </Container>
