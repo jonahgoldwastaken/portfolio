@@ -217,6 +217,7 @@ const theme: Theme = {
         '1fr 1fr 1fr',
         '1fr 1fr 1fr 1fr',
       ],
+      gridAutoRows: '25rem',
       gap: 2,
     },
     footerGrid: {

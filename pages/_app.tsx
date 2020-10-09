@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { ThemeProvider } from 'theme-ui'
 import Layout from '../src/components/Layout'
 import components from '../src/components/MDXComponents'
-import theme from '../theme'
+import theme from '../src/theme'
 
 const App: React.FC<AppProps> = ({ pageProps, Component }) => (
   <ThemeProvider theme={theme} components={components}>
