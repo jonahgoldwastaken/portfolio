@@ -274,7 +274,7 @@ const theme: Theme = {
       '&:hover, &:focus': {
         boxShadow: 'cardHover',
         span: {
-          color: 'text',
+          color: 'altText',
           transform: 'scale(1.025)',
         },
         '::before': {
