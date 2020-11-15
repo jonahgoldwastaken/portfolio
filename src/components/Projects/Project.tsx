@@ -1,27 +1,30 @@
-import { Card } from 'theme-ui'
+import { Card, Heading } from 'theme-ui'
 
 interface ProjectProps {
   backgroundImage?: string
+  name: string
+  link: string
 }
 
 export const Project: React.FC<ProjectProps> = ({
-  children,
+  name,
+  link,
   backgroundImage,
 }) => {
   return (
     <Card
+      as="a"
+      href={link}
       sx={{
         '::before': backgroundImage
           ? {
               backgroundImage: `url(${backgroundImage})`,
-              opacity: 0.2,
             }
-          : null,
+          : undefined,
       }}
-      as="article"
       variant="primary"
     >
-      {children}
+      <span>{name}</span>
     </Card>
   )
 }

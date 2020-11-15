@@ -6,6 +6,7 @@ const theme: Theme = {
   sizes: ['8rem', '40rem', '60rem', '80rem', '120rem', '100%'],
   shadows: {
     card: '0px 5px 5px -2.5px rgba(0, 0, 0, 0.5)',
+    cardHover: '0px 20px 10px -15px rgba(0, 0, 0, 0.25)',
   },
   breakpoints: ['21rem', '40rem', '60rem', '80rem', '90rem', '120rem'],
   zIndices: [0, 1, 10, 100],
@@ -209,15 +210,8 @@ const theme: Theme = {
   },
   grids: {
     cardGrid: {
-      gridTemplateColumns: [
-        '1fr',
-        '1fr',
-        '1fr 1fr',
-        '1fr 1fr',
-        '1fr 1fr 1fr',
-        '1fr 1fr 1fr 1fr',
-      ],
-      gridAutoRows: '25rem',
+      gridTemplateColumns: ['1fr', null, '1fr 1fr'],
+      gridAutoRows: ['40rem', '40rem', '40rem', '40rem', '50rem'],
       gap: 2,
     },
     footerGrid: {
@@ -227,11 +221,20 @@ const theme: Theme = {
       maxWidth: ['60rem', null, null, '80rem', '120rem'],
       width: '100%',
       gridTemplateColumns: ['1fr', null, '1fr 1fr'],
-      gap: '1rem',
     },
   },
   cards: {
     primary: {
+      height: '100%',
+      willChange: 'box-shadow',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: 'transparent',
+      fontSize: 2,
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      textDecoration: 'none',
       position: 'relative',
       padding: 1,
       gridColumn: 'span 1',
@@ -239,11 +242,11 @@ const theme: Theme = {
       borderRadius: '2',
       backgroundColor: 'muted',
       boxShadow: 'card',
-      transition: 'box-shadow 0.1s ease-in-out',
+      transition: 'box-shadow 0.2s ease-in-out',
       overflow: 'hidden',
-      '> *': {
-        position: 'relative',
+      span: {
         zIndex: 2,
+        transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out',
       },
       '::before, ::after': {
         content: '""',
@@ -254,14 +257,33 @@ const theme: Theme = {
         height: '100%',
       },
       '::before': {
-        filter: 'brightness(0.5) grayscale(1)',
+        filter: 'brightness(1) blur(0px)',
+        transition: 'filter 0.2s ease-in-out, transform 0.2s ease-in-out',
+        transform: 'scale(1.025)',
+        opacity: 1,
         backgroundSize: 'cover',
         backgroundPosition: 'center 60%',
-        zIndex: 1,
+        zIndex: 0,
       },
       '::after': {
         backgroundColor: 'primary',
-        zIndex: 0,
+        opacity: 0.5,
+        zIndex: 1,
+        transition: 'opacity 0.2s ease-in-out',
+      },
+      '&:hover, &:focus': {
+        boxShadow: 'cardHover',
+        span: {
+          color: 'text',
+          transform: 'scale(1.025)',
+        },
+        '::before': {
+          filter: 'brightness(0.5) blur(2px)',
+          transform: 'scale(1)',
+        },
+        '::after': {
+          opacity: 0.75,
+        },
       },
     },
   },
