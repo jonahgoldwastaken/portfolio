@@ -1,4 +1,4 @@
-import { Card, Heading } from 'theme-ui'
+import { Card } from 'theme-ui'
 
 interface ProjectProps {
   backgroundImage?: string
