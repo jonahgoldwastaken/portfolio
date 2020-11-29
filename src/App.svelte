@@ -1,70 +1,57 @@
-<script lang='typescript'>
-	import {onMount} from 'svelte';
-	let count: number = 0;
-	onMount(() => {
-	  const interval = setInterval(() => count++, 1000);
-	  return () => {
-		clearInterval(interval);
-	  };
-	});
-  </script>
-  
-  <style>
-	:global(body) {
-	  margin: 0;
-	  font-family: Arial, Helvetica, sans-serif;
-	}
-	.App {
-	  text-align: center;
-	}
-	.App code {
-	  background: #0002;
-	  padding: 4px 8px;
-	  border-radius: 4px;
-	}
-	.App p {
-	  margin: 0.4rem;
-	}
-  
-	.App-header {
-	  background-color: #f9f6f6;
-	  color: #333;
-	  min-height: 100vh;
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  justify-content: center;
-	  font-size: calc(10px + 2vmin);
-	}
-	.App-link {
-	  color: #ff3e00;
-	}
-	.App-logo {
-	  height: 36vmin;
-	  pointer-events: none;
-	  margin-bottom: 3rem;
-	  animation: App-logo-spin infinite 1.6s ease-in-out alternate;
-	}
-	@keyframes App-logo-spin {
-	  from {
-		transform: scale(1);
-	  }
-	  to {
-		transform: scale(1.06);
-	  }
-	}
-  </style>
-  
-  <div class="App">
-	<header class="App-header">
-	  <img src="/logo.svg" class="App-logo" alt="logo" />
-	  <p>Edit <code>src/App.svelte</code> and save to reload.</p>
-	  <p>Page has been open for <code>{count}</code> seconds.</p>
-	  <p>
-		<a class="App-link" href="https://svelte.dev" target="_blank" rel="noopener noreferrer">
-		  Learn Svelte
-		</a>
-	  </p>
-	</header>
-  </div>
-  
+<script lang="typescript">
+  import Header from './components/organisms/Header.svelte'
+  import Hero from './components/organisms/Hero.svelte'
+  import ProjectList from './components/organisms/ProjectList.svelte'
+</script>
+
+<style lang="scss">
+  :global {
+    /* @link https://utopia.fyi/generator-mk-ii?c=320,16,1.2,2560,24,1.333,5,0,1440-1920 */
+
+    :root {
+      --step--2: clamp(0.6944rem, 0.6729rem + 0.1071vw, 0.8444rem);
+      --step--1: clamp(0.8331rem, 0.7914rem + 0.2085vw, 1.125rem);
+      --step-0: clamp(1rem, 0.9286rem + 0.3571vw, 1.5rem);
+      --step-1: clamp(1.2rem, 1.0858rem + 0.571vw, 1.9994rem);
+      --step-2: clamp(1.44rem, 1.2649rem + 0.8754vw, 2.6656rem);
+      --step-3: clamp(1.7281rem, 1.4674rem + 1.3036vw, 3.5531rem);
+      --step-4: clamp(2.0738rem, 1.6934rem + 1.9018vw, 4.7363rem);
+      --step-5: clamp(2.4881rem, 1.9417rem + 2.7321vw, 6.3131rem);
+
+      --black: #2e3138;
+      --brown: #60463b;
+      --orange: #f55e00;
+      --light-orange: #fe8234;
+
+      color: var(--black);
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 var(--step-2);
+
+      @media screen and (min-width: 60rem) {
+        padding: 0 var(--step-4);
+      }
+    }
+
+    ul,
+    ol {
+      padding: 0;
+      margin: 0;
+    }
+  }
+</style>
+
+<div>
+  <Header />
+  <Hero />
+  <ProjectList />
+</div>
