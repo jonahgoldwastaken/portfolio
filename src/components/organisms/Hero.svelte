@@ -1,8 +1,9 @@
 <script>
-  import Highlight from '../atoms/Highlight.svelte'
   import Heading from '../atoms/Heading.svelte'
   import Text from '../atoms/Text.svelte'
   import ProfilePicture from '../atoms/ProfilePicture.svelte'
+
+  export let picture = ''
 </script>
 
 <style lang="scss">
@@ -31,17 +32,11 @@
 <section>
   <div>
     <Heading>
-      Ik maak
-      <Highlight>unieke</Highlight>
-      en
-      <Highlight>onvergetelijke</Highlight>
-      ervaringen.
+      <slot name="heading" />
     </Heading>
     <Text bold>
-      Ik ben een Communication & Multimedia Design student gevestigd in
-      Amsterdam. Ik draag graag bij aan web- en mobiele apps die geven om de
-      tijd en wensen van hun gebruikers.
+      <slot name="subheading" />
     </Text>
   </div>
-  <ProfilePicture src="/profile-picture.jpg" />
+  <ProfilePicture src={picture} />
 </section>

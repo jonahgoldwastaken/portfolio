@@ -1,7 +1,5 @@
 <script lang="typescript">
-  import Header from './components/organisms/Header.svelte'
-  import Hero from './components/organisms/Hero.svelte'
-  import ProjectList from './components/organisms/ProjectList.svelte'
+  import Index from './pages/Index.svelte'
 </script>
 
 <style lang="scss">
@@ -50,8 +48,4 @@
   }
 </style>
 
-<div>
-  <Header />
-  <Hero />
-  <ProjectList />
-</div>
+<Index />

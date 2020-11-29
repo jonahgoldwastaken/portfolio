@@ -1,6 +1,10 @@
 <script>
   import HeaderHeading from '../atoms/HeaderHeading.svelte'
   import Navigation from '../molecules/Navigation.svelte'
+  import type { Link } from '../../../types/link'
+
+  export let heading = ''
+  export let links: Link[] = []
 </script>
 
 <style>
@@ -17,6 +21,6 @@
 </style>
 
 <header>
-  <HeaderHeading>Jonah Meijers</HeaderHeading>
-  <Navigation />
+  <HeaderHeading>{heading}</HeaderHeading>
+  <Navigation {links} />
 </header>

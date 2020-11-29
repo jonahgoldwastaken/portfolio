@@ -1,15 +1,7 @@
 <script>
   import NavigationLink from '../atoms/NavigationLink.svelte'
-  const links = [
-    {
-      title: 'E-Mail',
-      href: 'mailto:jonahmeijers97@gmail.com',
-    },
-    {
-      title: 'GitHub',
-      href: 'https://github.com/theonejonahgold',
-    },
-  ]
+  import type { Link } from '../../../types/link'
+  export let links: Link[] = []
 </script>
 
 <style>
