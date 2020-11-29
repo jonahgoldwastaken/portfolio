@@ -2,7 +2,7 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
-    "test": "web-test-runner \"src/**/*.test.ts\""
+    "format": "prettier --write src/**/*.{js,ts,svelte}"
   },
   "dependencies": {
     "svelte": "3.29.0"

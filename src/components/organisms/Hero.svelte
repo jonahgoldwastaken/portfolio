@@ -8,15 +8,16 @@
 <style lang="scss">
   section {
     display: grid;
-    grid-auto-rows: 1fr;
+    grid-auto-rows: min-content;
     grid-auto-flow: row;
     grid-gap: auto;
-    margin: 0 auto 20rem;
+    margin: 0 auto var(--step-5);
 
     @media screen and (min-width: 60rem) {
       grid-auto-flow: column;
       justify-content: space-between;
     }
+
     @media screen and (min-width: 100rem) {
       grid-template-columns: 60rem auto;
     }

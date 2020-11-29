@@ -14,10 +14,10 @@
     object-fit: cover;
 
     @media screen and (min-width: 60rem) {
-      width: calc(var(--step-0) + 50%);
+      margin-bottom: 0px;
+      width: calc(var(--step-0) + 100%);
       height: calc(var(--step-0) * 2 + 100%);
-      float: left;
-      margin-right: var(--step-0);
+      grid-area: image;
     }
   }
 </style>

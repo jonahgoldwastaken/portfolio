@@ -11,6 +11,7 @@
   "prettier.format-on-save" : "Enable",
   "workspace.color" : 1,
   "workspace.name" : "Portfolio",
+  "workspace.preview_append_paths" : false,
   "workspace.preview_type" : "custom",
-  "workspace.preview_url" : "localhost:8080"
+  "workspace.preview_url" : "http:\/\/localhost:8080"
 }

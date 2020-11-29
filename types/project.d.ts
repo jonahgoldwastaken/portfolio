@@ -4,4 +4,5 @@ export interface TileProject {
   description: string
   year: number
   client: string
+  url: string
 }

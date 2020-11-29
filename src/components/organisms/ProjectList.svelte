@@ -4,36 +4,31 @@
 
   let dummyData: TileProject[] = [
     {
-      title: 'Frontend-Applications',
+      title: 'Interactieve data story',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab tenetur amet nisi vitae alias unde. In ad, reiciendis deleniti earum alias quaerat doloremque, laboriosam eum beatae similique minus, error vero. Reprehenderit natus sunt aut sequi qui in iste minus recusandae odio consequatur voluptatum hic, dolores, pariatur deleniti?',
-      image: '/profile-picture.jpg',
-      client: 'Aernoud Laurense',
+        'Een data story over de representatie van doelgroepen in parkeergelegenheden.',
+      image:
+        'https://raw.githubusercontent.com/theonejonahgold/frontend-applications/main/docs/screenshot.png',
+      client: 'CMD Tech Track',
       year: 2020,
+      url: 'https://frontend-applications.jonahmeijers.nl',
     },
     {
-      title: 'Frontend-Applications',
+      title: 'Stageopdracht: TEDx Alkmaar',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab tenetur amet nisi vitae alias unde. In ad, reiciendis deleniti earum alias quaerat doloremque, laboriosam eum beatae similique minus, error vero. Reprehenderit natus sunt aut sequi qui in iste minus recusandae odio consequatur voluptatum hic, dolores, pariatur deleniti?',
-      image: '/profile-picture.jpg',
-      client: 'Aernoud Laurense',
-      year: 2020,
+        'Website die ik samen met een collega heb gebouwd tijdens mijn korte stage.',
+      image: '/tedx-alkmaar.png',
+      client: 'Raadhuis',
+      year: 2018,
+      url: 'https://tedxalkmaar.nl',
     },
     {
-      title: 'Frontend-Applications',
+      title: 'Extreme Space Invaders',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab tenetur amet nisi vitae alias unde. In ad, reiciendis deleniti earum alias quaerat doloremque, laboriosam eum beatae similique minus, error vero. Reprehenderit natus sunt aut sequi qui in iste minus recusandae odio consequatur voluptatum hic, dolores, pariatur deleniti?',
-      image: '/profile-picture.jpg',
-      client: 'Aernoud Laurense',
-      year: 2020,
-    },
-    {
-      title: 'Frontend-Applications',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab tenetur amet nisi vitae alias unde. In ad, reiciendis deleniti earum alias quaerat doloremque, laboriosam eum beatae similique minus, error vero. Reprehenderit natus sunt aut sequi qui in iste minus recusandae odio consequatur voluptatum hic, dolores, pariatur deleniti?',
-      image: '/profile-picture.jpg',
-      client: 'Aernoud Laurense',
-      year: 2020,
+        'Met 4 weken aan JavaScript kennis heb ik de klassieke Space Invaders nagemaakt.',
+      image: '/xpi.png',
+      client: 'CMD Inleiding Programmeren',
+      year: 2017,
     },
   ]
 </script>
@@ -46,16 +41,20 @@
     grid-auto-rows: 20rem;
     grid-gap: var(--step-2);
     width: 100%;
+    margin-bottom: var(--step-2);
 
     @media screen and (min-width: 60rem) {
-      grid-template-columns: minmax(auto, 45rem) minmax(auto, 45rem);
+      grid-template-columns: repeat(
+        2,
+        minmax(calc(100% / 3 - var(--step-2) * 2), 45rem)
+      );
     }
 
     @media screen and (min-width: 80rem) {
-      grid-template-columns: minmax(auto, 45rem) minmax(auto, 45rem) minmax(
-          auto,
-          45rem
-        );
+      grid-template-columns: repeat(
+        3,
+        minmax(calc(100% / 3 - var(--step-2) * 2), 45rem)
+      );
     }
   }
 </style>

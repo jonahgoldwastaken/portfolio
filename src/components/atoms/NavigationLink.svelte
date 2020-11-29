@@ -7,7 +7,13 @@
     font: normal var(--step-0) 'Noto Sans', sans-serif;
     text-decoration: none;
     text-decoration: underline;
+    color: var(--black);
   }
+
+  a:visited {
+    color: initial;
+  }
+
   a:hover,
   a:focus {
     color: var(--orange);

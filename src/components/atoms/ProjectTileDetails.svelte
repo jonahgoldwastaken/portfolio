@@ -4,6 +4,13 @@
 </script>
 
 <style>
+  p {
+    margin-top: 0px;
+
+    @media screen and (min-width: 60rem) {
+      margin-top: initial;
+    }
+  }
   small {
     color: white;
     font-size: var(--step--1);
