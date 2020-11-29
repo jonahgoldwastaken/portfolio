@@ -4,7 +4,8 @@
 
 <style>
   a {
-    font: normal var(--step-0) 'Noto Sans', sans-serif;
+    font-size: var(--step-0);
+    font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
     text-decoration: underline;
     color: var(--black);

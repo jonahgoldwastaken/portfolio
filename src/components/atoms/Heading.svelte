@@ -7,13 +7,12 @@
 <style>
   h1,
   h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h3 {
     --font-weight: 700;
     --font-size: var(--step-5);
-    font: var(--font-weight) var(--font-size) Raleway, sans-serif;
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    font-family: Raleway, sans-serif;
     letter-spacing: -1pt;
     margin: 0;
   }

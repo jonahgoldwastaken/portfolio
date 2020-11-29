@@ -1,6 +1,8 @@
 <style>
   h1 {
-    font: bold var(--step-0) Raleway, sans-serif;
+    font-weight: bold;
+    font-size: var(--step-0);
+    font-family: Raleway, sans-serif;
     margin: 0;
   }
 </style>
