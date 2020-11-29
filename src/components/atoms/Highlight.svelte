@@ -1,7 +1,8 @@
 <style>
-  span {
+  strong {
     color: var(--orange);
+    font-weight: inherit;
   }
 </style>
 
-<span><slot /></span>
+<strong><slot /></strong>
