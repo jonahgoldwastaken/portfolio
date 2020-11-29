@@ -29,6 +29,7 @@
       image: '/xpi.png',
       client: 'CMD Inleiding Programmeren',
       year: 2017,
+      url: 'https://oege.ie.hva.nl/~meijerj034/xpi/',
     },
   ]
 </script>
