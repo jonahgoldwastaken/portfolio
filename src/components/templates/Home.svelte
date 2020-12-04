@@ -11,11 +11,7 @@
 
 <Header links={headerLinks} heading={headerTitle} />
 <Hero picture={heroPicture}>
-  <span slot="heading">
-    <slot name="heading" />
-  </span>
-  <span slot="subheading">
-    <slot name="subheading" />
-  </span>
+  <slot slot="heading" name="heroHeading" />
+  <slot slot="subheading" name="heroSubheading" />
 </Hero>
 <ProjectList />

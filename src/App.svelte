@@ -1,6 +1,7 @@
 <script lang="typescript">
-  import Router from 'svelte-spa-router'
-  import { routes } from './routes'
+  import Index from './pages/Index.svelte'
+  // import Router from 'svelte-spa-router'
+  // import { routes } from './routes'
 </script>
 
 <style lang="scss">
@@ -49,4 +50,4 @@
   }
 </style>
 
-<Router {routes} />
+<Index />
