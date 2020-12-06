@@ -8,7 +8,6 @@ Code for [jonahgold.dev](https://jonahgold.dev)
 
 - [Svelte](https://svelte.dev)
 - [TypeScript](https://typescriptlang.org)
-- [Svelte-spa-router](https://github.com/ItalyPaleAle/svelte-spa-router)
 - [Svelte-preprocess](https://github.com/sveltejs/svelte-preprocess)
 - [Snowpack](https://www.snowpack.dev)
 - Tender love and care
