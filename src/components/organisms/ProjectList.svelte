@@ -5,6 +5,7 @@
   let dummyData: TileProject[] = [
     {
       title: 'De Blauwburgwal - toen en nu',
+      slug: 'bbwal',
       description:
         'Een visualisatie die een vergeten bombardement aan het licht brengt.',
       image:
@@ -15,6 +16,7 @@
     },
     {
       title: 'Interactieve data story',
+      slug: 'datastory',
       description:
         'Een data story over de representatie van doelgroepen in parkeergelegenheden.',
       image:
@@ -25,6 +27,7 @@
     },
     {
       title: 'Stageopdracht: TEDx Alkmaar',
+      slug: 'tedx',
       description:
         'Website die ik samen met een collega heb gebouwd tijdens mijn korte stage.',
       image: '/tedx-alkmaar.png',
@@ -34,6 +37,7 @@
     },
     {
       title: 'Extreme Space Invaders',
+      slug: 'xsi',
       description:
         'Met 4 weken aan JavaScript kennis heb ik de klassieke Space Invaders nagemaakt.',
       image: '/xpi.png',

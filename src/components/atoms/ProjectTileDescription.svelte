@@ -2,7 +2,7 @@
   p {
     font-size: var(--step-0);
     margin: 0;
-    color: white;
+    color: var(--white);
     hyphens: auto;
     display: none;
 

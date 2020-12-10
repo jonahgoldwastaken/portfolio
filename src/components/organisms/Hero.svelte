@@ -6,7 +6,7 @@
   export let picture = ''
 </script>
 
-<style lang="scss">
+<style>
   section {
     display: grid;
     grid-auto-rows: min-content;

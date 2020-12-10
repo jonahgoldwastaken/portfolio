@@ -12,6 +12,7 @@
     width: calc(var(--step-0) * 2 + 100%);
     height: 15rem;
     object-fit: cover;
+    object-position: 50% 50%;
 
     @media screen and (min-width: 60rem) {
       margin-bottom: 0px;

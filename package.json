@@ -5,7 +5,9 @@
     "format": "prettier --write src/**/*.{js,ts,svelte}"
   },
   "dependencies": {
-    "svelte": "^3.31.0"
+    "prosemirror-svelte": "^0.2.3",
+    "svelte": "^3.31.0",
+    "svelte-routing": "^1.4.2"
   },
   "devDependencies": {
     "@snowpack/plugin-svelte": "^3.3.0",

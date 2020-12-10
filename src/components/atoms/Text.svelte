@@ -4,10 +4,11 @@
 
 <style>
   p {
-    font-family: Raleway, sans-serif;
+    font-family: var(--font-running);
     line-height: 1.5em;
     font-size: var(--step-0);
   }
+
   p.bold {
     font-weight: bold;
   }

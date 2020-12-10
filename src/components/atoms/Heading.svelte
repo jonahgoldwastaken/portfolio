@@ -12,7 +12,7 @@
     --font-size: var(--step-5);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
-    font-family: Raleway, sans-serif;
+    font-family: var(--font-heading);
     letter-spacing: -1pt;
     margin: 0;
   }

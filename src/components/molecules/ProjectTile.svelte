@@ -1,4 +1,5 @@
 <script>
+  import { link } from 'svelte-routing'
   import ProjectTileImage from '../atoms/ProjectTileImage.svelte'
   import ProjectTileHeading from '../atoms/ProjectTileHeading.svelte'
   import ProjectTileDetails from '../atoms/ProjectTileDetails.svelte'
@@ -13,7 +14,7 @@
     display: block;
     height: 100%;
     transform: translateY(0px);
-    color: white;
+    color: var(--secondary);
     text-decoration: none;
     transition: transform 0.2s ease;
 
@@ -21,7 +22,7 @@
       transform: translateY(-2px);
 
       article {
-        box-shadow: 0 15px 5px -7.5px rgba(#2e3138, 0.25);
+        box-shadow: 0 15px 10px -10px rgba(#2e3138, 0.25);
       }
     }
   }
@@ -49,7 +50,7 @@
   }
 </style>
 
-<a href={project.url} target="_blank" rel="noopener noreferrer">
+<a use:link href="/project/{project.slug}">
   <article>
     <ProjectTileImage
       src={project.image}

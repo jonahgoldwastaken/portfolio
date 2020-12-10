@@ -11,8 +11,9 @@
       margin-top: initial;
     }
   }
+
   small {
-    color: white;
+    color: var(--white);
     font-size: var(--step--1);
   }
 </style>

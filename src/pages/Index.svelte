@@ -3,11 +3,7 @@
   import Highlight from '../components/atoms/Highlight.svelte'
 </script>
 
-<Home
-  headerTitle="Jonah Meijers"
-  headerLinks={[{ title: 'E-Mail', href: 'mailto:jonahmeijers97@gmail.com' }, { title: 'GitHub', href: 'https://github.com/theonejonahgold' }]}
-  heroPicture="/profile-picture.jpg"
->
+<Home heroPicture="/profile-picture.jpg">
   <slot slot="heroHeading">
     Ik maak
     <Highlight>unieke</Highlight>
