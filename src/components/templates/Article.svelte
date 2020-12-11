@@ -9,15 +9,26 @@
 <style>
   .article {
     display: grid;
+    grid-gap: var(--step-0);
+
+    > div {
+      grid-row: 2;
+      grid-column: 1;
+    }
 
     @media screen and (min-width: 60rem) {
       grid-template-columns: 1fr 1fr;
+
+      > div {
+        grid-row: 1;
+      }
     }
   }
 
   :global(.article img) {
+    grid-row: 1;
     width: 100%;
-    max-width: 40rem;
+    max-width: 60rem;
     border-radius: 12px;
 
     @media screen and (min-width: 60rem) {
