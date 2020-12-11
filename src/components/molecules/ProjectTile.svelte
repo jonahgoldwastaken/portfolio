@@ -22,6 +22,7 @@
       transform: translateY(-2px);
 
       article {
+        background: var(--orange);
         box-shadow: 0 15px 10px -10px rgba(#2e3138, 0.25);
       }
     }
@@ -35,7 +36,7 @@
     background: var(--light-orange);
     border-radius: 12px;
     box-shadow: 0 5px 5px -2.5px rgba(#2e3138, 0.5);
-    transition: box-shadow 0.2s ease;
+    transition: all 0.2s ease;
 
     @media screen and (min-width: 60rem) {
       display: grid;

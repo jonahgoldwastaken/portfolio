@@ -29,7 +29,7 @@
       title: 'Stageopdracht: TEDx Alkmaar',
       slug: 'tedx',
       description:
-        'Website die ik samen met een collega heb gebouwd tijdens mijn korte stage.',
+        'De campagnewebsite waaraan ik heb bijgedragen tijdens mijn korte stage.',
       image: '/tedx-alkmaar.png',
       client: 'Raadhuis',
       year: 2018,

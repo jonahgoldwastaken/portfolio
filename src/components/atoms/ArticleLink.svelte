@@ -6,7 +6,10 @@
   a {
     display: inline-block;
     padding: var(--step-0);
-    font-size: var(--step-0);
+    margin: var(--step-0) 0;
+    text-align: center;
+    width: 100%;
+    font-size: var(--step-1);
     font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
     color: var(--white);
@@ -18,11 +21,19 @@
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 10px -7.5px rgba(#2e3138, 0.5);
+      box-shadow: 0 12px 10px -10px rgba(#2e3138, 0.5);
     }
 
-    :global(+ a) {
-      margin-left: var(--step-0);
+    @media screen and (min-width: 60rem) {
+      width: auto;
+      padding: var(--step--1);
+      margin: var(--step--1) 0;
+      text-align: left;
+      font-size: var(--step-0);
+
+      :global(+ a) {
+        margin-left: var(--step-0);
+      }
     }
   }
 

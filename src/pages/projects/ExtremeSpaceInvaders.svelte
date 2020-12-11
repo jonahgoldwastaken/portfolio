@@ -20,10 +20,10 @@
     project.
   </Text>
   <ArticleLink href="https://oege.ie.hva.nl/~meijerj034/xpi/">
-    Speel het spel
+    Het spel
   </ArticleLink>
   <ArticleLink href="https://github.com/theonejonahgold/xtremespaceinvaders">
-    Bekijk de code
+    De code
   </ArticleLink>
   <Text>
     Dit project is puur voor educatieve doeleinden gebouwd, de content die niet

@@ -30,7 +30,10 @@
     samengevoegd. Grote dank aan de heer Geukes Foppen voor zijn werk. Het heeft
     ons heel erg geholpen met het concept.
   </Text>
-  <ArticleLink href="https://dataweek.jonahgold.dev">
-    Bekijk de visualisatie
+  <ArticleLink href="https://dataweek.jonahgold.dev">Visualisatie</ArticleLink>
+  <ArticleLink
+    href="https://app.gitbook.com/@jonahmeijers97/s/information-design/dataweek/dataweek"
+  >
+    Proces
   </ArticleLink>
 </Article>
