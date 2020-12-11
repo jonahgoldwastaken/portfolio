@@ -1,12 +1,9 @@
-<script>
-  export let href: string
-</script>
-
 <style>
-  a {
+  button {
+    border: none;
     display: inline-block;
-    padding: var(--step-0);
-    margin: var(--step-0) 0;
+    padding: var(--step--1);
+    margin: var(--step--1) 0;
     text-align: center;
     width: 100%;
     font-size: var(--step-1);
@@ -18,6 +15,7 @@
     border-radius: 6px;
     box-shadow: 0 5px 5px -2.5px rgba(#2e3138, 0.5);
     transform: translateY(0px);
+    cursor: pointer;
 
     &:hover {
       transform: translateY(-2px);
@@ -25,24 +23,16 @@
     }
 
     @media screen and (min-width: 60rem) {
-      width: auto;
-      padding: var(--step--1);
-      margin: var(--step--1) 0;
-      text-align: left;
       font-size: var(--step-0);
-
-      :global(+ a) {
-        margin-left: var(--step-0);
-      }
     }
   }
 
-  a:hover,
-  a:focus {
+  button:hover,
+  button:focus {
     background: var(--orange);
   }
 </style>
 
-<a target="_blank" rel="noopener noreferrer" {href} {...$$restProps}>
+<button {...$$restProps}>
   <slot />
-</a>
+</button>
