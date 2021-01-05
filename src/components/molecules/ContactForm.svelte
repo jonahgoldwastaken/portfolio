@@ -2,24 +2,12 @@
   import FormInput from '../atoms/FormInput.svelte'
   import FormButton from '../atoms/FormButton.svelte'
 
-  function encode(data: FormData) {
-    return [].slice
-      .call(data.entries())
-      .map(
-        (entry: string[]) =>
-          encodeURIComponent(entry[0]) + '=' + encodeURIComponent(entry[1])
-      )
-      .join('&')
-  }
-
   function handleSubmit() {
     const formData = new FormData(this)
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: {
-        ...encode(formData),
-      },
+      body: formData,
     })
       .then(console.log)
       .catch(console.log)
