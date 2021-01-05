@@ -6,6 +6,7 @@
   import Datastory from './pages/projects/Datastory.svelte'
   import Blauwburgwal from './pages/projects/Blauwburgwal.svelte'
   import Tedx from './pages/projects/Tedx.svelte'
+  import Vercel from './pages/projects/Vercel.svelte'
 </script>
 
 <style global lang="scss">
@@ -75,6 +76,9 @@
 </style>
 
 <Router>
+  <Route path="/project/vercel">
+    <Vercel />
+  </Route>
   <Route path="/project/tedx">
     <Tedx />
   </Route>

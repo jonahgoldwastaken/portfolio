@@ -10,9 +10,9 @@
     margin-left: calc(var(--step-0) * -1);
     margin-bottom: var(--step-0);
     width: calc(var(--step-0) * 2 + 100%);
-    height: 15rem;
+    height: 100%;
     object-fit: cover;
-    object-position: 50% 50%;
+    object-position: center;
 
     @media screen and (min-width: 60rem) {
       margin-bottom: 0px;

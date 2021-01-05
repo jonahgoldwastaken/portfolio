@@ -4,6 +4,15 @@
 
   let dummyData: TileProject[] = [
     {
+      title: 'Vercel remake',
+      slug: 'vercel',
+      description: 'De website van populaire hosting platform nagemaakt.',
+      image: '/vercel.png',
+      year: 2020,
+      client: 'CMD Frontend-development',
+      url: 'https://fd.jonahgold.dev',
+    },
+    {
       title: 'De Blauwburgwal - toen en nu',
       slug: 'bbwal',
       description:
@@ -53,13 +62,14 @@
     list-style: none;
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 20rem;
+    grid-auto-rows: min-content;
     grid-gap: var(--step-2);
     justify-content: center;
     width: 100%;
     margin-bottom: var(--step-2);
 
     @media screen and (min-width: 60rem) {
+      grid-auto-rows: 20rem;
       grid-template-columns: repeat(
         2,
         minmax(calc(100% / 3 - var(--step-2) * 2), 45rem)

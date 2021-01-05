@@ -5,10 +5,10 @@
 
 <style>
   p {
-    margin-top: 0px;
+    margin: 0px;
 
     @media screen and (min-width: 60rem) {
-      margin-top: initial;
+      margin: initial;
     }
   }
 

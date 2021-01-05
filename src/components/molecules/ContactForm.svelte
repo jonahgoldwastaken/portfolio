@@ -1,6 +1,29 @@
 <script>
   import FormInput from '../atoms/FormInput.svelte'
   import FormButton from '../atoms/FormButton.svelte'
+
+  function encode(data: FormData) {
+    return [].slice
+      .call(data.entries())
+      .map(
+        (entry: string[]) =>
+          encodeURIComponent(entry[0]) + '=' + encodeURIComponent(entry[1])
+      )
+      .join('&')
+  }
+
+  function handleSubmit() {
+    const formData = new FormData(this)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: {
+        ...encode(formData),
+      },
+    })
+      .then(console.log)
+      .catch(console.log)
+  }
 </script>
 
 <style lang="scss">
@@ -41,15 +64,10 @@
   }
 </style>
 
-<form
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  data-netlify-recaptcha="true"
->
+<form name="contact" method="POST" on:submit|preventDefault={handleSubmit}>
   <FormInput name="name" label="Naam" type="text" />
   <FormInput name="email" label="E-mail" type="email" />
   <FormInput name="message" label="Bericht" type="textarea" />
-  <div data-netlify-recaptcha="true" />
+  <input type="hidden" name="form-name" value="contact" />
   <FormButton>Verzenden</FormButton>
 </form>
