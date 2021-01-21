@@ -5,22 +5,20 @@
     "format": "prettier --write src/**/*.{js,ts,svelte}"
   },
   "dependencies": {
-    "prosemirror-svelte": "^0.2.3",
-    "svelte": "^3.31.0",
-    "svelte-routing": "^1.4.2"
+    "svelte": "^3.31.2"
   },
   "devDependencies": {
-    "@snowpack/plugin-svelte": "^3.3.0",
-    "@snowpack/plugin-typescript": "^1.1.0",
-    "@snowpack/plugin-webpack": "^2.1.1",
+    "@snowpack/plugin-svelte": "^3.5.2",
+    "@snowpack/plugin-typescript": "^1.2.1",
     "@tsconfig/svelte": "^1.0.10",
-    "@types/snowpack-env": "^2.3.2",
+    "@types/snowpack-env": "^2.3.3",
     "prettier": "^2.2.1",
-    "prettier-plugin-svelte": "^1.4.1",
-    "rollup": "^2.34.0",
-    "sass": "^1.29.0",
-    "snowpack": "^2.17.1",
+    "prettier-plugin-svelte": "^2.1.1",
+    "rollup": "^2.37.1",
+    "sass": "^1.32.5",
+    "snowpack": "^3.0.11",
     "svelte-preprocess": "^4.6.1",
-    "typescript": "^4.0.0"
+    "tinro": "^0.5.8",
+    "typescript": "^4.1.3"
   }
 }

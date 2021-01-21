@@ -13,15 +13,20 @@
     font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
     color: var(--white);
-    background: var(--light-orange);
+    background: linear-gradient(
+      to top right,
+      var(--orange),
+      var(--light-orange)
+    );
     transition: all 0.2s ease;
     border-radius: 6px;
-    box-shadow: 0 5px 5px -2.5px rgba(#2e3138, 0.5);
+    box-shadow: 0 5px 5px -2.5px rgba(#f55e00, 0.5);
     transform: translateY(0px);
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 10px -10px rgba(#2e3138, 0.5);
+      box-shadow: 0 12px 10px -10px rgba(#f55e00, 0.5);
+      color: var(--white);
     }
 
     @media screen and (min-width: 60rem) {
@@ -35,11 +40,6 @@
         margin-left: var(--step-0);
       }
     }
-  }
-
-  a:hover,
-  a:focus {
-    background: var(--orange);
   }
 </style>
 

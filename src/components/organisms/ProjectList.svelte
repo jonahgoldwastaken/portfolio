@@ -4,6 +4,15 @@
 
   let dummyData: TileProject[] = [
     {
+      title: 'EMPOWER 2.0',
+      slug: 'empower',
+      description: 'Een toolkit voor beleidsmakers over groene energie.',
+      image: '/empower.png',
+      year: 2021,
+      client: 'CMD Information Design',
+      url: 'https://empower.jonahgold.dev',
+    },
+    {
       title: 'Vercel remake',
       slug: 'vercel',
       description: 'De website van populaire hosting platform nagemaakt.',

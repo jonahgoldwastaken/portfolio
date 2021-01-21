@@ -38,6 +38,6 @@
     class="content"
   >
     <slot />
+    <Footer />
   </div>
-  <Footer />
 </div>

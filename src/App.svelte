@@ -1,12 +1,12 @@
 <script lang="typescript">
-  import { Router, Route } from 'svelte-routing'
-  import FourOFour from './pages/_404.svelte'
+  import { Route } from 'tinro'
   import Index from './pages/Index.svelte'
   import ExtremeSpaceInvaders from './pages/projects/ExtremeSpaceInvaders.svelte'
   import Datastory from './pages/projects/Datastory.svelte'
   import Blauwburgwal from './pages/projects/Blauwburgwal.svelte'
   import Tedx from './pages/projects/Tedx.svelte'
   import Vercel from './pages/projects/Vercel.svelte'
+  import Empower from './pages/projects/Empower.svelte'
 </script>
 
 <style global lang="scss">
@@ -71,30 +71,28 @@
 
   a:hover,
   a:focus {
-    color: var(--orange);
+    color: var(--light-orange);
   }
 </style>
 
-<Router>
-  <Route path="/project/vercel">
-    <Vercel />
-  </Route>
-  <Route path="/project/tedx">
-    <Tedx />
-  </Route>
-  <Route path="/project/datastory">
-    <Datastory />
-  </Route>
-  <Route path="/project/bbwal">
-    <Blauwburgwal />
-  </Route>
-  <Route path="/project/xsi">
-    <ExtremeSpaceInvaders />
-  </Route>
-  <Route path="/">
-    <Index />
-  </Route>
-  <Route path="*">
-    <FourOFour />
-  </Route>
-</Router>
+<Route path="/project/empower">
+  <Empower />
+</Route>
+<Route path="/project/vercel">
+  <Vercel />
+</Route>
+<Route path="/project/tedx">
+  <Tedx />
+</Route>
+<Route path="/project/datastory">
+  <Datastory />
+</Route>
+<Route path="/project/bbwal">
+  <Blauwburgwal />
+</Route>
+<Route path="/project/xsi">
+  <ExtremeSpaceInvaders />
+</Route>
+<Route path="/">
+  <Index />
+</Route>

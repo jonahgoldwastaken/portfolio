@@ -1,5 +1,4 @@
 <script>
-  import { link } from 'svelte-routing'
   export let href: string
 </script>
 
@@ -13,9 +12,9 @@
     margin: var(--step--2) 0;
 
     &:hover {
-      color: var(--orange);
+      color: var(--light-orange);
     }
   }
 </style>
 
-<a use:link {href}><slot /></a>
+<a {href}><slot /></a>
