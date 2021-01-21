@@ -1,6 +1,6 @@
 <script>
   import FooterSection from '../molecules/FooterSection.svelte'
-  import ContactForm from '../molecules/ContactForm.svelte'
+  // import ContactForm from '../molecules/ContactForm.svelte'
   import FooterLink from '../atoms/FooterLink.svelte'
   import Copyright from '../atoms/Copyright.svelte'
 </script>
