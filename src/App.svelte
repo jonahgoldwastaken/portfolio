@@ -1,6 +1,7 @@
 <script lang="typescript">
   import { Route } from 'tinro'
   import Index from './pages/Index.svelte'
+  import NotFound from './pages/NotFound.svelte'
   import ExtremeSpaceInvaders from './pages/projects/ExtremeSpaceInvaders.svelte'
   import Datastory from './pages/projects/Datastory.svelte'
   import Blauwburgwal from './pages/projects/Blauwburgwal.svelte'
@@ -61,7 +62,7 @@
   }
 
   a {
-    font-size: var(--step-0);
+    font-size: inherit;
     font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
     text-decoration: underline;
@@ -75,24 +76,29 @@
   }
 </style>
 
-<Route path="/project/empower">
-  <Empower />
-</Route>
-<Route path="/project/vercel">
-  <Vercel />
-</Route>
-<Route path="/project/tedx">
-  <Tedx />
-</Route>
-<Route path="/project/datastory">
-  <Datastory />
-</Route>
-<Route path="/project/bbwal">
-  <Blauwburgwal />
-</Route>
-<Route path="/project/xsi">
-  <ExtremeSpaceInvaders />
-</Route>
-<Route path="/">
-  <Index />
+<Route>
+  <Route path="/project/empower">
+    <Empower />
+  </Route>
+  <Route path="/project/vercel">
+    <Vercel />
+  </Route>
+  <Route path="/project/tedx">
+    <Tedx />
+  </Route>
+  <Route path="/project/datastory">
+    <Datastory />
+  </Route>
+  <Route path="/project/bbwal">
+    <Blauwburgwal />
+  </Route>
+  <Route path="/project/xsi">
+    <ExtremeSpaceInvaders />
+  </Route>
+  <Route path="/">
+    <Index />
+  </Route>
+  <Route fallback>
+    <NotFound />
+  </Route>
 </Route>
