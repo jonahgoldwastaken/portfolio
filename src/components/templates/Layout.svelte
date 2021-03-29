@@ -1,5 +1,5 @@
 <script>
-  import { fly } from 'svelte/transition'
+  import { fade } from 'svelte/transition'
   import Header from '../organisms/Header.svelte'
   import Footer from '../organisms/Footer.svelte'
   import type { Link } from '../../../types/link'
@@ -32,11 +32,7 @@
 
 <div>
   <Header {heading} {links} />
-  <div
-    in:fly={{ duration: 200, y: 20 }}
-    out:fly={{ duration: 200, y: -20 }}
-    class="content"
-  >
+  <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }} class="content">
     <slot />
     <Footer />
   </div>

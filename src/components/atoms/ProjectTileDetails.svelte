@@ -6,10 +6,6 @@
 <style>
   p {
     margin: 0px;
-
-    @media screen and (min-width: 60rem) {
-      margin: initial;
-    }
   }
 
   small {

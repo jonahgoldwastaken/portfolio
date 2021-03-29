@@ -4,8 +4,8 @@
     font-weight: inherit;
     background: linear-gradient(
       to top right,
-      var(--orange),
-      var(--light-orange)
+      var(--light-orange),
+      var(--orange)
     );
     background-clip: text;
     -webkit-background-clip: text;

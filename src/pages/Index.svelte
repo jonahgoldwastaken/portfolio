@@ -12,8 +12,10 @@
     ervaringen.
   </slot>
   <slot slot="heroSubheading">
-    Ik ben een Communication & Multimedia Design student gevestigd in Amsterdam.
-    Ik draag graag bij aan web- en mobiele apps die geven om de tijd en wensen
-    van hun gebruikers.
+    Mijn passie is om de manier waarop we met technologie omgaan een stuk meer
+    in balans is. Dit wil ik bereiken door concepten te ontwikkelen die de
+    apparaten die we het meest gebruiken weer de rol geven die ze oorspronkelijk
+    hebben gekregen: Utilitair en met het oog om wat je wilt bereiken
+    makkelijker te maken.
   </slot>
 </Home>

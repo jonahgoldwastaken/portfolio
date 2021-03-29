@@ -15,8 +15,8 @@
     color: var(--white);
     background: linear-gradient(
       to top right,
-      var(--orange),
-      var(--light-orange)
+      var(--light-orange),
+      var(--orange)
     );
     transition: all 0.2s ease;
     border-radius: 6px;

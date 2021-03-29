@@ -5,8 +5,6 @@
   import ExtremeSpaceInvaders from './pages/projects/ExtremeSpaceInvaders.svelte'
   import Datastory from './pages/projects/Datastory.svelte'
   import Blauwburgwal from './pages/projects/Blauwburgwal.svelte'
-  import Tedx from './pages/projects/Tedx.svelte'
-  import Vercel from './pages/projects/Vercel.svelte'
   import Empower from './pages/projects/Empower.svelte'
 </script>
 
@@ -25,8 +23,8 @@
 
     --black: #2e3138;
     --brown: #60463b;
-    --orange: #f55e00;
-    --light-orange: #fe8234;
+    --orange: #efcb16;
+    --light-orange: #f08721;
     --white: #fff;
 
     --primary: var(--black);
@@ -79,12 +77,6 @@
 <Route>
   <Route path="/project/empower">
     <Empower />
-  </Route>
-  <Route path="/project/vercel">
-    <Vercel />
-  </Route>
-  <Route path="/project/tedx">
-    <Tedx />
   </Route>
   <Route path="/project/datastory">
     <Datastory />

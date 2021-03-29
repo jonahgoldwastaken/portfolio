@@ -9,6 +9,10 @@
 </script>
 
 <style>
+  li {
+    max-width: 40rem;
+  }
+
   a {
     display: block;
     height: 100%;
@@ -29,42 +33,36 @@
   article {
     width: 100%;
     height: 100%;
-    padding: var(--step-0);
     overflow: hidden;
     background: linear-gradient(
       to top right,
-      var(--orange),
-      var(--light-orange)
+      var(--light-orange),
+      var(--orange)
     );
     border-radius: 12px;
     box-shadow: 0 5px 5px -2.5px rgba(#f55e00, 0.25);
     transition: all 0.2s ease;
+  }
 
-    @media screen and (min-width: 60rem) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: 'image content';
-
-      div {
-        grid-area: content;
-        padding-left: var(--step-0);
-      }
-    }
+  div {
+    padding: var(--step-0);
   }
 </style>
 
-<a href="/project/{project.slug}">
-  <article>
-    <ProjectTileImage
-      src={project.image}
-      alt="Afbeelding van project {project.title}"
-    />
-    <div>
-      <ProjectTileHeading>{project.title}</ProjectTileHeading>
-      <ProjectTileDetails
-        details={{ year: project.year, client: project.client }}
+<li>
+  <a href="/project/{project.slug}">
+    <article>
+      <ProjectTileImage
+        src={project.image}
+        alt="Afbeelding van project {project.title}"
       />
-      <ProjectTileDescription>{project.description}</ProjectTileDescription>
-    </div>
-  </article>
-</a>
+      <div>
+        <ProjectTileHeading>{project.title}</ProjectTileHeading>
+        <ProjectTileDetails
+          details={{ year: project.year, client: project.client }}
+        />
+        <ProjectTileDescription>{project.description}</ProjectTileDescription>
+      </div>
+    </article>
+  </a>
+</li>
