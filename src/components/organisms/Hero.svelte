@@ -1,30 +1,17 @@
-<script>
+<script lang="ts">
   import Heading from '../atoms/Heading.svelte'
   import Text from '../atoms/Text.svelte'
-  import ProfilePicture from '../atoms/ProfilePicture.svelte'
-
-  export let picture = ''
 </script>
 
-<style>
+<style lang="scss">
   section {
     display: grid;
-    grid-auto-rows: min-content;
-    grid-auto-flow: row;
-    grid-gap: auto;
-    margin: 0 auto var(--step-5);
-
-    @media screen and (min-width: 60rem) {
-      grid-auto-flow: column;
-      justify-content: space-between;
-    }
-
-    @media screen and (min-width: 100rem) {
-      grid-template-columns: 60rem auto;
-    }
-
-    @media screen and (min-width: 120rem) {
-      grid-template-columns: 80rem auto;
+    margin: 0 auto max(20rem, 8.75vh);
+    height: max(40rem, 78.75vh);
+    place-items: center;
+    max-width: 60rem;
+    :global(*) {
+      text-align: center;
     }
   }
 </style>
@@ -38,5 +25,4 @@
       <slot name="subheading" />
     </Text>
   </div>
-  <ProfilePicture src={picture} />
 </section>

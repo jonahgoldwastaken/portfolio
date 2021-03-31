@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   import NavigationLink from '../atoms/NavigationLink.svelte'
   import type { Link } from '../../../types/link'
   export let links: Link[] = []
 </script>
 
-<style>
+<style lang="scss">
   ul {
     list-style: none;
     display: grid;

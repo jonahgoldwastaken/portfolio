@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   export let href: string
 </script>
 
-<style>
+<style lang="scss">
   a {
     display: block;
     width: max-content;
@@ -12,7 +12,7 @@
     margin: var(--step--2) 0;
 
     &:hover {
-      color: var(--light-orange);
+      color: var(--orange);
     }
   }
 </style>

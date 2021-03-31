@@ -2,7 +2,7 @@
   "extends": "@tsconfig/svelte/tsconfig.json",
   "include": ["src", "types"],
   "compilerOptions": {
-    "lib": ["dom", "es2017"],
+    "lib": ["DOM", "es2020"],
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",

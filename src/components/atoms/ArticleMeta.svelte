@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   export let client: string
   export let year: number
 </script>
 
-<style>
+<style lang="scss">
   p {
     margin: var(--step--1) 0 var(--step-1);
   }

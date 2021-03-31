@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   export let label: string
   export let name: string
   export let type: 'text' | 'email' | 'textarea' = 'text'
 </script>
 
-<style>
+<style lang="scss">
   label {
     font: var(--step--1) bold;
     line-height: 1;
@@ -30,5 +30,7 @@
   {label}
   {#if type === 'textarea'}
     <textarea rows="6" {name} />
-  {:else}<input {name} {type} />{/if}
+  {:else}
+    <input {name} {type} />
+  {/if}
 </label>

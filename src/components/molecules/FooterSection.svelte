@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import FooterHeading from '../atoms/FooterHeading.svelte'
   export let heading: string
 </script>

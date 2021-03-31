@@ -1,11 +1,8 @@
-<script>
-  import FooterSection from '../molecules/FooterSection.svelte'
-  // import ContactForm from '../molecules/ContactForm.svelte'
-  import FooterLink from '../atoms/FooterLink.svelte'
+<script lang="ts">
   import Copyright from '../atoms/Copyright.svelte'
 </script>
 
-<style>
+<style lang="scss">
   footer {
     position: sticky;
     top: 100vh;
@@ -26,19 +23,19 @@
 </style>
 
 <footer>
-  <div>
-    <FooterSection heading="Projecten">
-      <FooterLink href="/project/empower">EMPOWER 2.0</FooterLink>
-      <FooterLink href="/project/vercel">Vercel Remake</FooterLink>
-      <FooterLink href="/project/bbwal">De Blauwburgwal</FooterLink>
-      <FooterLink href="/project/datastory">Interactieve data story</FooterLink>
-    </FooterSection>
-    <FooterSection heading="My corners of the internet">
-      <FooterLink href="https://github.com/theonejonahgold">GitHub</FooterLink>
-    </FooterSection>
-    <!-- <FooterSection heading="Contact">
-      <ContactForm />
-    </FooterSection> -->
-  </div>
+  <!--  <div>-->
+  <!--    <FooterSection heading="Projecten">-->
+  <!--      <FooterLink href="/project/empower">EMPOWER 2.0</FooterLink>-->
+  <!--      <FooterLink href="/project/vercel">Vercel Remake</FooterLink>-->
+  <!--      <FooterLink href="/project/bbwal">De Blauwburgwal</FooterLink>-->
+  <!--      <FooterLink href="/project/datastory">Interactieve data story</FooterLink>-->
+  <!--    </FooterSection>-->
+  <!--    <FooterSection heading="My corners of the internet">-->
+  <!--      <FooterLink href="https://github.com/theonejonahgold">GitHub</FooterLink>-->
+  <!--    </FooterSection>-->
+  <!--    &lt;!&ndash; <FooterSection heading="Contact">-->
+  <!--      <ContactForm />-->
+  <!--    </FooterSection> &ndash;&gt;-->
+  <!--  </div>-->
   <Copyright />
 </footer>

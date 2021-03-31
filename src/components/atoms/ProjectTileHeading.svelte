@@ -1,12 +1,17 @@
-<style>
-  h3 {
+<script lang="ts">
+  export let heading
+</script>
+
+<style lang="scss">
+  h2 {
     font-size: var(--step-1);
     font-weight: bold;
-    color: var(--white);
+    width: max-content;
     margin: 0;
+    color: var(--white);
   }
 </style>
 
-<h3>
+<h2 bind:this={heading}>
   <slot />
-</h3>
+</h2>
