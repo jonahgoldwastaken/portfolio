@@ -1,19 +1,15 @@
-<script>
+<script lang="ts">
   import Home from '../components/templates/Home.svelte'
   import Highlight from '../components/atoms/Highlight.svelte'
 </script>
 
-<Home heroPicture="/profile-picture.jpg">
+<Home>
   <slot slot="heroHeading">
-    Ik maak
-    <Highlight>unieke</Highlight>
-    en
-    <Highlight>onvergetelijke</Highlight>
-    ervaringen.
+    Ik bouw producten die iets <Highlight>bereiken</Highlight>.
   </slot>
   <slot slot="heroSubheading">
-    Ik ben een Communication & Multimedia Design student gevestigd in Amsterdam.
-    Ik draag graag bij aan web- en mobiele apps die geven om de tijd en wensen
-    van hun gebruikers.
+    Dit komt doordat de balans tussen technologie en het echte leven voor mij op
+    nummer één staat. Ik werk aan producten die mensen verder brengen, in plaats
+    van hun tijd roven.
   </slot>
 </Home>

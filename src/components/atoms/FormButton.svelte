@@ -1,4 +1,4 @@
-<style>
+<style lang="scss">
   button {
     border: none;
     display: inline-block;
@@ -10,7 +10,7 @@
     font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
     color: var(--white);
-    background: var(--light-orange);
+    background: var(--orange);
     transition: all 0.2s ease;
     border-radius: 6px;
     box-shadow: 0 5px 5px -2.5px rgba(#2e3138, 0.5);
@@ -29,7 +29,7 @@
 
   button:hover,
   button:focus {
-    background: var(--orange);
+    background: var(--color-dark);
   }
 </style>
 

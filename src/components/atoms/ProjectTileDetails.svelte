@@ -1,15 +1,11 @@
 <script>
-  import type { TileProject } from '../../../types/project'
+  import { TileProject } from '../../../types/project'
   export let details: Pick<TileProject, 'year' | 'client'>
 </script>
 
-<style>
+<style lang="scss">
   p {
-    margin: 0px;
-
-    @media screen and (min-width: 60rem) {
-      margin: initial;
-    }
+    margin: 0;
   }
 
   small {

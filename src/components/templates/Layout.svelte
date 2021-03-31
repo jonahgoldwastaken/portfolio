@@ -1,5 +1,4 @@
-<script>
-  import { fly } from 'svelte/transition'
+<script lang="ts">
   import Header from '../organisms/Header.svelte'
   import Footer from '../organisms/Footer.svelte'
   import type { Link } from '../../../types/link'
@@ -12,32 +11,9 @@
   ]
 </script>
 
-<style>
-  div:not(.content) {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    padding: 0 var(--step-2);
-
-    @media screen and (min-width: 60rem) {
-      padding: 0 var(--step-4);
-    }
-  }
-
-  .content {
-    background: var(--secondary);
-  }
+<style lang="scss">
 </style>
 
-<div>
-  <Header {heading} {links} />
-  <div
-    in:fly={{ duration: 200, y: 20 }}
-    out:fly={{ duration: 200, y: -20 }}
-    class="content"
-  >
-    <slot />
-    <Footer />
-  </div>
-</div>
+<Header {heading} {links} />
+<slot />
+<Footer />

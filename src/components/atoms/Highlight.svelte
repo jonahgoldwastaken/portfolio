@@ -1,11 +1,11 @@
-<style>
+<style lang="scss">
   strong {
-    color: var(--orange);
+    color: var(--color-dark);
     font-weight: inherit;
     background: linear-gradient(
       to top right,
-      var(--orange),
-      var(--light-orange)
+      var(--color-dark),
+      var(--color-light)
     );
     background-clip: text;
     -webkit-background-clip: text;

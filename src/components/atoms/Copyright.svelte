@@ -1,4 +1,4 @@
-<style>
+<style lang="scss">
   p {
     color: var(--primary);
     grid-column: 1;
@@ -7,4 +7,4 @@
   }
 </style>
 
-<p><small>© Jonah Meijers 2020, alle rechten voorbehouden</small></p>
+<p><small>© Jonah Meijers 2021, alle rechten voorbehouden</small></p>

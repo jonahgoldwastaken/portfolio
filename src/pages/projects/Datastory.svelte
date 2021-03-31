@@ -6,11 +6,7 @@
 
 <Article client="CMD Tech Track" year={2020}>
   <slot slot="title">Interactieve data story</slot>
-  <img
-    slot="image"
-    src="https://raw.githubusercontent.com/theonejonahgold/frontend-applications/main/docs/screenshot.png"
-    alt="Screenshot Data story"
-  />
+  <img slot="image" src="/datastory.png" alt="Screenshot Data story" />
   <Text>
     De Volkskrant heeft de Tech Track de opdracht gegeven om met data van het
     RDW een interactieve data story te schrijven die journalistisch interessant

@@ -1,8 +1,28 @@
-<script>
+<script lang="ts">
+  import Heading from '../atoms/Heading.svelte'
   import ProjectTile from '../molecules/ProjectTile.svelte'
   import type { TileProject } from '../../../types/project'
 
   let dummyData: TileProject[] = [
+    {
+      title: "CSS Rubik's Cube",
+      slug: 'cube',
+      description:
+        'Verschillende HTML en CSS only experimenten met de wereldberoemde kubus.',
+      image: '/cube.png',
+      year: 2021,
+      client: 'CMD Minor Web Design & Development',
+      url: 'http://theonejonahgold.github.io/css-rubiks-cube',
+    },
+    {
+      title: 'Triptop',
+      slug: 'triptop',
+      description: 'Bouw de perfecte playlist voor je roadtrip.',
+      image: '/triptop.png',
+      year: 2021,
+      client: 'CMD Minor Web Design & Development',
+      url: 'https://triptop.app',
+    },
     {
       title: 'EMPOWER 2.0',
       slug: 'empower',
@@ -13,21 +33,11 @@
       url: 'https://empower.jonahgold.dev',
     },
     {
-      title: 'Vercel remake',
-      slug: 'vercel',
-      description: 'De website van populaire hosting platform nagemaakt.',
-      image: '/vercel.png',
-      year: 2020,
-      client: 'CMD Frontend-development',
-      url: 'https://fd.jonahgold.dev',
-    },
-    {
       title: 'De Blauwburgwal - toen en nu',
       slug: 'bbwal',
       description:
         'Een visualisatie die een vergeten bombardement aan het licht brengt.',
-      image:
-        'https://raw.githubusercontent.com/theonejonahgold/information_design/master/.gitbook/assets/screenshot_dataweek.png',
+      image: '/dataweek.png',
       year: 2020,
       client: 'CMD Dataweek',
       url: 'https://dataweek.jonahgold.dev',
@@ -37,21 +47,10 @@
       slug: 'datastory',
       description:
         'Een data story over de representatie van doelgroepen in parkeergelegenheden.',
-      image:
-        'https://raw.githubusercontent.com/theonejonahgold/frontend-applications/main/docs/screenshot.png',
+      image: '/datastory.png',
       client: 'CMD Tech Track',
       year: 2020,
       url: 'https://fa.jonahgold.dev',
-    },
-    {
-      title: 'Stageopdracht: TEDx Alkmaar',
-      slug: 'tedx',
-      description:
-        'De campagnewebsite waaraan ik heb bijgedragen tijdens mijn korte stage.',
-      image: '/tedx-alkmaar.png',
-      client: 'Raadhuis',
-      year: 2018,
-      url: 'https://tedxalkmaar.nl',
     },
     {
       title: 'Extreme Space Invaders',
@@ -66,40 +65,23 @@
   ]
 </script>
 
-<style>
+<style lang="scss">
   ol {
     list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: min-content;
-    grid-gap: var(--step-2);
-    justify-content: center;
-    width: 100%;
-    margin-bottom: var(--step-2);
-
-    @media screen and (min-width: 60rem) {
-      grid-auto-rows: 20rem;
-      grid-template-columns: repeat(
-        2,
-        minmax(calc(100% / 3 - var(--step-2) * 2), 45rem)
-      );
-    }
-
-    @media screen and (min-width: 80rem) {
-      grid-template-columns: repeat(
-        3,
-        minmax(calc(100% / 3 - var(--step-2) * 2), 45rem)
-      );
-    }
+    display: flex;
+    flex-wrap: wrap;
+    margin: var(--step-1) auto var(--step-2);
+    width: max-content;
+    max-width: 100%;
+    justify-content: flex-start;
   }
 </style>
 
 <section>
+  <Heading>Projecten</Heading>
   <ol>
     {#each dummyData as project, i (project.title + i)}
-      <li>
-        <ProjectTile {project} />
-      </li>
+      <ProjectTile {project} />
     {/each}
   </ol>
 </section>

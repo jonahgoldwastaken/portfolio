@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   export let bold: boolean = false
 </script>
 
-<style>
+<style lang="scss">
   p {
     font-family: var(--font-running);
     line-height: 1.5em;

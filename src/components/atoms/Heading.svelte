@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   type HeadingType = 'h1' | 'h2' | 'h3'
 
   export let type: HeadingType = 'h1'
 </script>
 
-<style>
+<style lang="scss">
   h1,
   h2,
   h3 {

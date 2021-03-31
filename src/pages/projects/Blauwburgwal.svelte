@@ -8,7 +8,7 @@
   <slot slot="title">De Blauwburgwal - toen en nu</slot>
   <img
     slot="image"
-    src="https://raw.githubusercontent.com/theonejonahgold/information_design/master/.gitbook/assets/screenshot_dataweek.png"
+    src="/dataweek.png"
     alt="Screenshot Blauwburgwal project"
   />
   <Text>

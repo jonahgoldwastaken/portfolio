@@ -7,10 +7,11 @@ module.exports = {
   routes: [{ match: 'routes', src: '.*', dest: '/index.html' }],
   plugins: ['@snowpack/plugin-svelte', '@snowpack/plugin-typescript'],
   optimize: {
-    entrypoints: 'auto',
-    bundle: true,
+    entrypoints: ({ files }) =>
+      files.filter(file => file.includes('index.html')),
     splitting: true,
     minify: true,
     treeshake: true,
+    sourcemap: 'external',
   },
 }

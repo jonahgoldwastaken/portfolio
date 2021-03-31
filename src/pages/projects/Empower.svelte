@@ -8,7 +8,7 @@
   <slot slot="title">EMPOWER 2.0</slot>
   <img
     slot="image"
-    src="/empower.png"
+    src="/empower-logo.jpg"
     alt="Screenshot homepage EMPOWER 2.0 toolkit"
   />
   <Text>

@@ -1,13 +1,8 @@
 <script lang="typescript">
   import { Route } from 'tinro'
+  import Loadable from 'svelte-loadable'
   import Index from './pages/Index.svelte'
   import NotFound from './pages/NotFound.svelte'
-  import ExtremeSpaceInvaders from './pages/projects/ExtremeSpaceInvaders.svelte'
-  import Datastory from './pages/projects/Datastory.svelte'
-  import Blauwburgwal from './pages/projects/Blauwburgwal.svelte'
-  import Tedx from './pages/projects/Tedx.svelte'
-  import Vercel from './pages/projects/Vercel.svelte'
-  import Empower from './pages/projects/Empower.svelte'
 </script>
 
 <style global lang="scss">
@@ -23,25 +18,38 @@
     --step-4: clamp(2.0738rem, 1.6934rem + 1.9018vw, 4.7363rem);
     --step-5: clamp(2.4881rem, 1.9417rem + 2.7321vw, 6.3131rem);
 
-    --black: #2e3138;
-    --brown: #60463b;
-    --orange: #f55e00;
-    --light-orange: #fe8234;
+    --black: #11181c;
+    --blue: #0074b3;
+    --blue-opacity: #0074b3a6;
+    --light-blue: #3cb3d1;
+    --light-blue-opacity: #3cb3d1a6;
+    --orange: #e07f00;
+    --orange-opacity: #f08700a6;
+    --yellow: #dec754;
+    --yellow-opacity: #efca08a6;
     --white: #fff;
 
-    --primary: var(--black);
-    --secondary: var(--white);
+    --color-light: var(--yellow);
+    --color-dark: var(--orange);
+    --color-light-opacity: var(--yellow-opacity);
+    --color-dark-opacity: var(--orange-opacity);
+
+    //--primary: var(--black);
+    //--secondary: var(--white);
+
+    //@media (prefers-color-scheme: dark) {
+    --primary: var(--white);
+    --secondary: var(--black);
+    //}
 
     --font-heading: Raleway, sans-serif;
     --font-running: 'Noto Sans', sans-serif;
 
+    --focus-border: 2px solid var(--white);
+
     color: var(--primary);
     font-family: var(--font-running);
-
-    @media (prefers-color-scheme: dark) {
-      --primary: var(--white);
-      --secondary: var(--black);
-    }
+    line-height: 1.5;
   }
 
   *,
@@ -55,6 +63,22 @@
     background: var(--secondary);
   }
 
+  body.blue {
+    --color-light: var(--light-blue);
+    --color-dark: var(--blue);
+    --color-light-opacity: var(--light-blue-opacity);
+    --color-dark-opacity: var(--blue-opacity);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.125;
+  }
+
   ul,
   ol {
     padding: 0;
@@ -65,35 +89,55 @@
     font-size: inherit;
     font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
-    text-decoration: underline;
     color: var(--primary);
-    transition: color 0.2s ease;
+    transition: color 0.1s ease;
   }
 
   a:hover,
   a:focus {
-    color: var(--light-orange);
+    outline: none;
+    background: linear-gradient(
+      to top right,
+      var(--color-dark),
+      var(--color-light)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #app {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding: 0 var(--step-2);
+
+    @media screen and (min-width: 60rem) {
+      padding: 0 var(--step-4);
+    }
   }
 </style>
 
 <Route>
+  <Route path="/project/cube">
+    <Loadable loader={() => import('./pages/projects/Cube.svelte')} />
+  </Route>
+  <Route path="/project/triptop">
+    <Loadable loader={() => import('./pages/projects/Triptop.svelte')} />
+  </Route>
   <Route path="/project/empower">
-    <Empower />
-  </Route>
-  <Route path="/project/vercel">
-    <Vercel />
-  </Route>
-  <Route path="/project/tedx">
-    <Tedx />
+    <Loadable loader={() => import('./pages/projects/Empower.svelte')} />
   </Route>
   <Route path="/project/datastory">
-    <Datastory />
+    <Loadable loader={() => import('./pages/projects/Datastory.svelte')} />
   </Route>
   <Route path="/project/bbwal">
-    <Blauwburgwal />
+    <Loadable loader={() => import('./pages/projects/Blauwburgwal.svelte')} />
   </Route>
   <Route path="/project/xsi">
-    <ExtremeSpaceInvaders />
+    <Loadable
+      loader={() => import('./pages/projects/ExtremeSpaceInvaders.svelte')}
+    />
   </Route>
   <Route path="/">
     <Index />

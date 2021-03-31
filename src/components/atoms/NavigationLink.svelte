@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   export let href: string
 </script>
 
-<style>
+<style lang="scss">
   li {
     font-size: var(--step-0);
   }

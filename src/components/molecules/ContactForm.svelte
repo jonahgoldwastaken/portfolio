@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import FormInput from '../atoms/FormInput.svelte'
   import FormButton from '../atoms/FormButton.svelte'
 
