@@ -8,6 +8,7 @@
     padding: var(--step-0);
     margin: var(--step-0) 0;
     text-align: center;
+    line-height: 1.125em;
     width: 100%;
     font-size: var(--step-2);
     font-family: 'Noto Sans', sans-serif;
@@ -22,6 +23,7 @@
     border-radius: 12px;
     transform: translateY(0px);
     font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     cursor: pointer;
     background-clip: initial;
     -webkit-background-clip: initial;
@@ -44,7 +46,7 @@
 
     @media screen and (min-width: 60rem) {
       width: auto;
-      padding: var(--step--1);
+      padding: var(--step-0);
       margin: var(--step--1) 0;
       text-align: left;
       font-size: var(--step-1);

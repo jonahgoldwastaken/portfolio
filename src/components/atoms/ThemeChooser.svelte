@@ -8,7 +8,6 @@
 
   function changThemeColour() {
     document.body.classList.toggle('blue')
-
     if (document.body.classList.contains('blue')) {
       light = 'var(--yellow)'
       dark = 'var(--orange)'

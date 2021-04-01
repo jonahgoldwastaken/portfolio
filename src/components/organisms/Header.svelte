@@ -2,10 +2,9 @@
   import Logo from '../atoms/Logo.svelte'
   import HeaderHeading from '../atoms/HeaderHeading.svelte'
   import Navigation from '../molecules/Navigation.svelte'
-  import type { Link } from '../../../types/link'
   import ThemeChooser from '../atoms/ThemeChooser.svelte'
+
   export let heading = ''
-  export let links: Link[] = []
 </script>
 
 <style lang="scss">
@@ -34,7 +33,7 @@
     <HeaderHeading>{heading}</HeaderHeading>
   </div>
   <div>
-    <Navigation {links} />
+    <Navigation />
     <ThemeChooser />
   </div>
 </header>

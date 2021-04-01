@@ -88,7 +88,7 @@
   a {
     font-size: inherit;
     font-family: 'Noto Sans', sans-serif;
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--primary);
     transition: color 0.1s ease;
   }

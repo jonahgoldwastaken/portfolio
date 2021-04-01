@@ -1,7 +1,11 @@
 <script lang="ts">
   import NavigationLink from '../atoms/NavigationLink.svelte'
   import type { Link } from '../../../types/link'
-  export let links: Link[] = []
+
+  const links: Link[] = [
+    { title: 'Home', href: '/' },
+    { title: 'GitHub', href: 'https://github.com/theonejonahgold' },
+  ]
 </script>
 
 <style lang="scss">

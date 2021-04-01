@@ -10,7 +10,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: filter 0.2s ease;
+    border-radius: 12px;
   }
 </style>
 

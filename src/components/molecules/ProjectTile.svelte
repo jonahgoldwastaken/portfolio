@@ -6,8 +6,8 @@
   import { onMount, tick } from 'svelte'
 
   export let project: TileProject
-  let div
-  let heading
+  let div = null
+  let heading = null
   let hoverHeight = 'px'
   let standardWidth = 'px'
   let full
@@ -60,9 +60,15 @@
           clip-path: inset(0% 0% 0% 0%);
         }
 
-        :global(div) {
-          color: var(--black);
-          width: 100%;
+        :global(body:not(.blue)) & {
+          box-shadow: 0 0 0 0 rgba(#f08700, 0);
+        }
+
+        :global(body.blue) & {
+          box-shadow: 0 0 0 0 rgba(#0074b3, 0);
+        }
+
+        :global(p) {
           clip-path: inset(0% 0% 0% 0);
         }
       }
@@ -108,7 +114,7 @@
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.2s ease;
-    will-change: width, transform, box-shadow;
+    will-change: width, height, transform, box-shadow;
 
     &:after {
       content: '';
