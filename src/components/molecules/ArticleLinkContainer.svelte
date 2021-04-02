@@ -21,7 +21,7 @@
       position: sticky;
       top: var(--base-space);
       grid-column: 3 / span 1;
-      grid-row: 2 / span 2;
+      grid-row: 2 / 4;
       align-self: start;
       padding: var(--base-space);
 

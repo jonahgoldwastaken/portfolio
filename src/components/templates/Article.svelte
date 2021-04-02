@@ -46,6 +46,12 @@
 
     &:first-child {
       grid-row: 1 / span 2;
+
+      @media screen and (min-width: 90rem) {
+        & ~ :global(aside) {
+          grid-row-start: 1;
+        }
+      }
     }
   }
 
