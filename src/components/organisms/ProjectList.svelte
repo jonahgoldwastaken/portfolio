@@ -1,8 +1,15 @@
 <script lang="ts">
   import ProjectTile from '../molecules/ProjectTile.svelte'
   import type { TileProject } from '../../../types/project'
+  import { letterAnimation } from '../../actions/textAnimation'
+  import observer from '../../actions/intersectionObserver'
+  import ProjectCTA from '../molecules/ProjectCTA.svelte'
 
-  let dummyData: TileProject[] = [
+  export let animate: 'heading' | 'list' | 'both'
+
+  let animateHeading = false
+
+  const dummyData: TileProject[] = [
     {
       title: "CSS Rubik's Cube",
       slug: 'cube',
@@ -69,13 +76,43 @@
     list-style: none;
     margin: var(--base-space) auto;
   }
+
+  h1.animate :global {
+    [class*='ch'] {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    @for $i from 1 through 9 {
+      .ch-#{$i} {
+        animation: slide-in 0.4s #{$i / 80}s ease forwards;
+      }
+    }
+  }
 </style>
 
 <section>
-  <h1>Projecten</h1>
+  {#if animate === 'both' || animate === 'heading'}
+    <h1
+      use:observer={(bool, amnt) =>
+        animateHeading === false && amnt >= 0.75
+          ? (animateHeading = bool)
+          : null}
+      class:animate={animateHeading}
+      use:letterAnimation={'Projecten'}
+    >
+      Projecten
+    </h1>
+  {:else}
+    <h1>Projecten</h1>
+  {/if}
   <ol>
     {#each dummyData as project, i (project.title + i)}
-      <ProjectTile {project} />
+      <ProjectTile
+        animate={animate === 'list' || animate === 'both'}
+        {project}
+      />
     {/each}
+    <ProjectCTA animate={animate === 'list' || animate === 'both'} />
   </ol>
 </section>

@@ -1,15 +1,14 @@
 <script lang="ts">
-  import { letterAnimation, wordAnimation } from '../../actions/textAnimation'
+  import { wordAnimation } from '../../actions/textAnimation'
   import observer from '../../actions/intersectionObserver'
 
-  const heading = 'Ik bouw producten die iets bereiken.'
+  const heading = 'Ik bouw producten die iets **bereiken**.'
   const subheading =
     '    Ik ben een Communication & Multimedia Design student die graag bouwt aan een\n' +
     '    toekomst waar de balans tussen mens en technologie meer in balans is, zodat\n' +
     '    technologie iedereen de kracht geeft te bereiken wat ze willen.'
 
-  let animateHeading = false
-  let animateParagraph = false
+  let animate = false
 </script>
 
 <style lang="scss">
@@ -25,16 +24,20 @@
     }
   }
 
+  h1 :global([class*='ch']),
+  p :global([class*='ch']) {
+    opacity: 0;
+    display: inline-block;
+  }
+
   h1.animate :global {
     .w {
       display: inline-block;
     }
 
-    @for $i from 1 through 50 {
+    @for $i from 1 through 6 {
       .ch-#{$i} {
-        opacity: 0;
-        display: inline-block;
-        animation: slide-in 0.3s #{$i / 80}s ease forwards;
+        animation: slide-in 0.4s #{$i / 80}s ease forwards;
       }
     }
 
@@ -51,30 +54,18 @@
   }
 
   p.animate :global {
-    @for $i from 1 through 50 {
+    @for $i from 1 through 37 {
       span:nth-child(#{$i}) {
-        display: inline-block;
-        opacity: 0;
-        animation: slide-in 0.3s #{($i - 1) / 120 + 0.35}s ease forwards;
+        animation: slide-in 0.4s #{$i / 80 + 0.2}s ease forwards;
       }
     }
   }
 </style>
 
-<section>
-  <h1
-    use:observer={(bool, amnt) =>
-      animateHeading === false && amnt >= 0.75 ? (animateHeading = bool) : null}
-    class:animate={animateHeading}
-    use:letterAnimation={heading}
-  />
-  <p
-    class="bold"
-    use:observer={(bool, amnt) =>
-      animateParagraph === false && amnt >= 0.75
-        ? (animateParagraph = bool)
-        : null}
-    class:animate={animateParagraph}
-    use:wordAnimation={subheading}
-  />
+<section
+  use:observer={(bool, amnt) =>
+    animate === false && amnt >= 0.75 ? (animate = bool) : null}
+>
+  <h1 class:animate use:wordAnimation={heading} />
+  <p class="bold" class:animate use:wordAnimation={subheading} />
 </section>

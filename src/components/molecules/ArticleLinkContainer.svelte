@@ -31,7 +31,7 @@
 </style>
 
 <aside>
-  <h3 class="h2">Links</h3>
+  <h2 class="h3">Links</h2>
   <div>
     <slot />
   </div>

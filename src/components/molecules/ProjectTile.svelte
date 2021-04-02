@@ -6,6 +6,7 @@
   import observer from '../../actions/intersectionObserver'
   import { debounce } from 'debounce'
 
+  export let animate = false
   export let project: TileProject
   let div = null
   let heading = null
@@ -13,7 +14,7 @@
   let standardWidth = 'px'
   let full = true
   let canRecalculate = true
-  let animate = false
+  let enableAnimation = false
   let slide = false
 
   $: if (canRecalculate && div && heading) resizeHandler()
@@ -24,7 +25,7 @@
 
   async function resizeHandler() {
     if (!canRecalculate || !div || !heading) return
-    animate = false
+    enableAnimation = false
     full = true
     setTimeout(async () => {
       const height = div.offsetHeight
@@ -33,7 +34,7 @@
       standardWidth = `${width}px`
       full = false
       setTimeout(() => {
-        animate = true
+        enableAnimation = true
       }, 1)
     }, 1)
   }
@@ -42,13 +43,9 @@
 <style lang="scss">
   li {
     display: block;
-    opacity: 0;
     width: 100%;
     height: clamp(10rem, 80vh, 40rem);
     margin: var(--step-0) 0;
-    z-index: -1;
-    pointer-events: none;
-    visibility: hidden;
 
     @media screen and (min-width: 50rem) {
       &:nth-child(even) a {
@@ -170,20 +167,25 @@
     visibility: hidden;
   }
 
-  .animate {
+  div.animate {
     transition: all 0.2s ease;
   }
 
-  .slide {
+  li.animate {
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  li.slide {
     animation: 0.4s ease forwards;
     visibility: visible;
   }
 
-  .slide:nth-child(odd) {
+  li.slide:nth-child(odd) {
     animation-name: slide-in-left;
   }
 
-  .slide:nth-child(even) {
+  li.slide:nth-child(even) {
     animation-name: slide-in-right;
   }
 
@@ -215,7 +217,8 @@
 <li
   use:observer={(bool, amnt) =>
     slide === false && amnt >= 0.5 ? (slide = bool) : null}
-  class:slide
+  class:slide={animate && slide}
+  class:animate
 >
   <a href="/projects/{project.slug}">
     <article>
@@ -227,7 +230,7 @@
         use:observer={observeHandler}
         style="--height: {hoverHeight};--width: {standardWidth}"
         class:full
-        class:animate
+        class:animate={enableAnimation}
         bind:this={div}
       >
         <ProjectTileHeading bind:heading>

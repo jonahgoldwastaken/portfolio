@@ -6,5 +6,5 @@
 
 <Layout>
   <Hero />
-  <ProjectList />
+  <ProjectList animate="list" />
 </Layout>

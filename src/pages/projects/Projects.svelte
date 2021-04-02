@@ -8,5 +8,5 @@
 </svelte:head>
 
 <Layout>
-  <ProjectList />
+  <ProjectList animate="both" />
 </Layout>

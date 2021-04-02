@@ -29,8 +29,15 @@ export function wordAnimation(node: HTMLElement, text: string) {
 }
 
 function splitTextIntoWordSpans(text: string) {
+  let currCh = 0
   return text.split(' ').reduce((acc, curr) => {
     if (!curr) return acc
-    return acc + `<span>${curr}</span>&nbsp;`
+    return curr.includes('**')
+      ? acc +
+          `<strong class="ch-${++currCh}">${curr.replace(
+            /\*\*/g,
+            ''
+          )}</strong>&nbsp;`
+      : acc + `<span class="ch-${++currCh}">${curr}</span>&nbsp;`
   }, '')
 }
