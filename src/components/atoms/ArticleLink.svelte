@@ -30,7 +30,7 @@
     -webkit-text-fill-color: initial;
 
     &:not(:last-child) {
-      margin-right: 1em;
+      margin-right: var(--base-space);
     }
 
     &:hover,

@@ -1,6 +1,6 @@
 <style lang="scss">
   svg {
-    margin-right: var(--step-2);
+    margin-right: var(--base-space);
 
     &:hover #Clipped #Clipped #Path {
       animation: egg 1s ease-in-out;
@@ -31,7 +31,6 @@
   width="58px"
   height="69px"
   viewBox="0 0 58 69"
-  version="1.1"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
 >

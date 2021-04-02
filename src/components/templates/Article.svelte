@@ -43,6 +43,10 @@
     grid-area: header;
     max-width: 60rem;
     width: 100%;
+
+    &:first-child {
+      grid-row: 1 / span 2;
+    }
   }
 
   main {

@@ -2,11 +2,9 @@
   import { wordAnimation } from '../../actions/textAnimation'
   import observer from '../../actions/intersectionObserver'
 
-  const heading = 'Ik bouw producten die iets **bereiken**.'
+  const heading = 'Jonah bouwt producten voor **mensen**.'
   const subheading =
-    '    Ik ben een Communication & Multimedia Design student die graag bouwt aan een\n' +
-    '    toekomst waar de balans tussen mens en technologie meer in balans is, zodat\n' +
-    '    technologie iedereen de kracht geeft te bereiken wat ze willen.'
+    'Hij is een Interaction Designer en Developer van gefocuste concepten met een specifiek doel.'
 
   let animate = false
 </script>
@@ -66,6 +64,6 @@
   use:observer={(bool, amnt) =>
     animate === false && amnt >= 0.75 ? (animate = bool) : null}
 >
-  <h1 class:animate use:wordAnimation={heading} />
-  <p class="bold" class:animate use:wordAnimation={subheading} />
+  <h1 class:animate use:wordAnimation={heading}>{heading}</h1>
+  <p class="bold" class:animate use:wordAnimation={subheading}>{subheading}</p>
 </section>

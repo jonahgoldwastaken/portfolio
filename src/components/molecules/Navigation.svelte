@@ -15,7 +15,7 @@
     display: grid;
     grid-auto-columns: auto;
     grid-auto-flow: column;
-    grid-gap: 0.75rem;
+    grid-gap: var(--half-space);
     margin: 0;
     padding: 0;
   }
@@ -23,8 +23,11 @@
 
 <nav>
   <ul>
-    {#each links as link (link.title)}
-      <NavigationLink href={link.href}>{link.title}</NavigationLink>
-    {/each}
+    <NavigationLink href="/">Home</NavigationLink>
+    <NavigationLink href="/projects/">Projecten</NavigationLink>
+    <NavigationLink href="/about/">Over</NavigationLink>
+    <NavigationLink href="https://github.com/theonejonahgold">
+      GitHub
+    </NavigationLink>
   </ul>
 </nav>

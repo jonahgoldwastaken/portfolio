@@ -29,7 +29,7 @@
     color: transparent;
     user-select: none;
     background: linear-gradient(to bottom left, var(--light), var(--dark));
-    margin-left: 0.75rem;
+    margin-left: var(--base-space);
     cursor: pointer;
     transition: transform 0.1s ease;
 

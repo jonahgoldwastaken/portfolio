@@ -5,6 +5,9 @@
     background: var(--secondary);
     border-radius: 12px;
 
+    grid-column: 1 / span 3;
+    grid-row: 4 / span 1;
+
     div {
       margin-top: var(--base-space);
       display: flex;

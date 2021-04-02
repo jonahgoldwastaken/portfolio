@@ -3,6 +3,8 @@
   import Loadable from 'svelte-loadable'
   import Index from './pages/Index.svelte'
   import NotFound from './pages/NotFound.svelte'
+  import About from './pages/About.svelte'
+  import Projects from './pages/projects/Projects.svelte'
 
   router.subscribe(() => window.scrollTo(0, 0))
 </script>
@@ -192,8 +194,11 @@
       />
     </Route>
     <Route path="/">
-      <Loadable loader={() => import('./pages/projects/Projects.svelte')} />
+      <Projects />
     </Route>
+  </Route>
+  <Route path="/about">
+    <About />
   </Route>
   <Route path="/">
     <Index />

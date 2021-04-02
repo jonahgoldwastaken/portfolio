@@ -2,8 +2,8 @@
   button {
     border: none;
     display: inline-block;
-    padding: var(--step--1);
-    margin: var(--step--1) 0;
+    padding: var(--half-space);
+    margin: var(--half-space) 0;
     text-align: center;
     width: 100%;
     font-size: var(--step-1);
