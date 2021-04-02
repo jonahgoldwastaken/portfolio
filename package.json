@@ -5,6 +5,7 @@
     "format": "prettier --write src/**/*.{js,ts,svelte}"
   },
   "dependencies": {
+    "debounce": "^1.2.1",
     "svelte": "^3.35.0",
     "svelte-loadable": "^1.5.1"
   },
@@ -12,6 +13,7 @@
     "@snowpack/plugin-svelte": "^3.5.2",
     "@snowpack/plugin-typescript": "^1.2.1",
     "@tsconfig/svelte": "^1.0.10",
+    "@types/debounce": "^1.2.0",
     "@types/snowpack-env": "^2.3.3",
     "postcss": "^8.2.4",
     "prettier": "^2.2.1",

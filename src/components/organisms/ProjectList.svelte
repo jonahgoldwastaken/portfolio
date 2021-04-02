@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Heading from '../atoms/Heading.svelte'
   import ProjectTile from '../molecules/ProjectTile.svelte'
   import type { TileProject } from '../../../types/project'
 
@@ -68,17 +67,12 @@
 <style lang="scss">
   ol {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    margin: var(--step-1) auto var(--step-2);
-    width: max-content;
-    max-width: 100%;
-    justify-content: flex-start;
+    margin: var(--base-space) auto;
   }
 </style>
 
 <section>
-  <Heading>Projecten</Heading>
+  <h1>Projecten</h1>
   <ol>
     {#each dummyData as project, i (project.title + i)}
       <ProjectTile {project} />

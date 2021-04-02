@@ -1,8 +1,10 @@
 <script lang="typescript">
-  import { Route } from 'tinro'
+  import { Route, router } from 'tinro'
   import Loadable from 'svelte-loadable'
   import Index from './pages/Index.svelte'
   import NotFound from './pages/NotFound.svelte'
+
+  router.subscribe(() => window.scrollTo(0, 0))
 </script>
 
 <style global lang="scss">
@@ -17,6 +19,13 @@
     --step-3: clamp(1.7281rem, 1.4674rem + 1.3036vw, 3.5531rem);
     --step-4: clamp(2.0738rem, 1.6934rem + 1.9018vw, 4.7363rem);
     --step-5: clamp(2.4881rem, 1.9417rem + 2.7321vw, 6.3131rem);
+
+    --base-space: var(--step-0);
+    --half-space: calc(var(--base-space) / 2);
+    --quarter-space: calc(var(--base-space) / 4);
+    --double-space: calc(var(--base-space) * 2);
+    --threefold-space: calc(var(--base-space) * 3);
+    --quadruple-space: calc(var(--base-space) * 4);
 
     --black: #11181c;
     --blue: #0074b3;
@@ -34,13 +43,8 @@
     --color-light-opacity: var(--yellow-opacity);
     --color-dark-opacity: var(--orange-opacity);
 
-    //--primary: var(--black);
-    //--secondary: var(--white);
-
-    //@media (prefers-color-scheme: dark) {
     --primary: var(--white);
     --secondary: var(--black);
-    //}
 
     --font-heading: Raleway, sans-serif;
     --font-running: 'Noto Sans', sans-serif;
@@ -79,6 +83,53 @@
     line-height: 1.125;
   }
 
+  h1,
+  h2,
+  h3 {
+    --font-weight: 700;
+    --font-size: var(--step-5);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    margin: 0 auto;
+  }
+
+  h2,
+  .h2 {
+    --font-weight: 700;
+    --font-size: var(--step-4);
+  }
+
+  h3,
+  .h3 {
+    --font-weight: 500;
+    --font-size: var(--step-2);
+  }
+
+  p {
+    font-family: var(--font-running);
+    line-height: 1.5em;
+    font-size: var(--step-0);
+  }
+
+  p.bold {
+    font-weight: bold;
+  }
+
+  strong {
+    color: var(--color-dark);
+    font-weight: inherit;
+    background: linear-gradient(
+      to top right,
+      var(--color-dark),
+      var(--color-light)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   ul,
   ol {
     padding: 0;
@@ -110,34 +161,39 @@
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    padding: 0 var(--step-2);
+    padding: 0 var(--double-space);
 
     @media screen and (min-width: 60rem) {
-      padding: 0 var(--step-4);
+      padding: 0 var(--quadruple-space);
     }
   }
 </style>
 
 <Route>
-  <Route path="/project/cube">
-    <Loadable loader={() => import('./pages/projects/Cube.svelte')} />
-  </Route>
-  <Route path="/project/triptop">
-    <Loadable loader={() => import('./pages/projects/Triptop.svelte')} />
-  </Route>
-  <Route path="/project/empower">
-    <Loadable loader={() => import('./pages/projects/Empower.svelte')} />
-  </Route>
-  <Route path="/project/datastory">
-    <Loadable loader={() => import('./pages/projects/Datastory.svelte')} />
-  </Route>
-  <Route path="/project/bbwal">
-    <Loadable loader={() => import('./pages/projects/Blauwburgwal.svelte')} />
-  </Route>
-  <Route path="/project/xsi">
-    <Loadable
-      loader={() => import('./pages/projects/ExtremeSpaceInvaders.svelte')}
-    />
+  <Route path="/projects/*">
+    <Route path="/cube">
+      <Loadable loader={() => import('./pages/projects/Cube.svelte')} />
+    </Route>
+    <Route path="/triptop">
+      <Loadable loader={() => import('./pages/projects/Triptop.svelte')} />
+    </Route>
+    <Route path="/empower">
+      <Loadable loader={() => import('./pages/projects/Empower.svelte')} />
+    </Route>
+    <Route path="/datastory">
+      <Loadable loader={() => import('./pages/projects/Datastory.svelte')} />
+    </Route>
+    <Route path="/bbwal">
+      <Loadable loader={() => import('./pages/projects/Blauwburgwal.svelte')} />
+    </Route>
+    <Route path="/xsi">
+      <Loadable
+        loader={() => import('./pages/projects/ExtremeSpaceInvaders.svelte')}
+      />
+    </Route>
+    <Route path="/">
+      <Loadable loader={() => import('./pages/projects/Projects.svelte')} />
+    </Route>
   </Route>
   <Route path="/">
     <Index />

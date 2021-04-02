@@ -9,7 +9,7 @@
     font-size: var(--step--1);
     color: var(--primary);
     transition: color 0.2s ease;
-    margin: var(--step--2) 0;
+    margin: var(--half-space) 0;
 
     &:hover {
       color: var(--orange);

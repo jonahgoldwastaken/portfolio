@@ -7,7 +7,7 @@
     position: sticky;
     top: 100vh;
     background: var(--secondary);
-    padding: var(--step-2) 0;
+    padding: var(--double-space) 0;
 
     > div {
       display: grid;

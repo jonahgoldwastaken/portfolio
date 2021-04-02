@@ -4,13 +4,13 @@
 
 <style lang="scss">
   a {
-    display: inline-block;
-    padding: var(--step-0);
-    margin: var(--step-0) 0;
+    display: block;
+    padding: 0.75em;
+    margin: 0;
     text-align: center;
-    line-height: 1.125em;
+    line-height: 1em;
     width: 100%;
-    font-size: var(--step-2);
+    font-size: var(--step-0);
     font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
     color: var(--white);
@@ -29,10 +29,13 @@
     -webkit-background-clip: initial;
     -webkit-text-fill-color: initial;
 
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+
     &:hover,
     &:focus {
       transform: translateY(-2px);
-      color: var(--white);
     }
 
     &:focus {
@@ -44,15 +47,14 @@
       transform: scale(0.9) translateY(-2px);
     }
 
-    @media screen and (min-width: 60rem) {
-      width: auto;
-      padding: var(--step-0);
-      margin: var(--step--1) 0;
-      text-align: left;
-      font-size: var(--step-1);
+    &:last-of-type {
+      margin-bottom: 0;
+    }
 
-      :global(+ a) {
-        margin-left: var(--step-0);
+    @media screen and (min-width: 90rem) {
+      margin: var(--base-space) 0;
+      &:last-child {
+        margin: var(--base-space) 0 0;
       }
     }
   }

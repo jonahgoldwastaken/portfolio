@@ -4,6 +4,7 @@
 
   const links: Link[] = [
     { title: 'Home', href: '/' },
+    { title: 'Projecten', href: '/projects/' },
     { title: 'GitHub', href: 'https://github.com/theonejonahgold' },
   ]
 </script>

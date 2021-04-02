@@ -5,9 +5,6 @@
 </script>
 
 <Layout>
-  <Hero>
-    <slot slot="heading" name="heroHeading" />
-    <slot slot="subheading" name="heroSubheading" />
-  </Hero>
+  <Hero />
   <ProjectList />
 </Layout>

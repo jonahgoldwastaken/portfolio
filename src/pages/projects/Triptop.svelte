@@ -1,17 +1,19 @@
 <script>
   import Article from '../../components/templates/Article.svelte'
-  import Text from '../../components/atoms/Text.svelte'
   import ArticleLink from '../../components/atoms/ArticleLink.svelte'
 </script>
 
-<Article client="CMD Web App From Scratch" year={2021}>
-  <slot slot="title">Triptop</slot>
-  <Text>
+<svelte:head>
+  <title>Triptop - Jonah Meijers</title>
+</svelte:head>
+
+<Article title="Triptop" client="CMD Web App From Scratch" year={2021}>
+  <p>
     Triptop is een app die ik heb gebouwd voor het vak Web app from scratch. Het
     vak leert ons hoe je een webapplicatie die communiceert met een 3rd-party
     API zonder framework op kan bouwen.
-  </Text>
-  <Text>
+  </p>
+  <p>
     Mijn webapp is een kleine service die roadtrippers de mogelijkheid biedt om
     snel en makkelijk een playlist te maken die lang genoeg is om van A naar B
     te komen. Je geeft aan van waar naar waar je reist, tot 5 van je meest
@@ -19,19 +21,21 @@
     lengte van de rit en die favoriete nummers je afspeellijst. Deze
     afspeellijst kan je dan vervolgens opslaan in Spotify en gelijk gaan
     luisteren.
-  </Text>
-  <Text>
+  </p>
+  <p>
     Ik heb bij dit vak veel geleerd over templating, client-side routing en
     state management. Voor de laatste twee heb ik een eigen implementatie
     geschreven in de app op basis van Handlebars templates Ik heb een veel beter
     begrip over hoe frameworks onder de motorkap te werk gaan, op z'n minst
     therotisch, en kan nu ook zien waar sommige tekortkomingen van frameworks
     vandaan komen.
-  </Text>
-  <ArticleLink href="https://triptop.app">De app</ArticleLink>
-  <ArticleLink
-    href="https://github.com/theonejonahgold/web-app-from-scratch-2021"
-  >
-    De code
-  </ArticleLink>
+  </p>
+  <slot slot="links">
+    <ArticleLink href="https://triptop.app">App</ArticleLink>
+    <ArticleLink
+      href="https://github.com/theonejonahgold/web-app-from-scratch-2021"
+    >
+      Code
+    </ArticleLink>
+  </slot>
 </Article>

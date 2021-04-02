@@ -3,44 +3,75 @@
   import ProjectTileHeading from '../atoms/ProjectTileHeading.svelte'
   import ProjectTileDescription from '../atoms/ProjectTileDescription.svelte'
   import type { TileProject } from '../../../types/project'
-  import { onMount, tick } from 'svelte'
+  import observer from '../../actions/intersectionObserver'
+  import { debounce } from 'debounce'
 
   export let project: TileProject
   let div = null
   let heading = null
   let hoverHeight = 'px'
   let standardWidth = 'px'
-  let full
+  let full = true
+  let canRecalculate = true
+  let animate = false
+  let slide = false
+
+  $: if (canRecalculate && div && heading) resizeHandler()
+
+  function observeHandler(isIntersecting: boolean) {
+    canRecalculate = !isIntersecting
+  }
 
   async function resizeHandler() {
+    if (!canRecalculate || !div || !heading) return
+    animate = false
     full = true
-    await tick()
-    setTimeout(() => {
+    setTimeout(async () => {
       const height = div.offsetHeight
       const width = heading.offsetWidth
       hoverHeight = `${height}px`
       standardWidth = `${width}px`
       full = false
-    }, 50)
+      setTimeout(() => {
+        animate = true
+      }, 1)
+    }, 1)
   }
-
-  onMount(resizeHandler)
 </script>
 
 <style lang="scss">
   li {
-    flex: 1 1 40rem;
-    margin: calc(0.5 * var(--step-0)) calc(0.5 * var(--step-0));
+    display: block;
+    opacity: 0;
+    width: 100%;
+    height: clamp(10rem, 80vh, 40rem);
+    margin: var(--step-0) 0;
+    z-index: -1;
+    pointer-events: none;
+    visibility: hidden;
+
+    @media screen and (min-width: 50rem) {
+      &:nth-child(even) a {
+        margin-left: auto;
+      }
+      &:not(:first-child) {
+        margin-top: clamp(-20rem, -40vh, -5rem);
+      }
+    }
   }
 
   a {
     display: block;
-    width: 100%;
     height: 100%;
     transform: translateY(0px);
     color: var(--secondary);
     text-decoration: none;
     transition: transform 0.1s ease;
+    pointer-events: all;
+
+    @media screen and (min-width: 50rem) {
+      width: calc(50% - var(--step-0));
+    }
 
     &:hover,
     &:focus {
@@ -87,18 +118,15 @@
 
   article {
     position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
     border-radius: 12px;
-    transition: all 0.2s ease;
+    overflow: hidden;
   }
 
   div {
+    display: block;
     position: absolute;
     bottom: 0;
     left: 0;
-    display: inline-block;
     width: calc(var(--width) + (var(--step-0) * 2));
     transform: translate(var(--step-0), calc(-1 * var(--step-0)));
     border-radius: 12px;
@@ -113,7 +141,6 @@
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.2s ease;
     will-change: width, height, transform, box-shadow;
 
     &:after {
@@ -138,25 +165,69 @@
   }
 
   .full {
-    height: auto !important;
-    width: 100% !important;
-    transition: none !important;
-    opacity: 0;
+    height: auto;
+    width: 100%;
+    visibility: hidden;
+  }
+
+  .animate {
+    transition: all 0.2s ease;
+  }
+
+  .slide {
+    animation: 0.4s ease forwards;
+    visibility: visible;
+  }
+
+  .slide:nth-child(odd) {
+    animation-name: slide-in-left;
+  }
+
+  .slide:nth-child(even) {
+    animation-name: slide-in-right;
+  }
+
+  @keyframes -global-slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes -global-slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
   }
 </style>
 
-<svelte:window on:resize={resizeHandler} />
+<svelte:window on:resize={debounce(resizeHandler, 200)} />
 
-<li>
-  <a href="/project/{project.slug}">
+<li
+  use:observer={(bool, amnt) =>
+    slide === false && amnt >= 0.5 ? (slide = bool) : null}
+  class:slide
+>
+  <a href="/projects/{project.slug}">
     <article>
       <ProjectTileImage
         src={project.image}
         alt="Afbeelding van project {project.title}"
       />
       <div
+        use:observer={observeHandler}
         style="--height: {hoverHeight};--width: {standardWidth}"
         class:full
+        class:animate
         bind:this={div}
       >
         <ProjectTileHeading bind:heading>

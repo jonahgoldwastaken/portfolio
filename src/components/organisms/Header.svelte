@@ -13,13 +13,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: calc(var(--step-2) / 4 * 3) 0;
+    padding: var(--double-space) 0;
     background: var(--secondary);
     transition: padding 0.2s ease-in-out;
 
     @media screen and (min-width: 60rem) {
-      padding: calc(var(--step-4) / 4 * 3) 0;
+      padding: var(--threefold-space) 0;
     }
+
     div {
       display: flex;
       align-items: center;

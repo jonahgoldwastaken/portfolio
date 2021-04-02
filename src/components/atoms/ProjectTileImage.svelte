@@ -7,7 +7,7 @@
   img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: clamp(10rem, 80vh, 40rem);
     object-fit: cover;
     object-position: center;
     border-radius: 12px;
