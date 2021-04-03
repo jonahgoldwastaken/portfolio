@@ -1,12 +1,8 @@
 <script lang="ts">
-  import { wordAnimation } from '../../actions/textAnimation'
-  import observer from '../../actions/intersectionObserver'
+  import { wordAnimation } from "../../actions/textAnimation";
+  import observer from "../../actions/intersectionObserver";
 
-  const heading = 'Jonah bouwt producten voor **mensen**.'
-  const subheading =
-    'Hij is een Interaction Designer en Developer van gefocuste concepten met een specifiek doel.'
-
-  let animate = false
+  let animate = false;
 </script>
 
 <style lang="scss">
@@ -64,6 +60,18 @@
   use:observer={(bool, amnt) =>
     animate === false && amnt >= 0.75 ? (animate = bool) : null}
 >
-  <h1 class:animate use:wordAnimation={heading}>{heading}</h1>
-  <p class="bold" class:animate use:wordAnimation={subheading}>{subheading}</p>
+  <h1
+    class:animate
+    use:wordAnimation={'Jonah bouwt producten voor **mensen**.'}
+  >
+    Jonah bouwt producten voor <strong>mensen</strong>.
+  </h1>
+  <p
+    class="bold"
+    class:animate
+    use:wordAnimation={'Hij is een Interaction Designer en Developer van gefocuste concepten met een specifiek doel.'}
+  >
+    Hij is een Interaction Designer en Developer van gefocuste concepten met een
+    specifiek doel.
+  </p>
 </section>
