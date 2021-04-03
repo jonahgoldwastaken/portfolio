@@ -1,6 +1,5 @@
 <script lang="ts">
   import ArticleMeta from '../atoms/ArticleMeta.svelte'
-  import Layout from '../templates/Layout.svelte'
   import ArticleLinkContainer from '../molecules/ArticleLinkContainer.svelte'
 
   export let title = ''
@@ -83,22 +82,20 @@
   }
 </style>
 
-<Layout>
-  <article>
-    {#if $$slots.banner}
-      <div>
-        <slot name="banner" />
-      </div>
-    {/if}
-    <header>
-      <h1>{title}</h1>
-      <ArticleMeta {client} {year} />
-    </header>
-    <main>
-      <slot />
-    </main>
-    <ArticleLinkContainer>
-      <slot name="links" />
-    </ArticleLinkContainer>
-  </article>
-</Layout>
+<article>
+  {#if $$slots.banner}
+    <div>
+      <slot name="banner" />
+    </div>
+  {/if}
+  <header>
+    <h1>{title}</h1>
+    <ArticleMeta {client} {year} />
+  </header>
+  <main>
+    <slot />
+  </main>
+  <ArticleLinkContainer>
+    <slot name="links" />
+  </ArticleLinkContainer>
+</article>
