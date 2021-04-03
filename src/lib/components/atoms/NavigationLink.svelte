@@ -24,6 +24,7 @@
 
 <li>
   <a
+    sveltekit:prefetch={!href.startsWith('http')}
     class:active={$page.path === href}
     target={href.startsWith('http') ? '_blank' : ''}
     rel={href.startsWith('http') ? 'noopener noreferrer external' : ''}
