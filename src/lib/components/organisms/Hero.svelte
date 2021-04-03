@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { wordAnimation } from "../../actions/textAnimation";
-  import observer from "../../actions/intersectionObserver";
+  import { wordAnimation } from '../../actions/textAnimation'
+  import observer from '../../actions/intersectionObserver'
 
-  let animate = false;
+  let animate = false
 </script>
 
 <style lang="scss">
@@ -16,6 +16,16 @@
     :global(*) {
       text-align: center;
     }
+  }
+
+  h1,
+  p {
+    visibility: hidden;
+  }
+
+  h1.animate,
+  p.animate {
+    visibility: visible;
   }
 
   h1 :global([class*='ch']),
