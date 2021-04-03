@@ -5,6 +5,7 @@
   import NotFound from './pages/NotFound.svelte'
   import About from './pages/About.svelte'
   import Projects from './pages/projects/Projects.svelte'
+  import Layout from './components/templates/Layout.svelte'
 
   router.subscribe(() => window.scrollTo(0, 0))
 </script>
@@ -171,39 +172,43 @@
   }
 </style>
 
-<Route>
-  <Route path="/projects/*">
-    <Route path="/cube">
-      <Loadable loader={() => import('./pages/projects/Cube.svelte')} />
+<Layout>
+  <Route>
+    <Route path="/projects/*">
+      <Route path="/cube">
+        <Loadable loader={() => import('./pages/projects/Cube.svelte')} />
+      </Route>
+      <Route path="/triptop">
+        <Loadable loader={() => import('./pages/projects/Triptop.svelte')} />
+      </Route>
+      <Route path="/empower">
+        <Loadable loader={() => import('./pages/projects/Empower.svelte')} />
+      </Route>
+      <Route path="/datastory">
+        <Loadable loader={() => import('./pages/projects/Datastory.svelte')} />
+      </Route>
+      <Route path="/bbwal">
+        <Loadable
+          loader={() => import('./pages/projects/Blauwburgwal.svelte')}
+        />
+      </Route>
+      <Route path="/xsi">
+        <Loadable
+          loader={() => import('./pages/projects/ExtremeSpaceInvaders.svelte')}
+        />
+      </Route>
+      <Route path="/">
+        <Projects />
+      </Route>
     </Route>
-    <Route path="/triptop">
-      <Loadable loader={() => import('./pages/projects/Triptop.svelte')} />
-    </Route>
-    <Route path="/empower">
-      <Loadable loader={() => import('./pages/projects/Empower.svelte')} />
-    </Route>
-    <Route path="/datastory">
-      <Loadable loader={() => import('./pages/projects/Datastory.svelte')} />
-    </Route>
-    <Route path="/bbwal">
-      <Loadable loader={() => import('./pages/projects/Blauwburgwal.svelte')} />
-    </Route>
-    <Route path="/xsi">
-      <Loadable
-        loader={() => import('./pages/projects/ExtremeSpaceInvaders.svelte')}
-      />
+    <Route path="/about">
+      <About />
     </Route>
     <Route path="/">
-      <Projects />
+      <Index />
+    </Route>
+    <Route fallback>
+      <NotFound />
     </Route>
   </Route>
-  <Route path="/about">
-    <About />
-  </Route>
-  <Route path="/">
-    <Index />
-  </Route>
-  <Route fallback>
-    <NotFound />
-  </Route>
-</Route>
+</Layout>
