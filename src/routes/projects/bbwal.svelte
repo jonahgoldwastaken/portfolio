@@ -16,11 +16,10 @@
     achterliet, en 44 mensen het leven kostte.
   </p>
   <p>
-    In deze data story vertellen
-    <a href="http://rosavoogd.nl" target="_blank">Rosa Voogd</a>
-    en ik een paar van de verhalen die zijn verzameld over het bombardement en deze
-    samengehangen met hoe de wal er nu uitziet. Dit biedt een groot contrast, en
-    brengt de verhalen nog meer diepgang dan ze al hadden.
+    In deze data story vertellen Rosa Voogd en ik een paar van de verhalen die
+    zijn verzameld over het bombardement en deze samengehangen met hoe de wal er
+    nu uitziet. Dit biedt een groot contrast, en brengt de verhalen nog meer
+    diepgang dan ze al hadden.
   </p>
   <p>
     De verhalen komen uit een boekje van Fred Geukes Foppen, die alle verhalen
@@ -37,5 +36,6 @@
     >
       Proces
     </ArticleLink>
+    <ArticleLink href="http://rosavoogd.nl">Rosa Voogd</ArticleLink>
   </slot>
 </Article>

@@ -11,14 +11,18 @@
 
   a.active {
     background: linear-gradient(
-      to top right,
+      to right,
       var(--color-dark),
       var(--color-light)
     );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
+    font-weight: normal;
+
+    &:before {
+      background-size: 100% 1px;
+    }
   }
 </style>
 

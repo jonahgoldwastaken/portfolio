@@ -43,7 +43,7 @@
   li {
     display: block;
     width: 100%;
-    height: clamp(10rem, 80vh, 40rem);
+    height: clamp(5rem, 60vh, 40rem);
     margin: var(--step-0) 0;
 
     @media screen and (min-width: 50rem) {
@@ -51,7 +51,7 @@
         margin-left: auto;
       }
       &:not(:first-child) {
-        margin-top: clamp(-20rem, -40vh, -5rem);
+        margin-top: clamp(-20rem, -30vh, -2.5rem);
       }
     }
   }

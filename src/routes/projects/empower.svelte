@@ -19,10 +19,9 @@
     hierover, maar nergens is een duidelijk overzicht aanwezig.
   </p>
   <p>
-    Enter onze toolkit. <a href="https://rosavoogd.nl" trinco-ignore>Rosa</a>,
-    <a href="http://fleurvanson.com" trinco-ignore>Fleur</a> en ik zijn druk
-    bezig geweest om in 5 weken tijd een prachtproduct neer te zetten die
-    beleidsmakers <i>empowered</i> om meer kennis te vergaren over hernieuwbare energie.
+    Enter onze toolkit. Rosa, Fleur en ik zijn druk bezig geweest om in 5 weken
+    tijd een prachtproduct neer te zetten die beleidsmakers <i>empowered</i> om meer
+    kennis te vergaren over hernieuwbare energie.
   </p>
   <p>
     Het product bevat twee pagina's. De homepagina biedt een overzicht van de
@@ -40,5 +39,7 @@
   </p>
   <slot slot="links">
     <ArticleLink href="https://empower.jonahgold.dev">Prototype</ArticleLink>
+    <ArticleLink href="https://rosavoogd.nl">Rosa Voogd</ArticleLink>
+    <ArticleLink href="http://fleurvanson.com">Fleur van Son</ArticleLink>
   </slot>
 </Article>

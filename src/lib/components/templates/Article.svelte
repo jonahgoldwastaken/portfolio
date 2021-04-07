@@ -79,6 +79,10 @@
         margin-top: var(--base-space);
       }
     }
+
+    a {
+      font-weight: 500;
+    }
   }
 </style>
 

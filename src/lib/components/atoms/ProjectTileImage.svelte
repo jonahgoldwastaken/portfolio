@@ -1,13 +1,13 @@
 <script lang="ts">
-  export let src: string
-  export let alt: string
+  export let src = ''
+  export let alt = ''
 </script>
 
 <style lang="scss">
   img {
     display: block;
     width: 100%;
-    height: clamp(10rem, 80vh, 40rem);
+    height: clamp(5rem, 60vh, 40rem);
     object-fit: cover;
     object-position: center;
     border-radius: 12px;

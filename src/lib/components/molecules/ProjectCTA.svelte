@@ -7,7 +7,7 @@
 
 <style lang="scss">
   li {
-    height: clamp(5rem, 40vh, 20rem);
+    height: clamp(2.5rem, 30vh, 20rem);
     margin: var(--step-0) 0;
 
     @media screen and (min-width: 50rem) {
@@ -16,7 +16,7 @@
       }
 
       &:not(:first-child) {
-        margin-top: clamp(-20rem, -40vh, -5rem);
+        margin-top: clamp(-20rem, -30vh, -2.5rem);
       }
     }
   }

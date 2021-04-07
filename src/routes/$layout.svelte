@@ -119,7 +119,7 @@
     color: var(--color-dark);
     font-weight: inherit;
     background: linear-gradient(
-      to top right,
+      to right,
       var(--color-dark),
       var(--color-light)
     );
@@ -135,24 +135,47 @@
   }
 
   a {
+    position: relative;
     font-size: inherit;
     font-family: 'Noto Sans', sans-serif;
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--primary);
-    transition: color 0.1s ease;
+    transition: color 0.2s ease;
+  }
+
+  a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--color-dark), var(--color-light))
+      no-repeat bottom left/0 1px;
+    transition: background-size 0.2s ease;
   }
 
   a:hover,
   a:focus {
     outline: none;
     background: linear-gradient(
-      to top right,
+      to right,
       var(--color-dark),
       var(--color-light)
     );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  a:hover:before {
+    background-size: 100% 1px;
+  }
+
+  a:focus {
+    border: 2px solid var(--white);
+    padding: 0em 0.1em;
+    border-radius: 0.25rem;
   }
 
   #svelte {
