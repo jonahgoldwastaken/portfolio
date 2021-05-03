@@ -188,6 +188,17 @@
       padding: 0 var(--quadruple-space);
     }
   }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(50%) rotateX(45deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0rem) rotateX(0deg);
+    }
+  }
 </style>
 
 <Header {heading} />

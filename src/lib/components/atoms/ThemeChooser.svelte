@@ -1,5 +1,8 @@
 <script lang="ts">
   import { browser } from '$app/env'
+  import { onMount } from 'svelte'
+
+  let js = false
 
   let light =
     browser && document.body.classList.contains('blue')
@@ -21,6 +24,10 @@
     light = 'var(--light-blue)'
     dark = 'var(--blue)'
   }
+
+  onMount(() => {
+    js = true
+  })
 </script>
 
 <style lang="scss">
@@ -54,6 +61,8 @@
   }
 </style>
 
-<button on:click={changThemeColour} style="--light: {light}; --dark: {dark};"
-  >Change theme</button
->
+{#if js}
+  <button on:click={changThemeColour} style="--light: {light}; --dark: {dark};"
+    >Change theme</button
+  >
+{/if}

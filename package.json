@@ -2,16 +2,15 @@
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
-    "start": "svelte-kit start",
+    "preview": "svelte-kit preview",
     "format": "prettier --write src/**/*.{js,ts,svelte}"
   },
   "type": "module",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@sveltejs/adapter-static": "next",
-    "@sveltejs/adapter-node": "next",
-    "@sveltejs/kit": "next",
+    "@sveltejs/adapter-node": "^1.0.0-next.17",
+    "@sveltejs/adapter-static": "^1.0.0-next.7",
+    "@sveltejs/kit": "^1.0.0-next.95",
     "@types/debounce": "^1.2.0",
     "postcss": "^8.2.4",
     "prettier": "^2.2.1",

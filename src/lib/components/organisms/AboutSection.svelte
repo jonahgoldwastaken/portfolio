@@ -1,10 +1,10 @@
 <script>
+  import { splitTextIntoLetters } from '$lib/utils/textSplitters'
   import observer from '../../actions/intersectionObserver'
-  import { letterAnimation } from '../../actions/textAnimation'
 
-  export let animate: 'heading' | 'image' | 'both' | null
-  let canHeadingAnimate = false
-  let canImageAnimate = false
+  export let animate: 'heading' | 'image' | 'both' | null = null
+  let canHeadingAnimate = true
+  let canImageAnimate = true
 </script>
 
 <style lang="scss">
@@ -88,9 +88,8 @@
           : null}
       class="animating"
       class:animate={canHeadingAnimate}
-      use:letterAnimation={'Over'}
     >
-      Over
+      {@html splitTextIntoLetters('Over')}
     </h1>
   {:else}
     <h1>Over</h1>

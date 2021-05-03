@@ -1,8 +1,5 @@
 <script lang="ts">
-  import { wordAnimation } from '../../actions/textAnimation'
-  import observer from '../../actions/intersectionObserver'
-
-  let animate = false
+  import { splitTextIntoWords } from '$lib/utils/textSplitters'
 </script>
 
 <style lang="scss">
@@ -18,23 +15,13 @@
     }
   }
 
-  h1,
-  p {
-    visibility: hidden;
-  }
-
-  h1.animate,
-  p.animate {
-    visibility: visible;
-  }
-
   h1 :global([class*='ch']),
   p :global([class*='ch']) {
     opacity: 0;
     display: inline-block;
   }
 
-  h1.animate :global {
+  h1 :global {
     .w {
       display: inline-block;
     }
@@ -44,20 +31,9 @@
         animation: slide-in 0.4s #{$i / 80}s ease forwards;
       }
     }
-
-    @keyframes -global-slide-in {
-      from {
-        opacity: 0;
-        transform: translateY(50%) rotateX(45deg);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0rem) rotateX(0deg);
-      }
-    }
   }
 
-  p.animate :global {
+  p :global {
     @for $i from 1 through 37 {
       span:nth-child(#{$i}) {
         animation: slide-in 0.4s #{$i / 80 + 0.2}s ease forwards;
@@ -66,22 +42,13 @@
   }
 </style>
 
-<section
-  use:observer={(bool, amnt) =>
-    animate === false && amnt >= 0.75 ? (animate = bool) : null}
->
-  <h1
-    class:animate
-    use:wordAnimation={'Jonah bouwt producten voor **mensen**.'}
-  >
-    Jonah bouwt producten voor <strong>mensen</strong>.
+<section>
+  <h1>
+    {@html splitTextIntoWords('Jonah bouwt producten voor **mensen**.')}
   </h1>
-  <p
-    class="bold"
-    class:animate
-    use:wordAnimation={'Hij is een Interaction Designer en Developer van gefocuste concepten met een specifiek doel.'}
-  >
-    Hij is een Interaction Designer en Developer van gefocuste concepten met een
-    specifiek doel.
+  <p class="bold">
+    {@html splitTextIntoWords(
+      'Hij is een Interaction Designer en Developer van gefocuste concepten met een specifiek doel.'
+    )}
   </p>
 </section>

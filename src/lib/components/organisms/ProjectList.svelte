@@ -1,13 +1,13 @@
 <script lang="ts">
   import ProjectTile from '../molecules/ProjectTile.svelte'
   import type { TileProject } from '../../../../types/project'
-  import { letterAnimation } from '../../actions/textAnimation'
-  import observer from '../../actions/intersectionObserver'
+  import observer from '$lib/actions/intersectionObserver'
   import ProjectCTA from '../molecules/ProjectCTA.svelte'
+  import { splitTextIntoLetters } from '$lib/utils/textSplitters'
 
   export let animate: 'heading' | 'list' | 'both'
 
-  let animateHeading = false
+  let animateHeading = true
 
   const dummyData: TileProject[] = [
     {
@@ -99,9 +99,8 @@
           ? (animateHeading = bool)
           : null}
       class:animate={animateHeading}
-      use:letterAnimation={'Projecten'}
     >
-      Projecten
+      {@html splitTextIntoLetters('Projecten')}
     </h1>
   {:else}
     <h1>Projecten</h1>

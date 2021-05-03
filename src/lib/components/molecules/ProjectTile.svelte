@@ -4,17 +4,23 @@
   import ProjectTileDescription from '../atoms/ProjectTileDescription.svelte'
   import type { TileProject } from '../../../../types/project'
   import observer from '../../actions/intersectionObserver'
+  import { onMount } from 'svelte'
 
-  export let animate = false
+  export let animate = true
   export let project: TileProject
   let div = null
   let heading = null
-  let hoverHeight = 'px'
-  let standardWidth = 'px'
+  let hoverHeight = 'auto'
+  let standardWidth = '100%'
   let full = true
-  let canRecalculate = true
+  let canRecalculate = false
   let enableAnimation = false
-  let slide = false
+  let slide = true
+  let js = false
+
+  onMount(() => {
+    js = true
+  })
 
   $: if (canRecalculate && div && heading) resizeHandler()
 
@@ -100,6 +106,7 @@
         }
       }
     }
+
     &:focus {
       outline: none;
 
@@ -107,6 +114,7 @@
         border: var(--focus-border);
       }
     }
+
     &:active {
       transform: translateY(-2px) scale(0.98);
     }
@@ -160,10 +168,19 @@
     box-shadow: 0 8px 26px 0 rgba(#0074b3, 0.37);
   }
 
-  .full {
+  .full.js {
     height: auto;
     width: 100%;
-    visibility: hidden;
+  }
+
+  div.full {
+    transform: translate(0, 0);
+    width: 100%;
+    height: auto;
+
+    :global(p) {
+      clip-path: inset(0 0 0 0);
+    }
   }
 
   div.animate {
@@ -227,8 +244,9 @@
       />
       <div
         use:observer={observeHandler}
-        style="--height: {hoverHeight};--width: {standardWidth}"
+        style="--height: {hoverHeight}; --width: {standardWidth}"
         class:full
+        class:js
         class:animate={enableAnimation}
         bind:this={div}
       >
