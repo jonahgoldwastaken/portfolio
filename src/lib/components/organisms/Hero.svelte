@@ -1,18 +1,28 @@
 <script lang="ts">
   import { splitTextIntoWords } from '$lib/utils/textSplitters'
+  import HeroImage from '../molecules/HeroImage.svelte'
+
+  let hovering = false
 </script>
 
 <style lang="scss">
   section {
     display: grid;
     margin: 0 auto max(20rem, 8.75vh);
-    height: max(40rem, 78.75vh);
+    height: 100vh;
     place-content: center;
-    max-width: 60rem;
+    max-width: 70rem;
+    grid-template-columns: 2fr 1fr;
+    column-gap: var(--base-space);
 
     :global(*) {
       text-align: center;
     }
+  }
+
+  h1,
+  p {
+    grid-column: 1;
   }
 
   h1 :global([class*='ch']),
@@ -40,15 +50,28 @@
       }
     }
   }
+
+  img {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
 </style>
 
 <section>
   <h1>
-    {@html splitTextIntoWords('Jonah bouwt producten voor **mensen**.')}
+    {#if hovering}
+      {@html splitTextIntoWords('Jonah poept soms op **tulpen**...')}
+    {:else}
+      {@html splitTextIntoWords('Jonah bouwt producten voor **mensen**.')}
+    {/if}
   </h1>
   <p class="bold">
     {@html splitTextIntoWords(
       'Hij is een Interaction Designer en Developer van gefocuste concepten met een specifiek doel.'
     )}
   </p>
+  <HeroImage bind:hovering />
 </section>

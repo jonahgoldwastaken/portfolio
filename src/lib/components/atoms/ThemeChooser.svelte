@@ -43,7 +43,7 @@
     background: linear-gradient(to bottom left, var(--light), var(--dark));
     margin-left: var(--base-space);
     cursor: pointer;
-    transition: transform 0.1s ease;
+    transition: transform 0.1s var(--easing);
 
     &:hover {
       transform: translateY(-2px);
@@ -53,7 +53,7 @@
       transform: scale(0.9) translateY(-2px);
     }
 
-    &:focus {
+    &:focus-within {
       outline: none;
       border: var(--focus-border);
       transform: translateY(-2px);

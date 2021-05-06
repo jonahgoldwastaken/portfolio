@@ -19,7 +19,7 @@
       var(--color-dark),
       var(--color-light)
     );
-    transition: all 0.1s ease;
+    transition: all 0.1s var(--easing);
     border-radius: 12px;
     transform: translateY(0px);
     font-weight: bold;

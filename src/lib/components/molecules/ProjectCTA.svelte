@@ -7,22 +7,22 @@
 
 <style lang="scss">
   li {
-    height: clamp(2.5rem, 30vh, 20rem);
+    height: 20rem;
     margin: var(--step-0) 0;
 
-    @media screen and (min-width: 50rem) {
+    @media screen and (min-width: 60rem) {
       &:nth-child(even) div {
         margin-left: auto;
       }
 
       &:not(:first-child) {
-        margin-top: clamp(-20rem, -30vh, -2.5rem);
+        margin-top: -20rem;
       }
     }
   }
 
   div {
-    @media screen and (min-width: 50rem) {
+    @media screen and (min-width: 60rem) {
       width: calc(50% - var(--step-0));
     }
   }
@@ -37,7 +37,7 @@
   }
 
   li:nth-child(odd).slide {
-    animation: 0.4s ease forwards;
+    animation: 0.4s var(--easing) forwards;
     visibility: visible;
   }
 

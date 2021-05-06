@@ -3,7 +3,7 @@
     margin-right: var(--base-space);
 
     &:hover g g polygon {
-      animation: egg 1s ease-in-out;
+      animation: egg 1s var(--easing);
     }
   }
 

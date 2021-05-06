@@ -11,7 +11,7 @@
     text-decoration: none;
     color: var(--white);
     background: var(--orange);
-    transition: all 0.2s ease;
+    transition: all 0.2s var(--easing);
     border-radius: 6px;
     box-shadow: 0 5px 5px -2.5px rgba(#2e3138, 0.5);
     transform: translateY(0px);

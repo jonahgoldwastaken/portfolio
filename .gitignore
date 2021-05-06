@@ -4,6 +4,6 @@ web_modules
 node_modules
 .DS_Store
 yarn-error.log
-/.svelte
+/.svelte-kit
 /build
 /functions

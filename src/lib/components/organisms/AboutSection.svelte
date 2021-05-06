@@ -40,7 +40,7 @@
 
       &.animate {
         visibility: visible;
-        animation: slide-in-right 0.4s ease;
+        animation: slide-in-right 0.4s var(--easing);
       }
     }
   }
@@ -69,7 +69,7 @@
   h1.animate :global {
     @for $i from 1 through 4 {
       .ch-#{$i} {
-        animation: slide-in 0.4s #{$i / 80}s ease forwards;
+        animation: slide-in 0.4s #{$i / 80}s var(--easing) forwards;
       }
     }
   }
@@ -122,12 +122,15 @@
         class="animating"
         class:animate={canImageAnimate}
         src="/profile-picture.jpg"
-        alt="Picture of Jonah"
+        alt="Jonah standing in between the Cube houses in Rotterdam with a warm smile, black leather jacket and his orange backpack."
       />
     </aside>
   {:else}
     <aside>
-      <img src="/profile-picture.jpg" alt="Picture of Jonah" />
+      <img
+        src="/profile-picture.jpg"
+        alt="Jonah standing in between the Cube houses in Rotterdam with a warm smile, black leather jacket and his orange backpack."
+      />
     </aside>
   {/if}
 </article>

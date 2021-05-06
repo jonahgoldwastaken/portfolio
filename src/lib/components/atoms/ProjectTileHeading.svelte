@@ -1,5 +1,4 @@
 <script lang="ts">
-  export let heading
 </script>
 
 <style lang="scss">
@@ -12,6 +11,6 @@
   }
 </style>
 
-<h2 bind:this={heading}>
+<h2>
   <slot />
 </h2>
