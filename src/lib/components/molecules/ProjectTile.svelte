@@ -25,7 +25,7 @@
     margin: var(--step-0) 0;
     pointer-events: none;
 
-    @media screen and (min-width: 50rem) {
+    @media screen and (min-width: 60rem) {
       &:nth-child(even) article {
         margin-left: auto;
       }
@@ -37,16 +37,16 @@
   }
 
   article {
-    width: calc(50% - var(--base-space));
+    width: 100%;
     height: 100%;
     position: relative;
     transform: translateY(0px);
-    color: var(--secondary);
+    color: var(--primary);
     transition: transform 0.1s var(--easing);
     pointer-events: all;
 
     @media screen and (min-width: 50rem) {
-      width: calc(50% - var(--step-0));
+      width: calc(50% - var(--base-space));
     }
 
     &:hover,
@@ -57,7 +57,7 @@
 
   a {
     all: unset;
-    color: var(--secondary);
+    color: var(--primary);
 
     &:before {
       background: none;
@@ -71,7 +71,11 @@
 
     &:hover,
     &:focus {
-      color: var(--secondary);
+      background-clip: initial;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+
+      color: var(--primary);
 
       & :global(*) {
         background-size: 100% 2px;

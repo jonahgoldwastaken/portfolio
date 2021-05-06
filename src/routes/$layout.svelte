@@ -35,14 +35,16 @@
 
 <svelte:head>
   {#if headerPadding}
-    <style>
+    <style type="text/css">
       #svelte {
-        padding-top: calc(69px + (var(--double-space) * 2));
+        padding-top: calc(69px + var(--base-space) + (var(--double-space) * 2));
       }
 
-      @media screen and (min-width: 90rem) {
+      @media screen and (min-width: 60rem) {
         #svelte {
-          padding-top: calc(69px + (var(--quadruple-space) * 2));
+          padding-top: calc(
+            69px + var(--base-space) + (var(--threefold-space) * 2)
+          );
         }
       }
     </style>

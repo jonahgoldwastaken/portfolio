@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--double-space) var(--double-space);
+    padding: var(--double-space);
     background: var(--secondary);
     transition: padding 0.2s var(--easing);
 
