@@ -1,11 +1,12 @@
 ---
+index: 2
 title: Interactieve data story
 slug: datastory
 description: Een data story over de representatie van doelgroepen in parkeergelegenheden.
 image: /datastory.png
 client: CMD Tech Track
 year: 2020
-url: https://fa.jonahgold.dev
+link: [project, https://fa.jonahgold.dev]
 ---
 
 De Volkskrant heeft de Tech Track de opdracht gegeven om met data van het

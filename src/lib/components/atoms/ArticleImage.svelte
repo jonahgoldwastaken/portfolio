@@ -2,10 +2,10 @@
   const formats = ['full-width', 'inline', 'caption'] as const
   type imageFormat = typeof formats[number]
 
-  export let format: imageFormat
-  export let src
-  export let alt
-  export let caption
+  export let format: imageFormat = 'caption'
+  export let src: string
+  export let alt: string
+  export let caption: string
 </script>
 
 <style lang="scss">
@@ -46,11 +46,11 @@
 
 {#if format === 'caption'}
   <figure>
-    <img class={format} {src} {alt} />
+    <img class={format} {src} {alt} aria-hidden={!alt} />
     <figcaption>
       {caption ?? ''}
     </figcaption>
   </figure>
 {:else}
-  <img class={format} {src} {alt} />
+  <img class={format} {src} {alt} aria-hidden={!alt} />
 {/if}

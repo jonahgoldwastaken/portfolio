@@ -1,7 +1,5 @@
 <script>
-  import { TileProject } from '../../../../types/project'
-
-  export let details: Pick<TileProject, 'year' | 'client'>
+  export let details: Pick<ProjectMetadata, 'year' | 'client'>
 </script>
 
 <style lang="scss">

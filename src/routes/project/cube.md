@@ -1,11 +1,12 @@
 ---
+index: 5
 title: CSS Rubik's Cube
 slug: cube
 description: Verschillende HTML en CSS only experimenten met de wereldberoemde kubus.
 image: /cube.png
 year: 2021
 client: CMD Minor Web Design & Development
-url: http://theonejonahgold.github.io/css-rubiks-cube
+link: [website, https://theonejonahgold.github.io/css-rubiks-cube]
 ---
 
 Voor het vak CSS To The Rescue mochten we de kracht CSS onderzoeken en

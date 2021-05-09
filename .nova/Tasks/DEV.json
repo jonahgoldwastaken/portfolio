@@ -1,0 +1,10 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "script" : "yarn dev"
+    }
+  },
+  "identifier" : "2D44804B-C90B-4C4B-8DF7-99DC66FCD338",
+  "openLogOnRun" : "start"
+}

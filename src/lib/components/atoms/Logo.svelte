@@ -1,5 +1,6 @@
 <style lang="scss">
   svg {
+    height: var(--quadruple-space);
     margin-right: var(--base-space);
 
     &:hover g g polygon {

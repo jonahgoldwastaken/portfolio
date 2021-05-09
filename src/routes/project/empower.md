@@ -1,11 +1,12 @@
 ---
+index: 4
 title: EMPOWER 2.0
 slug: empower
 description: Een toolkit voor beleidsmakers over groene energie.
 image: /empower.png
 year: 2021
 client: CMD Information Design
-url: https://empower.jonahgold.dev
+link: [project, https://empower.jonahgold.dev]
 ---
 
 EMPOWER 2.0 is een toolkit voor beleidsmakers om prosumers te worden op het

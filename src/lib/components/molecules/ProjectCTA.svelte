@@ -1,5 +1,6 @@
 <script>
   import observer from '../../actions/intersectionObserver'
+  import Link from '../atoms/Link.svelte'
 
   export let animate = false
   let slide = false
@@ -31,7 +32,7 @@
     pointer-events: none;
     visibility: hidden;
 
-    a {
+    :global(a) {
       pointer-events: all;
     }
   }
@@ -59,8 +60,9 @@
   <div>
     <h2>There is always room for more!</h2>
     <p>
-      Stuur een <a href="mailto:jonahmeijers97@gmail.com">mailtje</a>. Misschien
-      kunnen we wat voor elkaar beteken. :)
+      Stuur een <Link --weight="bold" href="mailto:jonahmeijers97@gmail.com"
+        >mailtje</Link
+      >. Misschien kunnen we wat voor elkaar beteken. :&#41;
     </p>
   </div>
 </li>

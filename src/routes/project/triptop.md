@@ -1,11 +1,12 @@
 ---
+index: 6
 title: Triptop
 slug: triptop
 description: Bouw de perfecte playlist voor je roadtrip.
 image: /triptop.png
 year: 2021
 client: CMD Minor Web Design & Development
-url: https://triptop.app
+link: [tool, https://triptop.app]
 ---
 
 Triptop is een app die ik heb gebouwd voor het vak Web app from scratch. Het

@@ -3,6 +3,7 @@
   import HeaderHeading from '../atoms/HeaderHeading.svelte'
   import Navigation from '../molecules/Navigation.svelte'
   import ThemeChooser from '../atoms/ThemeChooser.svelte'
+  import { headerSettings } from '$lib/stores/header'
 
   export let heading = ''
   let scrollY: number
@@ -23,11 +24,16 @@
     background: var(--secondary);
     transition: padding 0.2s var(--easing);
 
+    &.transparent {
+      background: linear-gradient(to bottom, #11181cff, #11181c00);
+    }
+
     @media screen and (min-width: 60rem) {
       padding: var(--threefold-space) var(--quadruple-space);
     }
 
-    &.scrolled {
+    &.scrolled,
+    &.compact {
       padding: var(--base-space) var(--double-space);
 
       @media screen and (min-width: 60rem) {
@@ -44,7 +50,11 @@
 
 <svelte:window bind:scrollY bind:innerHeight />
 
-<header class:scrolled={scrollY > innerHeight / 10}>
+<header
+  class:transparent={$headerSettings.transparent}
+  class:compact={$headerSettings.compact}
+  class:scrolled={scrollY > innerHeight / 10}
+>
   <div>
     <Logo />
     <HeaderHeading>{heading}</HeaderHeading>

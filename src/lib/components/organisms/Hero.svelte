@@ -1,5 +1,7 @@
 <script lang="ts">
   import { splitTextIntoWords } from '$lib/utils/textSplitters'
+
+  import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
   import HeroImage from '../molecules/HeroImage.svelte'
 
   let hovering = false
@@ -61,13 +63,13 @@
 </style>
 
 <section>
-  <h1>
-    {#if hovering}
-      {@html splitTextIntoWords('Jonah poept soms op **tulpen**...')}
-    {:else}
-      {@html splitTextIntoWords('Jonah bouwt producten voor **mensen**.')}
-    {/if}
-  </h1>
+  <AnimatingHeading
+    animate
+    animationType="words"
+    content={hovering
+      ? 'Jonah poept soms op **tulpen**...'
+      : 'Jonah bouwt producten voor **mensen**.'}
+  />
   <p class="bold">
     {@html splitTextIntoWords(
       'Hij is een Interaction Designer en Developer van gefocuste concepten met een specifiek doel.'

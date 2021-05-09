@@ -1,11 +1,12 @@
 ---
+index: 1
 title: Extreme Space Invaders
 slug: xsi
 description: Met 4 weken aan JavaScript kennis heb ik de klassieke Space Invaders nagemaakt.
 image: /xpi.png
 client: CMD Inleiding Programmeren
 year: 2017
-url: https://oege.ie.hva.nl/~meijerj034/xpi/
+link: [spel, https://oege.ie.hva.nl/~meijerj034/xpi/]
 ---
 
 Extreme Space Invaders is mijn paradepaartje uit de propedeuse. Tijdens het

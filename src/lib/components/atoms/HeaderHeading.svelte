@@ -3,7 +3,6 @@
     font-weight: bold;
     font-size: var(--step-0);
     font-family: var(--font-heading);
-    margin: 0;
     white-space: nowrap;
   }
 </style>

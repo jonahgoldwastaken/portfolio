@@ -6,7 +6,6 @@
     font-size: var(--step-1);
     font-weight: bold;
     width: max-content;
-    margin: 0;
     color: var(--white);
   }
 </style>

@@ -1,17 +1,14 @@
 <script>
-  import { splitTextIntoLetters } from '$lib/utils/textSplitters'
-  import observer from '../../actions/intersectionObserver'
+  import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
 
   export let animate: 'heading' | 'image' | 'both' | null = null
-  let canHeadingAnimate = true
-  let canImageAnimate = true
 </script>
 
 <style lang="scss">
   article {
     @media screen and (min-width: 90rem) {
       display: grid;
-      grid-template-columns: 60rem 1fr;
+      grid-template-columns: 2fr 1fr;
       grid-auto-rows: min-content;
       grid-template-areas: 'heading heading' 'content image';
       gap: var(--double-space);
@@ -45,33 +42,8 @@
     }
   }
 
-  h1 {
+  article :global(h1) {
     grid-area: heading;
-    text-align: left;
-    margin: 0;
-
-    &.animating {
-      visibility: hidden;
-    }
-
-    &.animate {
-      visibility: visible;
-    }
-  }
-
-  h1.animate :global {
-    [class*='ch'] {
-      display: inline-block;
-      opacity: 0;
-    }
-  }
-
-  h1.animate :global {
-    @for $i from 1 through 4 {
-      .ch-#{$i} {
-        animation: slide-in 0.4s #{$i / 80}s var(--easing) forwards;
-      }
-    }
   }
 </style>
 
@@ -81,16 +53,7 @@
 
 <article>
   {#if animate === 'both' || animate === 'heading'}
-    <h1
-      use:observer={(bool, amnt) =>
-        canHeadingAnimate === false && amnt >= 0.75
-          ? (canHeadingAnimate = bool)
-          : null}
-      class="animating"
-      class:animate={canHeadingAnimate}
-    >
-      {@html splitTextIntoLetters('Over')}
-    </h1>
+    <AnimatingHeading --alignment="left" observe content="Over" />
   {:else}
     <h1>Over</h1>
   {/if}
@@ -112,7 +75,7 @@
       jongens.
     </p>
   </main>
-  {#if animate === 'both' || animate === 'image'}
+  <!-- {#if animate === 'both' || animate === 'image'}
     <aside>
       <img
         use:observer={(bool, amnt) =>
@@ -132,5 +95,5 @@
         alt="Jonah standing in between the Cube houses in Rotterdam with a warm smile, black leather jacket and his orange backpack."
       />
     </aside>
-  {/if}
+  {/if} -->
 </article>

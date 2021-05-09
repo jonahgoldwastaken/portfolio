@@ -1,41 +1,38 @@
-<script>
-  import ArticleMeta from '../atoms/ArticleMeta.svelte'
-  import ArticleLinkContainer from '../molecules/ArticleLinkContainer.svelte'
+<script lang="ts">
+  import { headerSettings } from '$lib/stores/header'
+
+  import { onMount } from 'svelte'
+
+  import ArticleHeader from '../molecules/ArticleHeader.svelte'
 
   export let title = ''
   export let client = ''
+  export let image = ''
+  export let link
   export let year = new Date().getFullYear()
+
+  onMount(() => {
+    headerSettings.set({
+      compact: true,
+      transparent: true,
+      padding: false,
+    })
+  })
 </script>
 
-<style lang="css">
+<style lang="scss">
   article {
     display: grid;
     grid-template-columns: 100%;
     grid-gap: var(--base-space);
-    grid-template-areas: 'banner' ' header' 'main';
+    grid-template-areas: ' header' 'main';
     justify-items: center;
   }
 
   @media screen and (min-width: 90rem) {
     article {
       grid-template-columns: 1fr 60rem 1fr;
-      grid-template-areas: 'banner banner banner' '. header .' 'main main main';
-    }
-  }
-
-  header {
-    grid-area: header;
-    max-width: 60rem;
-    width: 100%;
-  }
-
-  header:first-child {
-    grid-row: 1 / span 2;
-  }
-
-  @media screen and (min-width: 90rem) {
-    header:first-child ~ :global(aside) {
-      grid-row-start: 1;
+      grid-template-areas: 'header header header' 'main main main';
     }
   }
 
@@ -79,6 +76,7 @@
     font-size: var(--step-0);
     margin: 0;
   }
+
   main :global(p + p) {
     margin-top: var(--base-space);
   }
@@ -94,14 +92,8 @@
       <slot name="banner" />
     </div>
   {/if}
-  <header>
-    <h1>{title}</h1>
-    <ArticleMeta {client} {year} />
-  </header>
+  <ArticleHeader {link} {title} {client} {year} src={image} />
   <main>
     <slot />
   </main>
-  <ArticleLinkContainer>
-    <slot name="links" />
-  </ArticleLinkContainer>
 </article>

@@ -2,12 +2,11 @@
   import ProjectTileImage from '../atoms/ProjectTileImage.svelte'
   import ProjectTileHeading from '../atoms/ProjectTileHeading.svelte'
   import ProjectTileDescription from '../atoms/ProjectTileDescription.svelte'
-  import type { TileProject } from '../../../../types/project'
   import observer from '../../actions/intersectionObserver'
   import { onMount } from 'svelte'
 
   export let animate = false
-  export let project: TileProject
+  export let project: ProjectMetadata
   let slide = false
   let js = false
 
@@ -40,7 +39,6 @@
     width: 100%;
     height: 100%;
     position: relative;
-    transform: translateY(0px);
     color: var(--primary);
     transition: transform 0.1s var(--easing);
     pointer-events: all;
@@ -104,8 +102,9 @@
   }
 
   li.slide {
-    animation: 0.4s var(--easing) forwards;
+    animation: 0.4s var(--easing);
     visibility: visible;
+    transition: none;
   }
 
   li.slide:nth-child(odd) {

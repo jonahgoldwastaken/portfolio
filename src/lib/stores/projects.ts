@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store'
 
-export const projectsStore = writable<TileProject[]>([])
+export const projectsStore = writable<ProjectMetadata[]>([])
