@@ -9,6 +9,7 @@
   export let client = ''
   export let image = ''
   export let link
+  export let description = ''
   export let year = new Date().getFullYear()
 
   onMount(() => {
@@ -18,6 +19,7 @@
       padding: false,
     })
   })
+
 </script>
 
 <style lang="scss">
@@ -33,26 +35,6 @@
     article {
       grid-template-columns: 1fr 60rem 1fr;
       grid-template-areas: 'header header header' 'main main main';
-    }
-  }
-
-  article > div:first-child {
-    grid-area: banner;
-    width: 100%;
-    margin-left: calc(-1 * var(--double-space));
-  }
-
-  article > div:first-child :global(img) {
-    width: calc(100% + var(--half-space) * 2);
-  }
-
-  @media screen and (min-width: 60rem) {
-    article > div:first-child {
-      margin-left: calc(-2 * var(--quadruple-space));
-    }
-
-    article > div:first-child :global(img) {
-      width: calc(100% + 2 * var(--quadruple-space));
     }
   }
 
@@ -84,15 +66,18 @@
   :global(a) {
     font-weight: 500;
   }
+
 </style>
 
+<svelte:head>
+  <title>
+    {title} - Jonah Meijers
+  </title>
+  <meta name="description" content={description} />
+</svelte:head>
+
 <article>
-  {#if $$slots.banner}
-    <div>
-      <slot name="banner" />
-    </div>
-  {/if}
-  <ArticleHeader {link} {title} {client} {year} src={image} />
+  <ArticleHeader {link} {title} {description} {client} {year} src={image} />
   <main>
     <slot />
   </main>

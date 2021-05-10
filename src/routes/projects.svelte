@@ -12,10 +12,15 @@
       transparent: false,
     })
   })
+
 </script>
 
 <svelte:head>
   <title>Projecten - Jonah Meijers</title>
+  <meta
+    name="descrtiption"
+    content="De projecten waar ik aan werk en heb gewerkt."
+  />
 </svelte:head>
 
 <ProjectList animate="both" />

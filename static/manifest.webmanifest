@@ -2,6 +2,7 @@
     "theme_color": "#e07f00",
     "background_color": "#11181c",
     "display": "standalone",
+    "orientation": "portrait",
     "scope": "/",
     "start_url": "/",
     "name": "Jonah Meijers",
@@ -27,6 +28,12 @@
             "src": "/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
+        },
+        {
+            "src": "/logo-simple.svg",
+            "sizes": "58x69",
+            "type": "image/svg+xml",
+            "purpose": "maskable"
         }
     ]
 }

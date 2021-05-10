@@ -13,6 +13,7 @@
   onMount(() => {
     js = true
   })
+
 </script>
 
 <style lang="scss">
@@ -43,7 +44,7 @@
     transition: transform 0.1s var(--easing);
     pointer-events: all;
 
-    @media screen and (min-width: 50rem) {
+    @media screen and (min-width: 60rem) {
       width: calc(50% - var(--base-space));
     }
 
@@ -136,6 +137,7 @@
       transform: translateX(0%);
     }
   }
+
 </style>
 
 <li

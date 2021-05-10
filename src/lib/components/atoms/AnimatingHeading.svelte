@@ -10,6 +10,7 @@
   export let animate = false
   export let delay = false
   export let animationType: 'words' | 'letters' = 'letters'
+
 </script>
 
 <style lang="scss">
@@ -24,7 +25,7 @@
     }
 
     &.animate :global {
-      @for $i from 1 through 400 {
+      @for $i from 1 through 100 {
         .ch-#{$i} {
           animation: slide-in 0.4s #{($i - 1) / 120}s var(--easing) forwards;
         }
@@ -35,17 +36,18 @@
     }
 
     &.animate.delay :global {
-      @for $i from 1 through 400 {
+      @for $i from 1 through 100 {
         .ch-#{$i} {
           animation-delay: #{0.4 + (($i - 1) / 120)}s;
         }
       }
     }
   }
+
 </style>
 
 {#if !observe}
-  <h1 class:delay class:animate on:animationend>
+  <h1 class:delay class:animate on:animationend {...$$restProps}>
     {#if animationType === 'letters'}
       {@html splitTextIntoLetters(content)}
     {:else}
@@ -58,6 +60,7 @@
       animate === false && amnt >= 0.75 ? (animate = bool) : null}
     class:animate
     on:animationend
+    {...$$restProps}
   >
     {#if animationType === 'letters'}
       {@html splitTextIntoLetters(content)}

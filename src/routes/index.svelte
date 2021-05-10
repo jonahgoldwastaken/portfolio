@@ -10,10 +10,12 @@
       transparent: false,
     })
   })
+
 </script>
 
 <svelte:head>
   <title>Jonah Meijers</title>
+  <meta name="description" content="De portfolio van Jonah Meijers" />
 </svelte:head>
 
 <Home />

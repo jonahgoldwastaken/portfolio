@@ -6,7 +6,7 @@ description: Een toolkit voor beleidsmakers over groene energie.
 image: /empower.png
 year: 2021
 client: CMD Information Design
-link: [project, https://empower.jonahgold.dev]
+link: [toolkit, https://empower.jonahgold.dev]
 ---
 
 EMPOWER 2.0 is een toolkit voor beleidsmakers om prosumers te worden op het

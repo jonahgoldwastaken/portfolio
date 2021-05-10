@@ -11,6 +11,7 @@
       transparent: false,
     })
   })
+
 </script>
 
 <svelte:head>

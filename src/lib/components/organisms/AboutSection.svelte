@@ -2,6 +2,7 @@
   import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
 
   export let animate: 'heading' | 'image' | 'both' | null = null
+
 </script>
 
 <style lang="scss">
@@ -11,7 +12,7 @@
       grid-template-columns: 2fr 1fr;
       grid-auto-rows: min-content;
       grid-template-areas: 'heading heading' 'content image';
-      gap: var(--double-space);
+      row-gap: var(--base-space);
     }
   }
 
@@ -45,6 +46,7 @@
   article :global(h1) {
     grid-area: heading;
   }
+
 </style>
 
 <svelte:head>

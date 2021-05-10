@@ -1,10 +1,12 @@
 <script lang="ts">
   import observer from '$lib/actions/intersectionObserver'
   import { createRangeFromDomain } from '$lib/utils/numberRange'
+  import { splitTextIntoWords } from '$lib/utils/textSplitters'
   import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
   import Link from '../atoms/Link.svelte'
 
   export let title: string
+  export let description: string
   export let client: string
   export let year: number
   export let src: string
@@ -28,6 +30,7 @@
 
   $: scrollPercentage = inView ? bgScale(scrollY) : 0
   $: zoomPercentage = inView ? zoomScale(scrollY) : 1.1
+
 </script>
 
 <style lang="scss">
@@ -76,51 +79,73 @@
       opacity: var(--scroll);
     }
 
-    :global(h1) {
+    div {
       grid-row: 2;
       grid-column: 1 / span 2;
+      max-width: 60rem;
+      justify-self: center;
+
+      > p {
+        text-align: center;
+        font-weight: 700;
+
+        :global([class*='ch']) {
+          opacity: 0;
+          display: inline-block;
+        }
+
+        :global {
+          @for $i from 1 through 37 {
+            span:nth-child(#{$i}) {
+              animation: slide-in 0.4s #{$i / 80 + 0.6}s ease forwards;
+            }
+          }
+        }
+      }
     }
   }
 
   p {
     margin: var(--half-space) 0 0;
-    opacity: 0;
     font-family: var(--font-heading);
     font-size: var(--step-0);
     color: var(--primary);
     font-weight: 500;
 
-    animation: swipe-in 0.4s var(--easing) forwards;
+    header > & {
+      opacity: 0;
+      animation: swipe-in 0.4s var(--easing) forwards;
 
-    @for $i from 1 through 5 {
-      &:nth-child(#{$i}) {
-        animation-delay: #{($i / 40) + 0.8}s;
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{($i / 40) + 0.8}s;
+        }
       }
-    }
 
-    @keyframes swipe-in {
-      from {
-        transform: translateY(100%);
-        opacity: 0;
+      @keyframes swipe-in {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0%);
+          opacity: 1;
+        }
       }
-      to {
-        transform: translateY(0%);
-        opacity: 1;
+
+      &:nth-of-type(1) {
+        grid-row: 3;
+        grid-column: 1;
+        align-self: end;
+        justify-self: start;
       }
-    }
 
-    &:first-of-type {
-      grid-row: 3;
-      grid-column: 1;
-      align-self: end;
-      justify-self: start;
-    }
-
-    &:nth-of-type(2) {
-      grid-row: 3;
-      grid-column: 2;
-      align-self: end;
-      justify-self: end;
+      &:nth-of-type(2) {
+        grid-row: 3;
+        grid-column: 2;
+        align-self: end;
+        justify-self: end;
+      }
     }
   }
 
@@ -148,6 +173,7 @@
       }
     }
   }
+
 </style>
 
 <svelte:window bind:scrollY bind:innerHeight />
@@ -156,7 +182,10 @@
   style="--scroll: {scrollPercentage}"
   use:observer={bool => (inView = bool)}
 >
-  <AnimatingHeading animate delay content={title} />
+  <div>
+    <AnimatingHeading aria-label="Titel" animate delay content={title} />
+    <p aria-label="Beschrijving">{@html splitTextIntoWords(description)}</p>
+  </div>
   <p>
     {client} • <time datetime={`${year}`}>{year}</time>
   </p>

@@ -5,6 +5,7 @@
   import HeroImage from '../molecules/HeroImage.svelte'
 
   let hovering = false
+
 </script>
 
 <style lang="scss">
@@ -22,27 +23,14 @@
     }
   }
 
-  h1,
+  section :global(h1),
   p {
     grid-column: 1;
   }
 
-  h1 :global([class*='ch']),
   p :global([class*='ch']) {
     opacity: 0;
     display: inline-block;
-  }
-
-  h1 :global {
-    .w {
-      display: inline-block;
-    }
-
-    @for $i from 1 through 6 {
-      .ch-#{$i} {
-        animation: slide-in 0.4s #{$i / 80}s ease forwards;
-      }
-    }
   }
 
   p :global {
@@ -53,13 +41,6 @@
     }
   }
 
-  img {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-  }
 </style>
 
 <section>
