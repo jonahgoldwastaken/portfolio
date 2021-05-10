@@ -1,16 +1,23 @@
+<script context="module">
+  import type { Load } from '@sveltejs/kit'
+  import { fetchProjects } from '$lib/utils/projectList'
+
+  export const load: Load = async function ({}) {
+    const projects = await fetchProjects()
+    return {
+      props: {
+        projects,
+      },
+    }
+  }
+</script>
+
 <script lang="ts">
-  import Home from '$lib/components/templates/Home.svelte'
-  import { headerSettings } from '$lib/stores/header'
-  import { onMount } from 'svelte'
+  import AboutSection from '$lib/components/organisms/AboutSection.svelte'
+  import Hero from '$lib/components/organisms/Hero.svelte'
+  import ProjectList from '$lib/components/organisms/ProjectList.svelte'
 
-  onMount(() => {
-    headerSettings.set({
-      compact: false,
-      padding: false,
-      transparent: false,
-    })
-  })
-
+  export let projects: ProjectMetadata[]
 </script>
 
 <svelte:head>
@@ -18,4 +25,6 @@
   <meta name="description" content="De portfolio van Jonah Meijers" />
 </svelte:head>
 
-<Home />
+<Hero />
+<ProjectList {projects} animate="list" />
+<AboutSection animate="image" />

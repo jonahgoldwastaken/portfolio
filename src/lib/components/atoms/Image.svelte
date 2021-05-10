@@ -1,25 +1,33 @@
 <script lang="ts">
-  const formats = ['full-width', 'inline', 'caption'] as const
+  const formats = [
+    'full-width',
+    'banner',
+    'inline',
+    'caption',
+    'basic',
+  ] as const
   type imageFormat = typeof formats[number]
 
-  export let format: imageFormat = 'caption'
+  export let format: imageFormat = 'basic'
   export let src: string
-  export let alt: string
-  export let caption: string
+  export let alt: string = ''
+  export let caption: string = ''
 </script>
 
 <style lang="scss">
   img {
     display: block;
+    object-fit: var(--fit, initial);
+    object-position: var(--position, initial);
 
-    &:not(.full-width) {
+    &:not(.full-width):not(.banner) {
       border-radius: 12px;
     }
   }
 
-  img.full-width {
+  .full-width {
+    --fit: cover;
     height: max(20rem, 75vh);
-    object-fit: cover;
     width: calc(2 * var(--base-space) + 100%);
 
     @media screen and (min-width: 60rem) {
@@ -27,10 +35,24 @@
     }
   }
 
-  img.inline,
-  img.caption {
+  .banner {
+    --fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .inline,
+  .caption {
     max-width: 60rem;
     margin: 0 auto;
+  }
+
+  .basic {
+    width: 100%;
+    height: 100%;
   }
 
   figure {

@@ -19,8 +19,8 @@
   main {
     grid-area: content;
 
-    p:first-of-type {
-      margin-top: 0;
+    p:not(:first-of-type) {
+      margin-top: var(--base-space);
     }
   }
 

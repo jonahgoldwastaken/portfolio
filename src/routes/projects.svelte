@@ -1,18 +1,21 @@
+<script context="module">
+  import type { Load } from '@sveltejs/kit'
+  import { fetchProjects } from '$lib/utils/projectList'
+
+  export const load: Load = async function ({}) {
+    const projects = await fetchProjects()
+    return {
+      props: {
+        projects,
+      },
+    }
+  }
+</script>
+
 <script>
   import ProjectList from '$lib/components/organisms/ProjectList.svelte'
-  import { headerSettings } from '$lib/stores/header'
-  import { onMount } from 'svelte'
 
-  export const padding = true
-
-  onMount(() => {
-    headerSettings.set({
-      compact: false,
-      padding: true,
-      transparent: false,
-    })
-  })
-
+  export let projects: ProjectMetadata[]
 </script>
 
 <svelte:head>
@@ -23,4 +26,4 @@
   />
 </svelte:head>
 
-<ProjectList animate="both" />
+<ProjectList {projects} animate="both" />

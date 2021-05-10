@@ -1,10 +1,9 @@
 <script lang="ts">
   import { splitTextIntoWords } from '$lib/utils/textSplitters'
-
   import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
-  import HeroImage from '../molecules/HeroImage.svelte'
+  import HeroImage from '../molecules/ProfilePicture.svelte'
 
-  let hovering = false
+  let easterEgg = false
 
 </script>
 
@@ -32,15 +31,18 @@
     grid-column: 1;
   }
 
-  p :global([class*='ch']) {
-    opacity: 0;
-    display: inline-block;
-  }
+  p {
+    font-weight: bold;
 
-  p :global {
-    @for $i from 1 through 37 {
-      span:nth-child(#{$i}) {
-        animation: slide-in 0.4s #{$i / 80 + 0.2}s ease forwards;
+    :global {
+      [class*='ch'] {
+        opacity: 0;
+        display: inline-block;
+      }
+      @for $i from 1 through 37 {
+        span:nth-child(#{$i}) {
+          animation: slide-in 0.4s #{$i / 80 + 0.2}s ease forwards;
+        }
       }
     }
   }
@@ -51,14 +53,14 @@
   <AnimatingHeading
     animate
     animationType="words"
-    content={hovering
+    content={easterEgg
       ? 'Jonah poept soms op **tulpen**...'
       : 'Jonah bouwt producten voor **mensen**.'}
   />
-  <p class="bold">
+  <p>
     {@html splitTextIntoWords(
       'Hij is een Interaction Designer en Developer van gefocuste concepten met een specifiek doel.'
     )}
   </p>
-  <HeroImage bind:hovering />
+  <HeroImage bind:easterEgg />
 </section>

@@ -13,6 +13,10 @@
 
   li {
     font-size: var(--step-0);
+
+    :global(a) {
+      --weight: normal;
+    }
   }
 </style>
 
@@ -22,10 +26,10 @@
       <Link href="/">Home</Link>
     </li>
     <li>
-      <Link href="/projects/">Projecten</Link>
+      <Link href="/projects">Projecten</Link>
     </li>
     <li>
-      <Link href="/about/">Over</Link>
+      <Link href="/about">Over</Link>
     </li>
     <li>
       <Link href="https://github.com/theonejonahgold">GitHub</Link>

@@ -1,5 +1,7 @@
 <script>
-  export let hovering = false
+  import Image from '../atoms/Image.svelte'
+
+  export let easterEgg = false
 
 </script>
 
@@ -23,13 +25,9 @@
     }
   }
 
-  img {
+  div :global(img) {
     display: block;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
   }
 
 </style>
@@ -44,13 +42,20 @@
   />
 </svelte:head>
 
-<div on:click={() => (hovering = !hovering)}>
-  {#if hovering}
-    <img src="/funky.jpg" alt="Jonah taking a shit in a tulip field" />
-  {:else}
-    <img
-      src="/profile-picture.jpg"
+<div on:click={() => (easterEgg = !easterEgg)}>
+  {#if easterEgg}
+    <Image
+      --fit="cover"
+      --position="bottom center"
+      src="/funky.jpg"
       alt="Jonah taking a shit in a tulip field"
+    />
+  {:else}
+    <Image
+      --fit="cover"
+      --position="center center"
+      src="/profile-picture.jpg"
+      alt="Jonah standing at the Rotterdam Cube houses, smiling softly at the camera."
     />
   {/if}
 </div>

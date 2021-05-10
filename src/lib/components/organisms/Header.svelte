@@ -2,13 +2,15 @@
   import Logo from '../atoms/Logo.svelte'
   import Navigation from '../molecules/Navigation.svelte'
   import ThemeChooser from '../atoms/ThemeChooser.svelte'
-  import { headerSettings } from '$lib/stores/header'
   import { raf } from '$lib/actions/requestAnimationFrame'
+  import { page } from '$app/stores'
 
   export let heading = ''
-  let scrolled = false
+  let scrolled = true
   let innerHeight: number
 
+  $: compact = $page.path.startsWith('/project/')
+  $: transparent = $page.path.startsWith('/project/')
 </script>
 
 <style lang="scss">
@@ -54,14 +56,13 @@
     font-family: var(--font-heading);
     white-space: nowrap;
   }
-
 </style>
 
 <svelte:window bind:innerHeight />
 
 <header
   use:raf={{
-    animate: true,
+    animate: !compact,
     cb: () => {
       if (window.pageYOffset > innerHeight / 10) {
         scrolled = true
@@ -70,8 +71,8 @@
       scrolled = false
     },
   }}
-  class:transparent={$headerSettings.transparent}
-  class:compact={$headerSettings.compact}
+  class:transparent
+  class:compact
   class:scrolled
 >
   <div>

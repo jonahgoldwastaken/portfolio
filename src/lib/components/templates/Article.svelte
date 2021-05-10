@@ -1,12 +1,9 @@
 <script context="module">
   import a from '../atoms/Link.svelte'
   export { a }
-
 </script>
 
 <script lang="ts">
-  import { headerSettings } from '$lib/stores/header'
-  import { onMount } from 'svelte'
   import ArticleHeader from '../molecules/ArticleHeader.svelte'
 
   export let title = ''
@@ -15,15 +12,6 @@
   export let link
   export let description = ''
   export let year = new Date().getFullYear()
-
-  onMount(() => {
-    headerSettings.set({
-      compact: true,
-      transparent: true,
-      padding: false,
-    })
-  })
-
 </script>
 
 <style lang="scss">
@@ -70,7 +58,6 @@
   main :global(a) {
     font-weight: 500;
   }
-
 </style>
 
 <svelte:head>

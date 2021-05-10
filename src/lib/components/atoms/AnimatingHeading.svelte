@@ -10,7 +10,7 @@
   export let animate = false
   export let delay = false
   export let animationType: 'words' | 'letters' = 'letters'
-
+  let canAnimate = true
 </script>
 
 <style lang="scss">
@@ -43,7 +43,6 @@
       }
     }
   }
-
 </style>
 
 {#if !observe}
@@ -57,8 +56,8 @@
 {:else}
   <h1
     use:observer={(bool, amnt) =>
-      animate === false && amnt >= 0.75 ? (animate = bool) : null}
-    class:animate
+      canAnimate === false && amnt >= 0.75 ? (canAnimate = bool) : null}
+    class:animate={canAnimate}
     on:animationend
     {...$$restProps}
   >

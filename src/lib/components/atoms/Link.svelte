@@ -2,6 +2,8 @@
   import { page } from '$app/stores'
 
   export let href: string
+
+  $: active = $page.path === href
 </script>
 
 <style lang="scss">
@@ -11,7 +13,7 @@
     font: inherit;
     transition: color 0.2s var(--easing);
     text-decoration: none;
-    font-weight: var(--weight, inherit);
+    font-weight: var(--weight, 700);
   }
 
   a:hover,
@@ -44,21 +46,14 @@
   }
 
   a:hover:before,
-  a:focus:before {
+  a:focus:before,
+  a.active:before {
     background-size: 100% 1px;
-  }
-
-  a.active {
-    font-weight: normal;
-
-    &:before {
-      background-size: 100% 1px;
-    }
   }
 </style>
 
 <a
-  class:active={$page.path === href}
+  class:active
   target={!href.startsWith('/') ? '_blank' : ''}
   rel={!href.startsWith('/') ? 'noopener noreferrer external' : ''}
   {href}

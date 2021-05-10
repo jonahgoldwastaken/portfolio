@@ -1,19 +1,15 @@
 <script lang="ts">
-  import ProjectTileImage from '../atoms/ProjectTileImage.svelte'
-  import ProjectTileHeading from '../atoms/ProjectTileHeading.svelte'
-  import ProjectTileDescription from '../atoms/ProjectTileDescription.svelte'
-  import observer from '../../actions/intersectionObserver'
   import { onMount } from 'svelte'
+  import observer from '../../actions/intersectionObserver'
 
   export let animate = false
-  export let project: ProjectMetadata
+  export let href: string
   let slide = false
   let js = false
 
   onMount(() => {
     js = true
   })
-
 </script>
 
 <style lang="scss">
@@ -32,6 +28,21 @@
 
       &:not(:first-child) {
         margin-top: -20rem;
+      }
+    }
+
+    &:last-child {
+      height: 20rem;
+      margin: var(--step-0) 0;
+
+      @media screen and (min-width: 60rem) {
+        &:nth-child(even) article {
+          margin-left: auto;
+        }
+
+        &:not(:first-child) {
+          margin-top: -20rem;
+        }
       }
     }
   }
@@ -82,7 +93,7 @@
     }
   }
 
-  div {
+  div:not(:first-child) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -95,6 +106,11 @@
     width: 100%;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
+
+    h2 {
+      --font-size: var(--step-1);
+      width: max-content;
+    }
   }
 
   li.animate {
@@ -137,7 +153,6 @@
       transform: translateX(0%);
     }
   }
-
 </style>
 
 <li
@@ -147,17 +162,24 @@
   class:animate
 >
   <article>
-    <a href="/project/{project.slug}">
-      <ProjectTileImage
-        src={project.image}
-        alt="Afbeelding van project {project.title}"
-      />
+    {#if href}
+      <a {href}>
+        <slot name="image" />
+        <div>
+          <h2>
+            <slot name="title" />
+          </h2>
+          <p><slot name="description" /></p>
+        </div>
+      </a>
+    {:else}
+      <slot name="image" />
       <div>
-        <ProjectTileHeading>
-          {project.title}
-        </ProjectTileHeading>
-        <ProjectTileDescription>{project.description}</ProjectTileDescription>
+        <h2>
+          <slot name="title" />
+        </h2>
+        <p><slot name="description" /></p>
       </div>
-    </a>
+    {/if}
   </article>
 </li>
