@@ -1,15 +1,20 @@
 <script>
   export let hovering = false
+
 </script>
 
 <style lang="scss">
   div {
     width: 100%;
     position: relative;
-    grid-row: 1 / span 2;
-    grid-column: 2;
+    grid-column: 1;
     animation: slide-in 0.5s var(--easing);
     cursor: help;
+
+    @media screen and (min-width: 60rem) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
 
     &:after {
       content: '';
@@ -26,6 +31,7 @@
     object-fit: cover;
     border-radius: 12px;
   }
+
 </style>
 
 <svelte:head>

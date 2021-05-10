@@ -15,8 +15,12 @@
     height: 100vh;
     place-content: center;
     max-width: 70rem;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: var(--base-space);
+
+    @media screen and (min-width: 60rem) {
+      grid-template-columns: 2fr 1fr;
+    }
 
     :global(*) {
       text-align: center;
