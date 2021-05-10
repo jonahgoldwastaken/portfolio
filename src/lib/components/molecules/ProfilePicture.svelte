@@ -2,7 +2,6 @@
   import Image from '../atoms/Image.svelte'
 
   export let easterEgg = false
-
 </script>
 
 <style lang="scss">
@@ -10,7 +9,8 @@
     width: 100%;
     position: relative;
     grid-column: 1;
-    animation: slide-in 0.5s var(--easing);
+    animation: slide-in 0.5s 0.4s var(--easing) forwards;
+    opacity: 0;
     cursor: help;
 
     @media screen and (min-width: 60rem) {
@@ -29,7 +29,6 @@
     display: block;
     position: absolute;
   }
-
 </style>
 
 <svelte:head>

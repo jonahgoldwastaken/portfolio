@@ -11,9 +11,9 @@
     picomatch "^2.2.2"
 
 "@sveltejs/adapter-node@^1.0.0-next.17":
-  version "1.0.0-next.19"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-1.0.0-next.19.tgz#5cb049305cedc03b6fc870da06a9be207cb6793f"
-  integrity sha512-8QXOm0x9xiRGNZl9H0VplhIRVk14tO67bHDihxpUuOG3gFYxsNvdISC0wrvdGHOOINDUj4K2pdSn8LEjPrml/A==
+  version "1.0.0-next.20"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-1.0.0-next.20.tgz#25ec7b7680d0bd3ad0ade76724f61adbd711f26b"
+  integrity sha512-ornNW289XN4TyY3tRXVGH38FxrqLsw1MHn4oq92T7U6EqnSbw/22waMZnPBQUxcj5GxZsXuuFjeBjn1BWt0x2A==
 
 "@sveltejs/adapter-static@^1.0.0-next.7":
   version "1.0.0-next.9"
@@ -21,9 +21,9 @@
   integrity sha512-yqZ+4dzi+2+2jDPHCrI7WrLdXyQ/0U56a7aFdepmodpvpxhazF203D1ez+AtTo27FjMmHjfI+q0O2FivUOosxg==
 
 "@sveltejs/kit@^1.0.0-next.95":
-  version "1.0.0-next.103"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.103.tgz#9b79673e93f45be92f79fb769baf60259fec71c7"
-  integrity sha512-g3Q3AnYloJVpXu83yfQLddYcsTYJ5M/NaoRTyv0qCTMNea1L9HTGrI8grdi5kF8wbPCUcX9fLA9RYRDfEkjF/Q==
+  version "1.0.0-next.104"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.104.tgz#a80ebb9f28aea77184b90e10e11c4f26e3a74c2e"
+  integrity sha512-1ww5NvpGYJdKXR4bfxo04AM4izcJwTziFIVrImq3jqS2b4d8l3KfrJOqgv+e07RvW/WakrCRPAyZzeHpXLdkZg==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.9"
     cheap-watch "^1.0.3"

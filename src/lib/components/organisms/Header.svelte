@@ -2,14 +2,11 @@
   import Logo from '../atoms/Logo.svelte'
   import Navigation from '../molecules/Navigation.svelte'
   import ThemeChooser from '../atoms/ThemeChooser.svelte'
-  import { raf } from '$lib/actions/requestAnimationFrame'
   import { page } from '$app/stores'
 
   export let heading = ''
-  let scrolled = true
   let innerHeight: number
 
-  $: compact = $page.path.startsWith('/project/')
   $: transparent = $page.path.startsWith('/project/')
 </script>
 
@@ -32,16 +29,7 @@
     }
 
     @media screen and (min-width: 60rem) {
-      padding: var(--threefold-space) var(--quadruple-space);
-    }
-
-    &.scrolled,
-    &.compact {
-      padding: var(--base-space) var(--double-space);
-
-      @media screen and (min-width: 60rem) {
-        padding: var(--base-space) var(--quadruple-space);
-      }
+      padding: var(--double-space) var(--quadruple-space);
     }
 
     div {
@@ -60,21 +48,7 @@
 
 <svelte:window bind:innerHeight />
 
-<header
-  use:raf={{
-    animate: !compact,
-    cb: () => {
-      if (window.pageYOffset > innerHeight / 10) {
-        scrolled = true
-        return
-      }
-      scrolled = false
-    },
-  }}
-  class:transparent
-  class:compact
-  class:scrolled
->
+<header class:transparent>
   <div>
     <Logo />
     <h1>{heading}</h1>

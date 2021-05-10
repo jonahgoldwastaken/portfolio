@@ -17,15 +17,6 @@
           var(--quadruple-space) + var(--base-space) + (var(--double-space) * 2)
         ) !important;
       }
-
-      @media screen and (min-width: 60rem) {
-        #svelte {
-          padding-top: calc(
-            var(--quadruple-space) + var(--base-space) +
-              (var(--threefold-space) * 2)
-          ) !important;
-        }
-      }
     </style>
   {/if}
 </svelte:head>

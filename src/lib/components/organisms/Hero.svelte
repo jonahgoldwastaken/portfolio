@@ -4,7 +4,6 @@
   import HeroImage from '../molecules/ProfilePicture.svelte'
 
   let easterEgg = false
-
 </script>
 
 <style lang="scss">
@@ -41,17 +40,17 @@
       }
       @for $i from 1 through 37 {
         span:nth-child(#{$i}) {
-          animation: slide-in 0.4s #{$i / 80 + 0.2}s ease forwards;
+          animation: slide-in 0.4s #{$i / 80 + 0.6}s ease forwards;
         }
       }
     }
   }
-
 </style>
 
 <section>
   <AnimatingHeading
     animate
+    delay
     animationType="words"
     content={easterEgg
       ? 'Jonah poept soms op **tulpen**...'
