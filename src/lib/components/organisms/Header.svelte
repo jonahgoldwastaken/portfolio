@@ -1,13 +1,14 @@
 <script lang="ts">
   import Logo from '../atoms/Logo.svelte'
-  import HeaderHeading from '../atoms/HeaderHeading.svelte'
   import Navigation from '../molecules/Navigation.svelte'
   import ThemeChooser from '../atoms/ThemeChooser.svelte'
   import { headerSettings } from '$lib/stores/header'
+  import { raf } from '$lib/actions/requestAnimationFrame'
 
   export let heading = ''
-  let scrollY: number
+  let scrolled = false
   let innerHeight: number
+
 </script>
 
 <style lang="scss">
@@ -46,18 +47,36 @@
       align-items: center;
     }
   }
+
+  h1 {
+    font-weight: bold;
+    font-size: var(--step-0);
+    font-family: var(--font-heading);
+    white-space: nowrap;
+  }
+
 </style>
 
-<svelte:window bind:scrollY bind:innerHeight />
+<svelte:window bind:innerHeight />
 
 <header
+  use:raf={{
+    animate: true,
+    cb: () => {
+      if (window.pageYOffset > innerHeight / 10) {
+        scrolled = true
+        return
+      }
+      scrolled = false
+    },
+  }}
   class:transparent={$headerSettings.transparent}
   class:compact={$headerSettings.compact}
-  class:scrolled={scrollY > innerHeight / 10}
+  class:scrolled
 >
   <div>
     <Logo />
-    <HeaderHeading>{heading}</HeaderHeading>
+    <h1>{heading}</h1>
   </div>
   <div>
     <Navigation />

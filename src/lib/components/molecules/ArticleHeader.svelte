@@ -1,5 +1,6 @@
 <script lang="ts">
   import observer from '$lib/actions/intersectionObserver'
+  import { raf } from '$lib/actions/requestAnimationFrame'
   import { createRangeFromDomain } from '$lib/utils/numberRange'
   import { splitTextIntoWords } from '$lib/utils/textSplitters'
   import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
@@ -12,24 +13,15 @@
   export let src: string
   export let link: ProjectMetadata['link']
 
-  let scrollY: number
   let innerHeight: number
   let inView = false
+  let img: HTMLImageElement
+  let scroll: number
 
-  $: bgScale = createRangeFromDomain({
-    rangeMin: 0,
-    rangeMax: 0.8,
+  $: scrollScale = createRangeFromDomain({
+    rangeMax: 1,
     domainMax: innerHeight,
   })
-
-  $: zoomScale = createRangeFromDomain({
-    rangeMin: 1,
-    rangeMax: 1.1,
-    domainMax: innerHeight,
-  })
-
-  $: scrollPercentage = inView ? bgScale(scrollY) : 0
-  $: zoomPercentage = inView ? zoomScale(scrollY) : 1.1
 
 </script>
 
@@ -47,43 +39,12 @@
     grid-template-rows: 1fr 1fr 1fr;
     align-items: center;
 
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    &:before {
-      z-index: -1;
-      box-shadow: inset 0 0 25vmax var(--secondary);
-      opacity: calc(1 * var(--scroll));
-      animation: opacity 0.4s var(--easing);
-
-      @keyframes opacity {
-        from {
-          opacity: 1;
-        }
-        to {
-          opacity: 0;
-        }
-      }
-    }
-
-    &:after {
-      z-index: -2;
-      background: #11181cbb;
-      opacity: var(--scroll);
-    }
-
     div {
       grid-row: 2;
       grid-column: 1 / span 2;
       max-width: 60rem;
       justify-self: center;
+      transform: translateZ(0);
 
       > p {
         text-align: center;
@@ -158,17 +119,23 @@
     z-index: -2;
     object-fit: cover;
     object-position: center center;
-    transform: scale(var(--zoom), var(--zoom));
+    transform: scale3d(
+        calc(1 + 0.1 * var(--scroll)),
+        calc(1 + 0.1 * var(--scroll)),
+        calc(1 + 0.1 * var(--scroll))
+      )
+      translate3d(0, 0, 0);
     animation: zoom-in 0.4s var(--easing);
-    opacity: 0.4;
+    opacity: calc((1 - var(--scroll)) * 0.4);
+    will-change: transform, opacity;
 
     @keyframes zoom-in {
       from {
-        transform: scale(0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
         opacity: 0;
       }
       to {
-        transform: scale(1, 1);
+        transform: scale3d(1, 1, 1);
         opacity: 0.4;
       }
     }
@@ -176,11 +143,16 @@
 
 </style>
 
-<svelte:window bind:scrollY bind:innerHeight />
+<svelte:window bind:innerHeight />
 
 <header
-  style="--scroll: {scrollPercentage}"
-  use:observer={bool => (inView = bool)}
+  use:raf={{
+    animate: inView,
+    cb: () => {
+      scroll = scrollScale(window.pageYOffset)
+    },
+  }}
+  use:observer={bool => (inView !== bool ? (inView = bool) : null)}
 >
   <div>
     <AnimatingHeading aria-label="Titel" animate delay content={title} />
@@ -196,8 +168,14 @@
       href={link[1]}
       rel="external noopener noreferrer"
     >
-      Open {link[0]}
+      Open {link[0] || 'website'}
     </Link>
   </p>
-  <img {src} aria-hidden="true" alt="" style="--zoom: {zoomPercentage}" />
+  <img
+    style="--scroll: {scroll};"
+    bind:this={img}
+    {src}
+    aria-hidden="true"
+    alt=""
+  />
 </header>

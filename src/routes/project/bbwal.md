@@ -14,12 +14,10 @@ diepgaande geschiedenis. De Blauwburgwal is op 11 mei 1940 zwaar getroffen
 door een bombardement, die de een groot deel van de straat in puin
 achterliet, en 44 mensen het leven kostte.
 
-In deze data story vertellen Rosa Voogd en ik een paar van de verhalen die
-zijn verzameld over het bombardement en deze samengehangen met hoe de wal er
-nu uitziet. Dit biedt een groot contrast, en brengt de verhalen nog meer
-diepgang dan ze al hadden.
+Voor deze story zijn een aantal verhalen van het bombardement samengevoegd
+met de huidige (herfst 2020) staat van de wal. Je zou niet zeggen dat de wal
+zo'n diepgaande geschiedenis heeft. Het was zeker een eye-opener voor mij.
 
-De verhalen komen uit een boekje van Fred Geukes Foppen, die alle verhalen
+De story is ontwikkeld samen met [Rosa Voogd](https://rosavoogd.nl). De verhalen komen uit een boekje van Fred Geukes Foppen, die alle verhalen
 van de mensen betrokken bij het bombardement heeft verzameld en
-samengevoegd. Grote dank aan de heer Geukes Foppen voor zijn werk. Het heeft
-ons heel erg geholpen met het concept.
+samengevoegd. Grote dank aan de heer Geukes Foppen voor zijn werk.

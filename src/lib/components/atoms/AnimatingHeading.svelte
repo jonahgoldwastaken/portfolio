@@ -25,7 +25,7 @@
     }
 
     &.animate :global {
-      @for $i from 1 through 100 {
+      @for $i from 1 through 50 {
         .ch-#{$i} {
           animation: slide-in 0.4s #{($i - 1) / 120}s var(--easing) forwards;
         }
@@ -36,7 +36,7 @@
     }
 
     &.animate.delay :global {
-      @for $i from 1 through 100 {
+      @for $i from 1 through 50 {
         .ch-#{$i} {
           animation-delay: #{0.4 + (($i - 1) / 120)}s;
         }

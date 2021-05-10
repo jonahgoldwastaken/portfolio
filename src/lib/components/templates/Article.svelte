@@ -1,8 +1,12 @@
+<script context="module">
+  import a from '../atoms/Link.svelte'
+  export { a }
+
+</script>
+
 <script lang="ts">
   import { headerSettings } from '$lib/stores/header'
-
   import { onMount } from 'svelte'
-
   import ArticleHeader from '../molecules/ArticleHeader.svelte'
 
   export let title = ''
@@ -63,7 +67,7 @@
     margin-top: var(--base-space);
   }
 
-  :global(a) {
+  main :global(a) {
     font-weight: 500;
   }
 
