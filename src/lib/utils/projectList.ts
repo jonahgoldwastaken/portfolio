@@ -1,7 +1,7 @@
 export async function fetchProjects() {
-  const modules = Object.entries(import.meta.glob('../../routes/project/*.md'))
+  const modules = Object.values(import.meta.glob('../../routes/project/*.md'))
   const projects: ProjectMetadata[] = await Promise.all(
-    modules.map(([_, project]) =>
+    modules.map(project =>
       project().then(({ metadata }: { metadata: ProjectMetadata }) => metadata)
     )
   )
