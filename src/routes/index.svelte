@@ -6,8 +6,9 @@
     const projects = (await fetchProjects()).filter(
       project =>
         project.slug === 'triptop' ||
-        project.slug === 'cube' ||
-        project.slug === 'empower'
+        project.slug === 'empower' ||
+        project.slug === 'bbwal' ||
+        project.slug === 'cube'
     )
     return {
       props: {
@@ -27,8 +28,11 @@
 </script>
 
 <style lang="scss">
-  section :global(li:last-child a) {
-    margin-top: var(--base-space);
+  @media screen and (min-width: 120rem) {
+    section :global(li:last-child) {
+      grid-column: 3;
+      margin-top: -20rem;
+    }
   }
 </style>
 
