@@ -18,7 +18,6 @@
 </script>
 
 <script lang="ts">
-  import Button from '$lib/components/atoms/Button.svelte'
   import ProjectListCTA from '$lib/components/molecules/ProjectListCTA.svelte'
   import AboutSection from '$lib/components/organisms/AboutSection.svelte'
   import Hero from '$lib/components/organisms/Hero.svelte'
