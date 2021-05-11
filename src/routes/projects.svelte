@@ -1,6 +1,6 @@
 <script context="module">
-  import type { Load } from '@sveltejs/kit'
   import { fetchProjects } from '$lib/utils/projectList'
+  import type { Load } from '@sveltejs/kit'
 
   export const load: Load = async function ({}) {
     const projects = await fetchProjects()
@@ -13,8 +13,8 @@
 </script>
 
 <script>
-  import ProjectList from '$lib/components/organisms/ProjectList.svelte'
   import AnimatingHeading from '$lib/components/atoms/AnimatingHeading.svelte'
+  import ProjectList from '$lib/components/organisms/ProjectList.svelte'
 
   export let projects: ProjectMetadata[]
 </script>

@@ -2,7 +2,6 @@
   import observer from '$lib/actions/intersectionObserver'
   import { raf } from '$lib/actions/requestAnimationFrame'
   import { createRangeFromDomain } from '$lib/utils/numberRange'
-  import { splitTextIntoWords } from '$lib/utils/textSplitters'
   import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
   import AnimatingSubheading from '../atoms/AnimatingSubheading.svelte'
   import Image from '../atoms/Image.svelte'

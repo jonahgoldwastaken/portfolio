@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Logo from '../atoms/Logo.svelte'
-  import Navigation from '../molecules/Navigation.svelte'
-  import ThemeChooser from '../atoms/ThemeChooser.svelte'
   import { page } from '$app/stores'
+  import Logo from '../atoms/Logo.svelte'
+  import ThemeChooser from '../atoms/ThemeChooser.svelte'
+  import Navigation from '../molecules/Navigation.svelte'
 
   export let heading = ''
   let innerHeight: number

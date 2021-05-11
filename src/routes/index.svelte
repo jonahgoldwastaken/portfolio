@@ -1,6 +1,6 @@
 <script context="module">
-  import type { Load } from '@sveltejs/kit'
   import { fetchProjects } from '$lib/utils/projectList'
+  import type { Load } from '@sveltejs/kit'
 
   export const load: Load = async function ({}) {
     const projects = (await fetchProjects()).filter(

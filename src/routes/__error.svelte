@@ -7,21 +7,11 @@
       },
     }
   }
-
 </script>
 
 <script lang="ts">
-  import { setContext } from 'svelte'
-
   export let status: number
   export let error: any
-
-  setContext('header', {
-    compact: false,
-    transparent: false,
-    padding: true,
-  })
-
 </script>
 
 <svelte:head>
