@@ -9,7 +9,9 @@ client: CMD Real-Tim Web
 link: [de app, https://devex.jonahgold.dev]
 ---
 
-import Image from '$lib/components/atoms/Image.svelte'
+<script>
+  import Image from '$lib/components/atoms/Image.svelte'
+</script>
 
 DevEx is een live-streaming platform voor developers die hun code-sessies willen delen met de wereld. Het is dé live-streaming platform voor programmeurs.
 
