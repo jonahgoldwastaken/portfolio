@@ -1,8 +1,8 @@
 <script lang="ts">
+  import '../app.scss'
   import { page } from '$app/stores'
   import Footer from '$lib/components/organisms/Footer.svelte'
   import Header from '$lib/components/organisms/Header.svelte'
-  import '../app.scss'
 
   export let heading = 'Jonah Meijers'
 

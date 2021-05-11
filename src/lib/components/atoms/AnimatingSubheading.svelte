@@ -19,8 +19,11 @@
     text-align: var(--alignment, center);
 
     :global {
+      [class*='w'],
       [class*='ch'] {
         display: inline-block;
+      }
+      [class*='ch'] {
         opacity: 0;
       }
     }
@@ -55,7 +58,6 @@
 
 {#if !observe}
   <p class:delay class:animate on:animationend {...$$restProps}>
-    <slot />
     {#if animationType === 'letters'}
       {@html splitTextIntoLetters(content)}
     {:else}
@@ -70,7 +72,6 @@
     on:animationend
     {...$$restProps}
   >
-    <slot />
     {#if animationType === 'letters'}
       {@html splitTextIntoLetters(content)}
     {:else}
