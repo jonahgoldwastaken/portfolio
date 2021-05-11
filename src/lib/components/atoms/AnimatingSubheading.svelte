@@ -14,13 +14,11 @@
 </script>
 
 <style lang="scss">
-  h1 {
+  p {
+    font-weight: bold;
     text-align: var(--alignment, center);
 
     :global {
-      [class*='w'] {
-        display: inline-block;
-      }
       [class*='ch'] {
         display: inline-block;
         opacity: 0;
@@ -28,9 +26,15 @@
     }
 
     &.animate :global {
-      @for $i from 1 through 50 {
+      @for $i from 1 through 100 {
         .ch-#{$i} {
-          animation: slide-in 0.4s #{($i - 1) / 120}s var(--easing) forwards;
+          animation: slide-in
+            0.4s
+            #{($i - 1) /
+            120 +
+            0.2}s
+            var(--easing)
+            forwards;
 
           @media (prefers-reduced-motion: reduce) {
             animation-name: fade-in;
@@ -40,9 +44,9 @@
     }
 
     &.animate.delay :global {
-      @for $i from 1 through 50 {
+      @for $i from 1 through 100 {
         .ch-#{$i} {
-          animation-delay: #{0.4 + (($i - 1) / 120)}s;
+          animation-delay: #{0.4 + (($i - 1) / 120) + 0.2}s;
         }
       }
     }
@@ -50,16 +54,16 @@
 </style>
 
 {#if !observe}
-  <h1 class:delay class:animate on:animationend {...$$restProps}>
+  <p class:delay class:animate on:animationend {...$$restProps}>
     <slot />
     {#if animationType === 'letters'}
       {@html splitTextIntoLetters(content)}
     {:else}
       {@html splitTextIntoWords(content)}
     {/if}
-  </h1>
+  </p>
 {:else}
-  <h1
+  <p
     use:observer={(bool, amnt) =>
       canAnimate === false && amnt >= 0.75 ? (canAnimate = bool) : null}
     class:animate={canAnimate}
@@ -72,5 +76,5 @@
     {:else}
       {@html splitTextIntoWords(content)}
     {/if}
-  </h1>
+  </p>
 {/if}

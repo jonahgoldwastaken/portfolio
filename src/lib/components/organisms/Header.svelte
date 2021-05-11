@@ -40,7 +40,7 @@
 
   h1 {
     font-weight: bold;
-    font-size: var(--step-0);
+    font-size: var(--step-1);
     font-family: var(--font-heading);
     white-space: nowrap;
   }

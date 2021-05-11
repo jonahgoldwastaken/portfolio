@@ -2,6 +2,7 @@
   import { page } from '$app/stores'
 
   export let href: string
+  export let noGradient = false
 
   $: active = $page.path === href
 </script>
@@ -16,9 +17,9 @@
     font-weight: var(--weight, 700);
   }
 
-  a:hover,
-  a:focus,
-  a.active {
+  a:hover:not(.no-gradient),
+  a:focus:not(.no-gradient),
+  a.active:not(.no-gradient) {
     background: linear-gradient(
       to right,
       var(--color-dark),
@@ -27,6 +28,12 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  a:hover.no-gradient,
+  a:focus.no-gradient,
+  a.active.no-gradient {
+    color: var(--color-dark);
   }
 
   a:before {
@@ -54,6 +61,7 @@
 
 <a
   class:active
+  class:no-gradient={noGradient}
   target={!href.startsWith('/') ? '_blank' : ''}
   rel={!href.startsWith('/') ? 'noopener noreferrer external' : ''}
   {href}

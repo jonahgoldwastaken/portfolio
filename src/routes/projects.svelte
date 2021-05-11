@@ -14,6 +14,7 @@
 
 <script>
   import ProjectList from '$lib/components/organisms/ProjectList.svelte'
+  import AnimatingHeading from '$lib/components/atoms/AnimatingHeading.svelte'
 
   export let projects: ProjectMetadata[]
 </script>
@@ -26,4 +27,7 @@
   />
 </svelte:head>
 
-<ProjectList {projects} animate="both" />
+<main>
+  <AnimatingHeading --alignment="left" animate content={'Projecten'} />
+  <ProjectList {projects} animate="both" />
+</main>

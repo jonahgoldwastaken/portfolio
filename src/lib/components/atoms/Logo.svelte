@@ -1,7 +1,11 @@
 <style lang="scss">
   svg {
-    height: var(--quadruple-space);
+    height: var(--threefold-space);
     margin-right: var(--base-space);
+
+    @media screen and (min-width: 60rem) {
+      margin-right: var(--base-space);
+    }
 
     &:hover g g polygon {
       animation: egg 1s var(--easing);
@@ -29,8 +33,6 @@
 </style>
 
 <svg
-  width="58px"
-  height="69px"
   viewBox="0 0 58 69"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"

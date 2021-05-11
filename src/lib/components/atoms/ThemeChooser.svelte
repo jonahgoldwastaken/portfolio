@@ -1,32 +1,20 @@
 <script lang="ts">
-  import { browser } from '$app/env'
-  import { onMount } from 'svelte'
+  import { afterUpdate, onMount, tick } from 'svelte'
 
   let js = false
+  let theme: 'blue' | 'orange' = 'orange'
 
-  let light =
-    browser && document.body.classList.contains('blue')
-      ? 'var(--yellow)'
-      : 'var(--light-blue)'
-  let dark =
-    browser && document.body.classList.contains('blue')
-      ? 'var(--orange)'
-      : 'var(--blue)'
-
-  function changThemeColour() {
-    if (!browser) return
-    document.body.classList.toggle('blue')
-    if (document.body.classList.contains('blue')) {
-      light = 'var(--yellow)'
-      dark = 'var(--orange)'
-      return
-    }
-    light = 'var(--light-blue)'
-    dark = 'var(--blue)'
-  }
-
-  onMount(() => {
+  onMount(async () => {
+    const lsTheme = localStorage.getItem('theme') as 'blue' | 'orange'
+    if (lsTheme) theme = lsTheme
+    await tick()
     js = true
+  })
+
+  afterUpdate(() => {
+    localStorage.setItem('theme', theme)
+    if (theme === 'blue') return document.body.classList.add('blue')
+    document.body.classList.remove('blue')
   })
 </script>
 
@@ -43,7 +31,7 @@
     background: linear-gradient(to bottom left, var(--light), var(--dark));
     margin-left: var(--base-space);
     cursor: pointer;
-    transition: transform 0.1s var(--easing);
+    transition: var(--interaction-transition);
 
     &:hover {
       transform: translateY(-2px);
@@ -61,8 +49,27 @@
   }
 </style>
 
+<svelte:head>
+  <link
+    rel="mask-icon"
+    href="/logo-simple.svg"
+    color={theme === 'orange' ? '#0074b3' : '#e07f00'}
+  />
+  <meta
+    name="theme-color"
+    content={theme === 'orange' ? '#0074b3' : '#e07f00'}
+  />
+</svelte:head>
+
 {#if js}
-  <button on:click={changThemeColour} style="--light: {light}; --dark: {dark};"
-    >Change theme</button
+  <button
+    on:click={() => {
+      theme = theme === 'orange' ? 'blue' : 'orange'
+    }}
+    style="--light: {theme === 'blue'
+      ? 'var(--yellow)'
+      : 'var(--light-blue)'}; --dark: {theme === 'blue'
+      ? 'var(--orange)'
+      : 'var(--blue)'}">Change theme</button
   >
 {/if}

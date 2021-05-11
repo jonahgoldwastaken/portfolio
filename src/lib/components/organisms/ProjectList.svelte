@@ -1,12 +1,11 @@
 <script lang="ts">
-  import ProjectTile from '../molecules/ProjectTile.svelte'
-  import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
   import Image from '../atoms/Image.svelte'
-  import Link from '../atoms/Link.svelte'
+  import ProjectListCTA from '../molecules/ProjectListCTA.svelte'
+  import ProjectTile from '../molecules/ProjectTile.svelte'
 
   export let projects: ProjectMetadata[]
   export let animate: 'heading' | 'list' | 'both'
-  let animateHeading = false
+  export let limit: number
 </script>
 
 <style lang="scss">
@@ -14,40 +13,55 @@
     list-style: none;
     margin: var(--base-space) auto;
   }
+
+  li {
+    display: block;
+    width: 100%;
+    height: min-content;
+    min-height: 20rem;
+    margin: 0 0 var(--base-space);
+
+    @media screen and (min-width: 60rem) {
+      & > :global(*:only-child) {
+        width: calc(50% - var(--base-space));
+      }
+
+      &:nth-child(even) > :global(*:only-child) {
+        margin-left: auto;
+      }
+
+      &:not(:first-child) {
+        margin-top: -20rem;
+      }
+    }
+  }
 </style>
 
-<section>
-  {#if animate === 'both' || animate === 'heading'}
-    <AnimatingHeading
-      --alignment="left"
-      observe
-      animate={animateHeading}
-      content={'Projecten'}
-    />
-  {:else}
-    <h1>Projecten</h1>
-  {/if}
-  <ol>
-    {#each projects as project, i (project.title + i)}
+<ol>
+  {#each projects.slice(0, limit > 0 ? limit : projects.length) as project, i (project.title + i)}
+    <li>
       <ProjectTile
         animate={animate === 'list' || animate === 'both'}
         href="/project/{project.slug}"
       >
         <Image slot="image" src={project.image} --fit="cover" />
         <svelte:fragment slot="title">{project.title}</svelte:fragment>
-        <svelte:fragment slot="description"
-          >{project.description}</svelte:fragment
-        >
+        <svelte:fragment slot="description">
+          {project.description}
+        </svelte:fragment>
       </ProjectTile>
-    {/each}
-    <ProjectTile animate={animate === 'list' || animate === 'both'}>
-      <svelte:fragment slot="title"
-        >There's always room for more!</svelte:fragment
-      >
-      <svelte:fragment slot="description">
-        Stuur een <Link href="mailto:jonahmeijers97@gmail.com">mailtje</Link>.
-        Misschien kunnen we wat voor elkaar beteken. :&#41;
-      </svelte:fragment>
-    </ProjectTile>
-  </ol>
-</section>
+    </li>
+  {/each}
+  <li>
+    <slot name="cta">
+      <ProjectListCTA animate={animate === 'list' || animate === 'both'}>
+        <svelte:fragment slot="heading">
+          Wil jij als stagebedrijf hiertussen staan?
+        </svelte:fragment>
+        <svelte:fragment slot="button">
+          Neem dan vooral contact op!
+        </svelte:fragment>
+      </ProjectListCTA>
+    </slot>
+  </li>
+</ol>

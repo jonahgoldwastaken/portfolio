@@ -9,13 +9,17 @@
     width: 100%;
     position: relative;
     grid-column: 1;
-    animation: slide-in 0.5s 0.4s var(--easing) forwards;
+    animation: slide-in-subtle 0.5s 0.4s var(--easing) forwards;
     opacity: 0;
     cursor: help;
 
     @media screen and (min-width: 60rem) {
       grid-column: 2;
       grid-row: 1 / span 2;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation-name: fade-in;
     }
 
     &:after {

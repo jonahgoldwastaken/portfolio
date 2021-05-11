@@ -30,9 +30,9 @@
             "type": "image/png"
         },
         {
-            "src": "/logo-simple.svg",
-            "sizes": "58x69",
-            "type": "image/svg+xml",
+            "src": "/maskable-icon.png",
+            "sizes": "1024x1024",
+            "type": "image/png",
             "purpose": "maskable"
         }
     ]

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { splitTextIntoWords } from '$lib/utils/textSplitters'
   import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
+  import AnimatingSubheading from '../atoms/AnimatingSubheading.svelte'
   import HeroImage from '../molecules/ProfilePicture.svelte'
 
   let easterEgg = false
@@ -19,31 +20,10 @@
     @media screen and (min-width: 60rem) {
       grid-template-columns: 2fr 1fr;
     }
-
-    :global(*) {
-      text-align: center;
-    }
   }
 
-  section :global(h1),
-  p {
+  section :global(h1, p) {
     grid-column: 1;
-  }
-
-  p {
-    font-weight: bold;
-
-    :global {
-      [class*='ch'] {
-        opacity: 0;
-        display: inline-block;
-      }
-      @for $i from 1 through 37 {
-        span:nth-child(#{$i}) {
-          animation: slide-in 0.4s #{$i / 80 + 0.6}s ease forwards;
-        }
-      }
-    }
   }
 </style>
 
@@ -56,10 +36,11 @@
       ? 'Jonah poept soms op **tulpen**...'
       : 'Jonah bouwt producten voor **mensen**.'}
   />
-  <p>
-    {@html splitTextIntoWords(
-      'Hij is een Interaction Designer en Developer van gefocuste concepten met een specifiek doel.'
-    )}
-  </p>
+  <AnimatingSubheading
+    animate
+    delay
+    animationType="words"
+    content="Hij ontwerpt en bouwt doelgerichte websites en applicaties, en is op zoek naar een stage!"
+  />
   <HeroImage bind:easterEgg />
 </section>

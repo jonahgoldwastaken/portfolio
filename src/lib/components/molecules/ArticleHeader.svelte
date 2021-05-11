@@ -4,6 +4,7 @@
   import { createRangeFromDomain } from '$lib/utils/numberRange'
   import { splitTextIntoWords } from '$lib/utils/textSplitters'
   import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
+  import AnimatingSubheading from '../atoms/AnimatingSubheading.svelte'
   import Image from '../atoms/Image.svelte'
   import Link from '../atoms/Link.svelte'
 
@@ -44,37 +45,27 @@
       max-width: 60rem;
       justify-self: center;
       transform: translateZ(0);
-
-      > p {
-        text-align: center;
-        font-weight: 700;
-
-        :global([class*='ch']) {
-          opacity: 0;
-          display: inline-block;
-        }
-
-        :global {
-          @for $i from 1 through 37 {
-            span:nth-child(#{$i}) {
-              animation: slide-in 0.4s #{$i / 80 + 0.6}s ease forwards;
-            }
-          }
-        }
-      }
     }
   }
 
-  p {
+  p,
+  div :global(p) {
     margin: var(--half-space) 0 0;
     font-family: var(--font-heading);
     font-size: var(--step-0);
     color: var(--primary);
+  }
+
+  p {
     font-weight: 500;
 
     header > & {
       opacity: 0;
       animation: swipe-in 0.4s var(--easing) forwards;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation-name: fade-in;
+      }
 
       @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
@@ -125,6 +116,20 @@
     opacity: calc((1 - var(--scroll, 0)) * 0.4);
     will-change: transform, opacity;
 
+    @media (prefers-reduced-motion: reduce) {
+      animation-name: image-fade-in;
+      transform: none;
+    }
+
+    @keyframes image-fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.4;
+      }
+    }
+
     @keyframes zoom-in {
       from {
         transform: scale3d(0.9, 0.9, 0.9);
@@ -151,7 +156,13 @@
 >
   <div>
     <AnimatingHeading aria-label="Titel" animate delay content={title} />
-    <p aria-label="Beschrijving">{@html splitTextIntoWords(description)}</p>
+    <AnimatingSubheading
+      aria-label="Beschrijving"
+      animate
+      delay
+      animationType="words"
+      content={description}
+    />
   </div>
   <p>
     {client} • <time datetime={`${year}`}>{year}</time>
