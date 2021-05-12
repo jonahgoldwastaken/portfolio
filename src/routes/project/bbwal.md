@@ -1,6 +1,6 @@
 ---
 index: 3
-title: De Blauwburgwal - toen en nu
+title: De Blauwburgwal
 slug: bbwal
 description: Een visualisatie die een vergeten bombardement aan het licht brengt.
 image: /dataweek.png

@@ -8,7 +8,8 @@
         project.slug === 'triptop' ||
         project.slug === 'empower' ||
         project.slug === 'bbwal' ||
-        project.slug === 'cube'
+        project.slug === 'cube' ||
+        project.slug === 'devex'
     )
     return {
       props: {
