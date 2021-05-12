@@ -29,7 +29,6 @@
 <section>
   <AnimatingHeading
     animate
-    delay
     animationType="words"
     content={easterEgg
       ? 'Jonah poept soms op **tulpen**...'
@@ -37,7 +36,6 @@
   />
   <AnimatingSubheading
     animate
-    delay
     animationType="words"
     content="Hij ontwerpt en bouwt doelgerichte websites en applicaties, en is op zoek naar een stage!"
   />
