@@ -53,11 +53,11 @@
   <link
     rel="mask-icon"
     href="/logo-simple.svg"
-    color={theme === 'orange' ? '#0074b3' : '#e07f00'}
+    color={theme === 'orange' ? '#e07f00' : '#0074b3'}
   />
   <meta
     name="theme-color"
-    content={theme === 'orange' ? '#0074b3' : '#e07f00'}
+    content={theme === 'orange' ? '#e07f00' : '#0074b3'}
   />
 </svelte:head>
 
