@@ -33,17 +33,30 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(self.clients.claim)
   e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
-        keys
-          .filter(key => key !== buildCache)
-          .filter(key => key !== pageHtmlCache)
-          .filter(key => key !== assetsCache)
-          .map(caches.delete.bind(caches))
+    caches
+      .keys()
+      .then(keys =>
+        Promise.all(
+          keys
+            .filter(key => key !== buildCache)
+            .filter(key => key !== pageHtmlCache)
+            .filter(key => key !== assetsCache)
+            .map(caches.delete.bind(caches))
+        )
       )
-        .catch(console.error)
-        .finally(self.skipWaiting.bind(self))
-    )
+      .then(() => caches.open(assetsCache))
+      .then(cache =>
+        cache
+          .keys()
+          .then(keys =>
+            keys
+              .map(key => new URL(key.url))
+              .filter(url => !files.includes(url.pathname))
+          )
+          .then(urls => urls.map(url => cache.delete(url.toString())))
+      )
+      .catch(console.error)
+      .finally(self.skipWaiting.bind(self))
   )
 })
 
