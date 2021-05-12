@@ -38,6 +38,10 @@
     grid-template-rows: 1fr 1fr 1fr;
     align-items: center;
 
+    :global(h1) {
+      font-size: var(--step-5);
+    }
+
     div {
       grid-row: 2;
       grid-column: 1 / span 2;
@@ -51,12 +55,13 @@
   div :global(p) {
     margin: var(--half-space) 0 0;
     font-family: var(--font-heading);
-    font-size: var(--step-0);
     color: var(--primary);
+    font-size: var(--step-1);
   }
 
   p {
     font-weight: 500;
+    font-size: var(--step-0);
 
     header > & {
       opacity: 0;
@@ -103,7 +108,7 @@
     }
   }
 
-  header :global(img) {
+  header :global(figure) {
     z-index: -2;
     transform: scale3d(
         calc(1 + 0.1 * var(--scroll, 0)),

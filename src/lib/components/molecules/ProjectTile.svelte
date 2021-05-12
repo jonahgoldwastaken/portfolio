@@ -1,9 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import observer from '../../actions/intersectionObserver'
+  import Image from '../atoms/Image.svelte'
 
   export let animate = false
   export let href: string
+  export let image: string
   let slide = false
   let js = false
 
@@ -14,17 +16,25 @@
 
 <style lang="scss">
   article {
-    height: 40rem;
     color: var(--primary);
     transition: var(--interaction-transition);
+    height: clamp(30rem, 30vh, 40rem);
+    background: var(--black);
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    display: grid;
+    border-radius: 12px;
 
-    &:hover,
-    &:focus {
-      transform: translateY(-2px);
+    > :global(*) {
+      position: relative;
+      grid-row: 1;
+      grid-column: 1;
+      min-height: 0;
     }
 
     &.animate {
-      pointer-events: none;
       visibility: hidden;
     }
 
@@ -36,55 +46,91 @@
         animation-name: fade-in;
       }
     }
-  }
 
-  a {
-    all: unset;
-    display: block;
-    color: var(--primary);
-    width: 100%;
-    height: 100%;
-    position: relative;
-    pointer-events: all;
+    h2,
+    p,
+    span {
+      transition: transform 0.2s var(--easing), opacity 0.2s var(--easing);
+    }
 
-    &:before {
-      background: none;
+    h2,
+    p {
+      transform: scale(1);
+      opacity: 1;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    h2 {
+      --font-size: var(--step-4);
+    }
+
+    a {
+      display: block;
+      color: var(--primary);
+      text-decoration: none;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      z-index: 1;
+
+      span {
+        opacity: 0;
+        transform: translateY(10%) rotateX(-45deg) translateZ(0);
+        font-size: var(--step-0);
+        font-weight: 500;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to right, var(--primary), var(--primary))
+            no-repeat bottom left/0 1px;
+          transition: background-size 0.2s 0.1s var(--easing);
+        }
+      }
+    }
+
+    :global(figure) {
+      z-index: -1;
+      transition: transform 0.2s var(--easing);
+      opacity: 0.4;
+      --fit: cover;
+      --position: center center;
     }
 
     &:hover,
     &:focus {
-      background-clip: initial;
-      -webkit-background-clip: initial;
-      -webkit-text-fill-color: initial;
-      color: var(--primary);
+      h2,
+      p {
+        transform: translateY(-10%) rotateX(-45deg);
+        opacity: 0;
+      }
 
-      h2 {
-        background-size: 100% 2px;
+      :global(figure) {
+        transform: scale(1.1) translateZ(0);
+      }
+
+      a span {
+        transform: translateY(0) rotateX(0deg) translateZ(0);
+        opacity: 1;
+
+        &:before {
+          background-size: 100% 2px;
+        }
       }
     }
   }
 
   div {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    display: grid;
+    place-items: center;
+    place-content: center;
     padding: var(--base-space);
-    background: linear-gradient(
-      to top right,
-      var(--color-dark),
-      var(--color-light)
-    );
-    width: 100%;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-  }
-
-  h2 {
-    --font-size: var(--step-1);
-    width: max-content;
-    background: linear-gradient(var(--primary), var(--primary)) no-repeat 0%
-      100%/0% 2px;
-    transition: 0.2s var(--easing);
+    transform: translateZ(0);
   }
 </style>
 
@@ -94,13 +140,10 @@
   class:slide={!js || (animate && slide)}
   class:animate
 >
-  <a {href}>
-    <slot name="image" />
-    <div>
-      <h2>
-        <slot name="title" />
-      </h2>
-      <p><slot name="description" /></p>
-    </div>
-  </a>
+  <Image src={image} />
+  <div>
+    <h2><slot name="title" /></h2>
+    <p><slot name="description" /></p>
+  </div>
+  <a {href}><span>Bekijk project</span></a>
 </article>

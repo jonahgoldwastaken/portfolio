@@ -43,20 +43,16 @@
 
   main > :global(:not(img)) {
     max-width: 60rem;
+    width: 100%;
   }
 
-  main :global(p) {
-    line-height: 1.5em;
-    font-size: var(--step-0);
-    margin: 0;
-  }
-
-  main :global(p + p) {
+  main > :global(*:not(:first-child)) {
     margin-top: var(--base-space);
   }
 
-  main :global(a) {
-    font-weight: 500;
+  main :global(ul),
+  main :global(ol) {
+    padding: initial;
   }
 </style>
 

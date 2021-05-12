@@ -15,14 +15,21 @@
 </script>
 
 <style lang="scss">
-  img {
+  figure {
     display: block;
-    object-fit: var(--fit, initial);
-    object-position: var(--position, initial);
+    margin: 0;
 
-    &:not(.full-width):not(.banner) {
+    &:not(.full-width):not(.banner) img {
       border-radius: 12px;
     }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: var(--fit, initial);
+    object-position: var(--position, initial);
   }
 
   .full-width {
@@ -36,28 +43,25 @@
   }
 
   .banner {
-    --fit: cover;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+
+    img {
+      --fit: cover;
+    }
   }
 
   .inline,
   .caption {
     max-width: 60rem;
-    margin: 0 auto;
   }
 
   .basic {
     width: 100%;
     height: 100%;
-  }
-
-  figure {
-    max-width: 60rem;
-    margin: 0 auto;
   }
 
   figcaption {
@@ -66,13 +70,11 @@
   }
 </style>
 
-{#if format === 'caption'}
-  <figure>
-    <img class={format} {src} {alt} aria-hidden={!alt} />
+<figure class={format}>
+  <img {src} {alt} aria-hidden={!alt} />
+  {#if format === 'caption'}
     <figcaption>
       {caption ?? ''}
     </figcaption>
-  </figure>
-{:else}
-  <img class={format} {src} {alt} aria-hidden={!alt} />
-{/if}
+  {/if}
+</figure>
