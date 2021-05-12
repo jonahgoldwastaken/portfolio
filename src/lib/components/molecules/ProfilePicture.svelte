@@ -9,7 +9,7 @@
     width: 100%;
     position: relative;
     grid-column: 1;
-    animation: slide-in-subtle 0.5s 0.4s var(--easing) forwards;
+    animation: slide-in-subtle 0.5s var(--easing) forwards;
     opacity: 0;
     cursor: help;
 
