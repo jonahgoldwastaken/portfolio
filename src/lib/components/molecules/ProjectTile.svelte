@@ -63,6 +63,7 @@
 
     h2 {
       --font-size: var(--step-4);
+      margin-bottom: var(--quarter-space);
     }
 
     a {
@@ -77,7 +78,7 @@
       span {
         opacity: 0;
         transform: translateY(10%) rotateX(-45deg) translateZ(0);
-        font-size: var(--step-0);
+        font-size: var(--step-1);
         font-weight: 500;
 
         &:before {
