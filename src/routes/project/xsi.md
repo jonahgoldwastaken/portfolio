@@ -2,7 +2,7 @@
 index: 1
 title: Extreme Space Invaders
 slug: xsi
-description: Met 4 weken aan JavaScript kennis heb ik de klassieke Space Invaders nagemaakt.
+description: Een Space Invaders kloon gemaakt met 4 weken JS kennis.
 image: /xpi.png
 client: CMD Inleiding Programmeren
 year: 2017

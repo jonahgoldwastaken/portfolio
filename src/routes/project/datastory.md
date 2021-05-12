@@ -1,12 +1,12 @@
 ---
 index: 2
-title: Interactieve data story
+title: Representatie in parkeerplekken
 slug: datastory
-description: Een data story over de representatie van doelgroepen in parkeergelegenheden.
+description: Is er genoeg plek om bij jouw favoriete plek te parkeren?
 image: /datastory.png
 client: CMD Tech Track
 year: 2020
-link: [project, https://fa.jonahgold.dev]
+link: [visualisatie, https://fa.jonahgold.dev]
 ---
 
 De Volkskrant heeft de Tech Track de opdracht gegeven om met data van het

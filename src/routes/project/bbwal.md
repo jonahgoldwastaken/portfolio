@@ -2,7 +2,7 @@
 index: 3
 title: De Blauwburgwal
 slug: bbwal
-description: Een visualisatie die een vergeten bombardement aan het licht brengt.
+description: Een vergeten bombardement aan het licht gebracht.
 image: /dataweek.png
 year: 2020
 client: CMD Dataweek

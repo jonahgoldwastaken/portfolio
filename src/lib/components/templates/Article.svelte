@@ -52,7 +52,7 @@
 
   main :global(ul),
   main :global(ol) {
-    padding: initial;
+    padding-left: 1.5em;
   }
 </style>
 
