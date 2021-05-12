@@ -30,10 +30,18 @@
     -webkit-text-fill-color: transparent;
   }
 
+  .no-gradient:before {
+    background-image: linear-gradient(
+      to right,
+      var(--hover-color, var(--color-dark)),
+      var(--hover-color, var(--color-light))
+    );
+  }
+
   a:hover.no-gradient,
   a:focus.no-gradient,
   a.active.no-gradient {
-    color: var(--color-dark);
+    color: var(--hover-color, var(--color-dark));
   }
 
   a:before {

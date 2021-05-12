@@ -5,7 +5,7 @@
 
   export let projects: ProjectMetadata[]
   export let animate: 'heading' | 'list' | 'both'
-  export let limit: number
+  export let limit = 0
 </script>
 
 <style lang="scss">
@@ -97,8 +97,8 @@
       <ProjectTile
         animate={animate === 'list' || animate === 'both'}
         href="/project/{project.slug}"
+        image={project.image}
       >
-        <Image slot="image" src={project.image} --fit="cover" />
         <svelte:fragment slot="title">{project.title}</svelte:fragment>
         <svelte:fragment slot="description">
           {project.description}
@@ -110,11 +110,9 @@
     <slot name="cta">
       <ProjectListCTA animate={animate === 'list' || animate === 'both'}>
         <svelte:fragment slot="heading">
-          Wil jij als stagebedrijf hiertussen staan?
+          Hiertussen staan als stagebedrijf?
         </svelte:fragment>
-        <svelte:fragment slot="button">
-          Neem dan vooral contact op!
-        </svelte:fragment>
+        <svelte:fragment slot="button">Neem contact op!</svelte:fragment>
       </ProjectListCTA>
     </slot>
   </li>
