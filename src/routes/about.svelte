@@ -119,7 +119,7 @@
   <main>
     <article
       use:observer={(bool, amnt) => {
-        if (visibleArticles[0] === false && bool && amnt > 0.1)
+        if (visibleArticles[0] === false && bool && amnt > 0.2)
           visibleArticles[0] = bool
       }}
       class:animate={visibleArticles[0]}
@@ -156,7 +156,7 @@
     </article>
     <article
       use:observer={(bool, amnt) => {
-        if (visibleArticles[1] === false && bool && amnt > 0.1)
+        if (visibleArticles[1] === false && bool && amnt > 0.2)
           visibleArticles[1] = bool
       }}
       class:animate={visibleArticles[1]}
@@ -200,7 +200,7 @@
     </article>
     <article
       use:observer={(bool, amnt) => {
-        if (visibleArticles[2] === false && bool && amnt > 0.1)
+        if (visibleArticles[2] === false && bool && amnt > 0.2)
           visibleArticles[2] = bool
       }}
       class:animate={visibleArticles[2]}
