@@ -7,49 +7,35 @@
 
   export let observe = false
   export let content: string
-  export let animate = false
+  export let animate = true
   export let delay = false
   export let animationType: 'words' | 'letters' = 'letters'
   let canAnimate = true
 </script>
 
 <style lang="scss">
+  @use 'sass:selector';
+
   p {
     font-weight: bold;
     text-align: var(--alignment, center);
 
-    :global {
-      [class*='w'],
-      [class*='ch'] {
-        display: inline-block;
-      }
-      [class*='ch'] {
-        opacity: 0;
-      }
-    }
-
     &.animate :global {
       @for $i from 1 through 100 {
         .ch-#{$i} {
-          animation: slide-in
-            0.4s
-            #{($i - 1) /
-            120 +
-            0.2}s
-            var(--easing)
-            forwards;
+          animation-delay: #{($i - 1) / 40}s;
 
-          @media (prefers-reduced-motion: reduce) {
-            animation-name: fade-in;
+          @at-root #{selector.replace(&,'.animate', '.animate.delay')} {
+            animation-delay: #{0.2 + (($i - 1) / 40)}s;
           }
         }
-      }
-    }
 
-    &.animate.delay :global {
-      @for $i from 1 through 100 {
-        .ch-#{$i} {
-          animation-delay: #{0.4 + (($i - 1) / 120) + 0.2}s;
+        .w .ch-#{$i} {
+          animation-delay: #{(($i - 1) / 80)}s;
+
+          @at-root #{selector.replace(&,'.animate', '.animate.delay')} {
+            animation-delay: #{0.2 + (($i - 1) / 80)}s;
+          }
         }
       }
     }

@@ -39,7 +39,7 @@
     }
 
     &.slide {
-      animation: slide-in-subtle 0.4s var(--easing);
+      animation: slide-in-subtle var(--base-time) var(--easing);
       visibility: visible;
 
       @media (prefers-reduced-motion: reduce) {
@@ -50,7 +50,8 @@
     h2,
     p,
     span {
-      transition: transform 0.2s var(--easing), opacity 0.2s var(--easing);
+      transition: transform var(--half-time) var(--easing),
+        opacity var(--half-time) var(--easing);
     }
 
     h2,
@@ -76,8 +77,9 @@
       z-index: 1;
 
       span {
+        display: block;
         opacity: 0;
-        transform: translateY(10%) rotateX(-45deg) translateZ(0);
+        transform: translateY(20%) rotateX(45deg) translateZ(0);
         font-size: var(--step-1);
         font-weight: 500;
 
@@ -90,14 +92,14 @@
           height: 100%;
           background: linear-gradient(to right, var(--primary), var(--primary))
             no-repeat bottom left/0 1px;
-          transition: background-size 0.2s 0.1s var(--easing);
+          transition: background-size var(--half-time) var(--easing);
         }
       }
     }
 
     :global(figure) {
       z-index: -1;
-      transition: transform 0.2s var(--easing);
+      transition: transform var(--half-time) var(--easing);
       opacity: 0.4;
       --fit: cover;
       --position: center center;
@@ -107,7 +109,7 @@
     &:focus {
       h2,
       p {
-        transform: translateY(-10%) rotateX(-45deg);
+        transform: translateY(-20%) rotateX(-45deg);
         opacity: 0;
       }
 

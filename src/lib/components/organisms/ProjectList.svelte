@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Image from '../atoms/Image.svelte'
   import ProjectListCTA from '../molecules/ProjectListCTA.svelte'
   import ProjectTile from '../molecules/ProjectTile.svelte'
 
@@ -14,17 +13,21 @@
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
+    padding: 0;
     margin: var(--base-space) calc(-1 * var(--half-space));
 
-    @media screen and (min-width: 80rem) {
+    @media screen and (min-width: 60rem), screen and (orientation: landscape) {
       grid-template-columns: 1fr 1fr;
     }
+
     @media screen and (min-width: 120rem) {
       grid-template-columns: 1fr 1fr 1fr;
     }
+
     @media screen and (min-width: 180rem) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
     @media screen and (min-width: 240rem) {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
@@ -36,7 +39,7 @@
     min-height: 20rem;
     margin: 0 var(--half-space) var(--base-space);
 
-    @media screen and (min-width: 80rem) {
+    @media screen and (min-width: 60rem) {
       &:nth-child(2) {
         margin-top: 20rem;
       }

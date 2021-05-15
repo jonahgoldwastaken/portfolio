@@ -21,8 +21,7 @@ export default function observer(
   el: HTMLElement,
   cb: observeObject['cb']
 ): {
-  update?: (params: any) => void
-  destroy?: () => void
+  destroy: () => void
 } {
   if (!iObserver)
     iObserver = new IntersectionObserver(callback, {

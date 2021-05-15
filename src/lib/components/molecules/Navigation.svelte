@@ -1,16 +1,9 @@
 <script lang="ts">
   import Link from '../atoms/Link.svelte'
+  import HorizontalList from './HorizontalList.svelte'
 </script>
 
 <style lang="scss">
-  ul {
-    list-style: none;
-    display: grid;
-    grid-auto-columns: auto;
-    grid-auto-flow: column;
-    grid-gap: var(--half-space);
-  }
-
   li {
     font-size: var(--step-0);
 
@@ -21,7 +14,7 @@
 </style>
 
 <nav>
-  <ul>
+  <HorizontalList noWrap --margin="var(--quarter-space)">
     <li>
       <Link href="/">Home</Link>
     </li>
@@ -37,5 +30,5 @@
     <li>
       <Link href="https://github.com/theonejonahgold">GitHub</Link>
     </li>
-  </ul>
+  </HorizontalList>
 </nav>

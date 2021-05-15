@@ -19,7 +19,7 @@
     display: block;
     margin: 0;
 
-    &:not(.full-width):not(.banner) img {
+    &:not(.full-width):not(.banner):not(.basic) img {
       border-radius: 12px;
     }
   }
@@ -56,12 +56,8 @@
 
   .inline,
   .caption {
-    max-width: 60rem;
-  }
-
-  .basic {
-    width: 100%;
-    height: 100%;
+    font-size: var(--step-0);
+    max-width: 80ch;
   }
 
   figcaption {

@@ -1,18 +1,34 @@
 <script lang="ts">
   import { page } from '$app/stores'
+  import External from '$lib/svg/external.svelte'
 
   export let href: string
   export let noGradient = false
 
   $: active = $page.path === href
+  $: console.log(href, external)
+  const external = href.startsWith('http')
 </script>
 
 <style lang="scss">
+  div {
+    display: inline-flex;
+    align-items: center;
+
+    :global(svg) {
+      font: inherit;
+      width: 1em;
+      height: 1em;
+      margin-left: var(--quarter-space);
+      color: var(--primary);
+    }
+  }
+
   a {
     position: relative;
     color: currentColor;
     font: inherit;
-    transition: color 0.2s var(--easing);
+    transition: color var(--half-time) var(--easing);
     text-decoration: none;
     font-weight: var(--weight, 700);
   }
@@ -34,7 +50,7 @@
     background-image: linear-gradient(
       to right,
       var(--hover-color, var(--color-dark)),
-      var(--hover-color, var(--color-light))
+      var(--hover-color, var(--color-dark))
     );
   }
 
@@ -53,7 +69,7 @@
     height: 100%;
     background: linear-gradient(to right, var(--color-dark), var(--color-light))
       no-repeat bottom left/0 1px;
-    transition: background-size 0.2s var(--easing);
+    transition: background-size var(--half-time) var(--easing);
   }
 
   a:focus {
@@ -67,13 +83,21 @@
   }
 </style>
 
-<a
-  class:active
-  class:no-gradient={noGradient}
-  target={!href.startsWith('/') ? '_blank' : ''}
-  rel={!href.startsWith('/') ? 'noopener noreferrer external' : ''}
-  {href}
-  {...$$restProps}
->
-  <slot />
-</a>
+{#if external}
+  <div>
+    <a
+      class:active
+      class:no-gradient={noGradient}
+      target="_blank"
+      rel="noopener noreferrer external"
+      {href}
+      {...$$restProps}
+    >
+      <slot /><External />
+    </a>
+  </div>
+{:else}
+  <a class:active class:no-gradient={noGradient} {href} {...$$restProps}>
+    <slot />
+  </a>
+{/if}

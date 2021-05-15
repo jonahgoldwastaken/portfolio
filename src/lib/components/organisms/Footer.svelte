@@ -6,7 +6,6 @@
   footer {
     position: sticky;
     top: 100vh;
-    background: var(--secondary);
     padding: var(--double-space) 0;
   }
 </style>

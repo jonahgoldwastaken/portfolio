@@ -12,6 +12,8 @@
     animation: slide-in-subtle 0.5s var(--easing) forwards;
     opacity: 0;
     cursor: help;
+    border-radius: 12px;
+    overflow: hidden;
 
     @media screen and (min-width: 60rem) {
       grid-column: 2;

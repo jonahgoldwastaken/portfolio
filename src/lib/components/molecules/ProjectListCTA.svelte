@@ -33,7 +33,7 @@
     }
 
     &.slide {
-      animation: slide-in-subtle 0.4s var(--easing);
+      animation: slide-in-subtle var(--base-time) var(--easing);
       visibility: visible;
 
       @media (prefers-reduced-motion: reduce) {

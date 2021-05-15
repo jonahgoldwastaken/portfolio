@@ -1,11 +1,10 @@
 <script lang="ts">
-  import observer from '$lib/actions/intersectionObserver'
-  import { raf } from '$lib/actions/requestAnimationFrame'
+  import { iObservedRaf } from '$lib/actions/requestAnimationFrame'
   import { createRangeFromDomain } from '$lib/utils/numberRange'
   import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
   import AnimatingSubheading from '../atoms/AnimatingSubheading.svelte'
-  import Image from '../atoms/Image.svelte'
   import Link from '../atoms/Link.svelte'
+  import Image from '../atoms/Image.svelte'
 
   export let title: string
   export let description: string
@@ -15,7 +14,6 @@
   export let link: ProjectMetadata['link']
 
   let innerHeight: number
-  let inView = false
   let scroll: number = 0
 
   $: scrollScale = createRangeFromDomain({
@@ -26,8 +24,8 @@
 
 <style lang="scss">
   header {
-    grid-area: header;
     width: calc(var(--quadruple-space) * 2 + 100%);
+    margin-left: calc(-1 * var(--quadruple-space));
     height: 100vh;
     position: relative;
     z-index: 0;
@@ -37,6 +35,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     align-items: center;
+
+    &:not(.visible) {
+      visibility: hidden;
+    }
 
     :global(h1) {
       font-size: var(--step-5);
@@ -63,49 +65,39 @@
     font-weight: 500;
     font-size: var(--step-0);
 
-    header > & {
-      opacity: 0;
-      animation: swipe-in 0.4s var(--easing) forwards;
+    opacity: 0;
+    animation: swipe-in var(--base-time) var(--base-time) var(--easing) forwards;
 
-      @media (prefers-reduced-motion: reduce) {
-        animation-name: fade-in;
+    @media (prefers-reduced-motion: reduce) {
+      animation-name: fade-in;
+    }
+
+    @keyframes swipe-in {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
       }
-
-      @for $i from 1 through 5 {
-        &:nth-child(#{$i}) {
-          animation-delay: #{($i / 40) + 0.8}s;
-        }
-      }
-
-      @keyframes swipe-in {
-        from {
-          transform: translateY(100%);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0%);
-          opacity: 1;
-        }
-      }
-
-      &:nth-of-type(1) {
-        grid-row: 3;
-        grid-column: 1;
-        align-self: end;
-        justify-self: start;
-      }
-
-      &:nth-of-type(2) {
-        grid-row: 3;
-        grid-column: 2;
-        align-self: end;
-        justify-self: end;
+      to {
+        transform: translateY(0%);
+        opacity: 1;
       }
     }
 
-    > :global(a) {
-      font-weight: bold;
+    &:nth-of-type(1) {
+      grid-row: 3;
+      grid-column: 1;
+      align-self: end;
+      justify-self: start;
     }
+  }
+
+  header :global(div:not(:first-of-type)) {
+    font-size: var(--step-0);
+
+    grid-row: 3;
+    grid-column: 2;
+    align-self: end;
+    justify-self: end;
   }
 
   header :global(figure) {
@@ -116,7 +108,7 @@
         calc(1 + 0.1 * var(--scroll, 0))
       )
       translate3d(0, 0, 0);
-    animation: zoom-in 0.4s var(--easing);
+    animation: zoom-in var(--base-time) var(--easing);
     opacity: calc((1 - var(--scroll, 0)) * 0.4);
     will-change: transform, opacity;
 
@@ -150,19 +142,14 @@
 <svelte:window bind:innerHeight />
 
 <header
-  use:raf={{
-    animate: inView,
-    cb: () => {
-      scroll = scrollScale(window.pageYOffset)
-    },
+  use:iObservedRaf={() => {
+    scroll = scrollScale(window.pageYOffset)
   }}
-  use:observer={bool => (inView !== bool ? (inView = bool) : null)}
 >
   <div>
-    <AnimatingHeading aria-label="Titel" animate delay content={title} />
+    <AnimatingHeading aria-label="Titel" delay content={title} />
     <AnimatingSubheading
       aria-label="Beschrijving"
-      animate
       delay
       animationType="words"
       content={description}
@@ -171,10 +158,8 @@
   <p>
     {client} • <time datetime={`${year}`}>{year}</time>
   </p>
-  <p>
-    <Link target="_blank" href={link[1]} rel="external noopener noreferrer">
-      Open {link[0] || 'website'}
-    </Link>
-  </p>
+  <Link href={link[1]}>
+    Open {link[0] || 'website'}
+  </Link>
   <Image format="banner" --scroll={scroll} {src} />
 </header>

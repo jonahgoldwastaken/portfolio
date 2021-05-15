@@ -12,17 +12,18 @@
     margin: 0 auto max(20rem, 8.75vh);
     height: 100vh;
     place-content: center;
-    max-width: 70rem;
+    font-size: var(--step-0);
+    max-width: 80ch;
     grid-template-columns: 1fr;
-    column-gap: var(--base-space);
+    gap: var(--base-space);
 
     @media screen and (min-width: 60rem) {
       grid-template-columns: 2fr 1fr;
-    }
-  }
 
-  section :global(h1, p) {
-    grid-column: 1;
+      section :global(h1, p) {
+        grid-column: 1;
+      }
+    }
   }
 </style>
 

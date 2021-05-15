@@ -22,7 +22,7 @@
     justify-content: space-between;
     padding: var(--double-space);
     background: var(--secondary);
-    transition: padding 0.2s var(--easing);
+    transition: padding var(--half-time) var(--easing);
 
     &.transparent {
       background: linear-gradient(to bottom, #11181cff, #11181c00);

@@ -21,7 +21,6 @@
 
 <script lang="ts">
   import ProjectListCTA from '$lib/components/molecules/ProjectListCTA.svelte'
-  import AboutSection from '$lib/components/organisms/AboutSection.svelte'
   import Hero from '$lib/components/organisms/Hero.svelte'
   import ProjectList from '$lib/components/organisms/ProjectList.svelte'
 
@@ -52,4 +51,3 @@
     </ProjectListCTA>
   </ProjectList>
 </section>
-<AboutSection animate="image" />
