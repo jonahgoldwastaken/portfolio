@@ -13,11 +13,15 @@ Voor het vak CSS To The Rescue mochten we de kracht CSS onderzoeken en
 uitwerken in een van twee eindopdrachten. Een van de eindopdrachten was het
 bouwen van een Rubik's Cube, en ik vond dat wel een mooie uitdaging.
 
+<!-- TODO: Add image of experiment -->
+
 Een van de mogelijke uitwerkingen in de eindopdracht was om de kubus
 interactief te maken. Dit heb ik 2 weken lang geprobeerd uit te werken, maar
 ben uiteindelijk tot de conclusie gekomen dat je interactiviteit niet 100%
 werkend gaat krijgen zonder een soort geschiedenis van de draaiingen die
 zijn gemaakt.
+
+<!-- TODO: Add image of experiment -->
 
 Verder heb ik geëxperimenteerd met animaties op basis van viewport size, de
 grootte van de kubus veranderen op bredere schermen en heb ik een leuke

@@ -9,6 +9,10 @@ year: 2020
 link: [visualisatie, https://fa.jonahgold.dev]
 ---
 
+Voor de Volkskrant heb ik een datastory gemaakt representatie op het gebied van parkeermogelijkheden aan het licht te brengen. Met een zeer unieke interactieve diagram kan je zien hoeveel parkeerplekken in de buurt van hot spots in Amsterdam liggen.
+
+Deze verzameling 
+
 De Volkskrant heeft de Tech Track de opdracht gegeven om met data van het
 RDW een interactieve data story te schrijven die journalistisch interessant
 is, met als doel om te leren hoe je data kan verwerken, en die verwerkte
