@@ -25,7 +25,7 @@
     align-items: center;
   }
 
-  main > :global(:not(img)) {
+  main > :global(:not(figure)) {
     max-width: 80ch;
     width: 100%;
   }

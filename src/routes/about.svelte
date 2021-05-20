@@ -214,24 +214,28 @@
           <li>
             <ImageBlock
               href="https://trello.com"
-              src="/trello.svg"
+              src="/logos/trello.svg"
               name="Trello"
             />
           </li>
           <li>
             <ImageBlock
               href="https://culturedcode.com"
-              src="/things.png"
+              src="/logos/things.png"
               name="Things 3"
             />
           </li>
           <li>
-            <ImageBlock href="https://craft.do" src="/craft.png" name="Craft" />
+            <ImageBlock
+              href="https://craft.do"
+              src="/logos/craft.png"
+              name="Craft"
+            />
           </li>
           <li>
             <ImageBlock
               href="https://stayinsession.com"
-              src="/session.png"
+              src="/logos/session.png"
               name="Session"
               noPadding
             />
@@ -245,14 +249,14 @@
           <li>
             <ImageBlock
               href="https://svelte.dev"
-              src="/svelte.svg"
+              src="/logos/svelte.svg"
               name="Svelte"
             />
           </li>
           <li>
             <ImageBlock
               href="https://www.typescriptlang.org"
-              src="/ts.svg"
+              src="/logos/ts.svg"
               colour="#3178c6"
               name="TypeScript"
             />
@@ -260,7 +264,7 @@
           <li>
             <ImageBlock
               href="https://sass-lang.com"
-              src="/sass.svg"
+              src="/logos/sass.svg"
               colour="#cd6699"
               name="Sass"
             />
@@ -268,14 +272,14 @@
           <li>
             <ImageBlock
               href="https://golang.org"
-              src="/golang.svg"
+              src="/logos/golang.svg"
               name="Golang"
             />
           </li>
           <li>
             <ImageBlock
               href="https://code.visualstudio.com"
-              src="/vscode.svg"
+              src="/logos/vscode.svg"
               name="VSCode"
             />
           </li>
@@ -283,14 +287,14 @@
         <h4>Gewerkt met (en kennis van)</h4>
         <HorizontalList --margin="var(--quarter-space)">
           <li>
-            <ImageBlock src="/html.svg" name="HTML5" />
+            <ImageBlock src="/logos/html.svg" name="HTML5" />
           </li>
           <li>
-            <ImageBlock src="/css.svg" name="CSS3" />
+            <ImageBlock src="/logos/css.svg" name="CSS3" />
           </li>
           <li>
             <ImageBlock
-              src="/js.svg"
+              src="/logos/js.svg"
               colour="#f7df1e"
               name="JavaScript (ES2020)"
             />
@@ -298,7 +302,7 @@
           <li>
             <ImageBlock
               href="https://reactjs.org"
-              src="/react.svg"
+              src="/logos/react.svg"
               colour="#282c34"
               name="React"
             />
@@ -306,14 +310,14 @@
           <li>
             <ImageBlock
               href="https://nextjs.org"
-              src="/nextjs.svg"
+              src="/logos/nextjs.svg"
               name="Next.js"
             />
           </li>
           <li>
             <ImageBlock
               href="https://nodejs.org"
-              src="/nodejs.svg"
+              src="/logos/nodejs.svg"
               colour="#fff"
               name="NodeJS"
             />
@@ -321,7 +325,7 @@
           <li>
             <ImageBlock
               href="https://docker.com"
-              src="/docker.png"
+              src="/logos/docker.png"
               colour="#007bff"
               name="Docker"
             />
@@ -329,7 +333,7 @@
           <li>
             <ImageBlock
               href="https://nova.app"
-              src="/nova.png"
+              src="/logos/nova.png"
               colour="#3d147f"
               name="Panic Nova"
             />
@@ -337,7 +341,7 @@
           <li>
             <ImageBlock
               href="https://www.jetbrains.com/webstorm/"
-              src="/webstorm.svg"
+              src="/logos/webstorm.svg"
               colour="#fff"
               name="Webstorm"
             />
@@ -351,14 +355,14 @@
           <li>
             <ImageBlock
               href="https://sketch.com"
-              src="/sketch.svg"
+              src="/logos/sketch.svg"
               name="Sketch"
             />
           </li>
           <li>
             <ImageBlock
               href="https://affinity.serif.com"
-              src="/affinity.svg"
+              src="/logos/affinity.svg"
               colour="#000"
               name="Affinity"
             />
@@ -369,14 +373,14 @@
           <li>
             <ImageBlock
               href="https://adobe.com"
-              src="/adobe.svg"
+              src="/logos/adobe.svg"
               name="Adobe CC"
             />
           </li>
           <li>
             <ImageBlock
               href="https://figma.com"
-              src="/figma.svg"
+              src="/logos/figma.svg"
               colour="rgb(56, 58, 66)"
               name="Figma"
             />
@@ -384,7 +388,7 @@
           <li>
             <ImageBlock
               href="https://www.framer.com"
-              src="/framer.svg"
+              src="/logos/framer.svg"
               colour="#000"
               name="Framer"
             />

@@ -5,7 +5,7 @@ slug: triptop
 description: Bouw de perfecte playlist voor je roadtrip.
 image: /triptop/banner.png
 year: 2021
-client: CMD Minor Web Design & Development
+client: CMD Minor WebDev
 link: [tool, https://triptop.app]
 ---
 
