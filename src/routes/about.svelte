@@ -1,9 +1,9 @@
 <script>
-  import AnimatingHeading from '$lib/components/atoms/AnimatingHeading.svelte'
-  import Link from '$lib/components/atoms/Link.svelte'
-  import ImageBlock from '$lib/components/atoms/ImageBlock.svelte'
-  import HorizontalList from '$lib/components/molecules/HorizontalList.svelte'
   import observer from '$lib/actions/intersectionObserver'
+  import AnimatingHeading from '$lib/components/atoms/AnimatingHeading.svelte'
+  import ImageBlock from '$lib/components/atoms/ImageBlock.svelte'
+  import Link from '$lib/components/atoms/Link.svelte'
+  import HorizontalList from '$lib/components/molecules/HorizontalList.svelte'
   import { onMount } from 'svelte'
 
   let visibleArticles = [true, true, true]
@@ -85,7 +85,7 @@
         }
 
         @media screen and (min-width: 90rem) {
-          &:nth-of-type(2) article:first-of-type {
+          article:nth-last-child(3) {
             grid-column: span 2;
           }
 
@@ -170,6 +170,7 @@
           <li>Presentaties maken en geven</li>
           <li>Projectmanagement</li>
           <li>Presteren onder druk</li>
+          <li>Snel leren en dingen eigen maken</li>
         </ul>
       </article>
       <article>
@@ -207,6 +208,37 @@
     >
       <h2>Tools</h2>
       <article>
+        <h3>Algemeen</h3>
+        <h4>Weapons of choice</h4>
+        <HorizontalList --margin="var(--quarter-space)">
+          <li>
+            <ImageBlock
+              href="https://trello.com"
+              src="/trello.svg"
+              name="Trello"
+            />
+          </li>
+          <li>
+            <ImageBlock
+              href="https://culturedcode.com"
+              src="/things.png"
+              name="Things 3"
+            />
+          </li>
+          <li>
+            <ImageBlock href="https://craft.do" src="/craft.png" name="Craft" />
+          </li>
+          <li>
+            <ImageBlock
+              href="https://stayinsession.com"
+              src="/session.png"
+              name="Session"
+              noPadding
+            />
+          </li>
+        </HorizontalList>
+      </article>
+      <article>
         <h3>WebDev</h3>
         <h4>Weapons of choice</h4>
         <HorizontalList --margin="var(--quarter-space)">
@@ -238,6 +270,13 @@
               href="https://golang.org"
               src="/golang.svg"
               name="Golang"
+            />
+          </li>
+          <li>
+            <ImageBlock
+              href="https://code.visualstudio.com"
+              src="/vscode.svg"
+              name="VSCode"
             />
           </li>
         </HorizontalList>
@@ -287,6 +326,22 @@
               name="Docker"
             />
           </li>
+          <li>
+            <ImageBlock
+              href="https://nova.app"
+              src="/nova.png"
+              colour="#3d147f"
+              name="Panic Nova"
+            />
+          </li>
+          <li>
+            <ImageBlock
+              href="https://www.jetbrains.com/webstorm/"
+              src="/webstorm.svg"
+              colour="#fff"
+              name="Webstorm"
+            />
+          </li>
         </HorizontalList>
       </article>
       <article>
@@ -328,7 +383,7 @@
           </li>
           <li>
             <ImageBlock
-              href="https://framer.com"
+              href="https://www.framer.com"
               src="/framer.svg"
               colour="#000"
               name="Framer"

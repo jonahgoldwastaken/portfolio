@@ -4,7 +4,6 @@
   import ThemeChooser from '../atoms/ThemeChooser.svelte'
   import Navigation from '../molecules/Navigation.svelte'
 
-  export let heading = ''
   let innerHeight: number
 
   $: transparent = $page.path.startsWith('/project/')
@@ -12,29 +11,43 @@
 
 <style lang="scss">
   header {
-    position: fixed;
-    top: 0;
-    left: 0%;
-    width: 100%;
-    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--double-space);
     background: var(--secondary);
-    transition: padding var(--half-time) var(--easing);
+    z-index: 10;
+    padding: var(--double-space) 0;
 
     &.transparent {
       background: linear-gradient(to bottom, #11181cff, #11181c00);
-    }
-
-    @media screen and (min-width: 60rem) {
-      padding: var(--double-space) var(--quadruple-space);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: var(--double-space) var(--base-space);
     }
 
     div {
       display: flex;
       align-items: center;
+    }
+
+    div:nth-child(2) {
+      display: none;
+    }
+
+    @media screen and (min-width: 50rem) {
+      &,
+      &.transparent {
+        position: fixed;
+        top: 0;
+        left: 0%;
+        width: 100%;
+        padding: var(--double-space) var(--quadruple-space);
+      }
+
+      div:nth-child(2) {
+        display: flex;
+      }
     }
   }
 
@@ -51,7 +64,7 @@
 <header class:transparent>
   <div>
     <Logo />
-    <h1>{heading}</h1>
+    <h1>Jonah Meijers</h1>
   </div>
   <div>
     <Navigation />

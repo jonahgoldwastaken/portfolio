@@ -5,9 +5,9 @@
   export let href: string
   export let noGradient = false
 
-  $: active = $page.path === href
-  $: console.log(href, external)
   const external = href.startsWith('http')
+
+  $: active = $page.path === href
 </script>
 
 <style lang="scss">
@@ -54,10 +54,30 @@
     );
   }
 
-  a:hover.no-gradient,
-  a:focus.no-gradient,
   a.active.no-gradient {
     color: var(--hover-color, var(--color-dark));
+  }
+
+  a.active:before {
+    background-size: 100% 1px;
+  }
+
+  @media (pointer: fine) {
+    a:hover.no-gradient,
+    a:focus.no-gradient,
+    a.active.no-gradient {
+      color: var(--hover-color, var(--color-dark));
+    }
+
+    a:focus {
+      outline: none;
+    }
+
+    a:hover:before,
+    a:focus:before,
+    a.active:before {
+      background-size: 100% 1px;
+    }
   }
 
   a:before {
@@ -70,16 +90,6 @@
     background: linear-gradient(to right, var(--color-dark), var(--color-light))
       no-repeat bottom left/0 1px;
     transition: background-size var(--half-time) var(--easing);
-  }
-
-  a:focus {
-    outline: none;
-  }
-
-  a:hover:before,
-  a:focus:before,
-  a.active:before {
-    background-size: 100% 1px;
   }
 </style>
 

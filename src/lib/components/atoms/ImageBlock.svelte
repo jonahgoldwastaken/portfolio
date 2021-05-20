@@ -3,6 +3,7 @@
 
   export let src: string
   export let name: string
+  export let noPadding = false
   export let href = ''
   export let colour = '#ffffff'
 </script>
@@ -31,6 +32,10 @@
       transition: opacity var(--half-time) var(--easing),
         transform var(--half-time) var(--easing);
       transform: translateZ(0);
+    }
+
+    &.no-padding :global(figure) {
+      padding: 0;
     }
 
     p,
@@ -78,7 +83,7 @@
   }
 </style>
 
-<div style="--bg: {colour}">
+<div style="--bg: {colour}" class:no-padding={noPadding}>
   {#if src}
     <Image --fit="contain" {src} format="basic" alt={name} />
   {/if}

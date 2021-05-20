@@ -1,4 +1,6 @@
-export function clampToPercentageRange(max: number, min: number = 0) {
+export { clampToPercentageRange, createRangeFromDomain }
+
+function clampToPercentageRange(max: number, min: number = 0) {
   return createRangeFromDomain({
     rangeMin: 0,
     rangeMax: 100,
@@ -7,7 +9,7 @@ export function clampToPercentageRange(max: number, min: number = 0) {
   })
 }
 
-export function createRangeFromDomain({
+function createRangeFromDomain({
   rangeMin = 0,
   rangeMax,
   domainMin = 0,

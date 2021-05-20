@@ -9,3 +9,10 @@ export async function fetchProjects() {
     a.index > b.index ? -1 : a.index === b.index ? 0 : 1
   )
 }
+
+export async function fetchSingleProject(name: string) {
+  const { metadata }: { metadata: ProjectMetadata } = await import(
+    `../../routes/project/${name}.md`
+  )
+  return metadata
+}

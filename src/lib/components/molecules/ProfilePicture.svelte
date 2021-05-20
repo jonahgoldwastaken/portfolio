@@ -15,7 +15,7 @@
     border-radius: 12px;
     overflow: hidden;
 
-    @media screen and (min-width: 60rem) {
+    @media screen and (min-width: 50rem) {
       grid-column: 2;
       grid-row: 1 / span 2;
     }

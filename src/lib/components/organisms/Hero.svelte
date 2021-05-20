@@ -9,15 +9,16 @@
 <style lang="scss">
   section {
     display: grid;
-    margin: 0 auto max(20rem, 8.75vh);
-    height: 100vh;
+    margin: 0 auto var(--quadruple-space);
     place-content: center;
     font-size: var(--step-0);
     max-width: 80ch;
     grid-template-columns: 1fr;
     gap: var(--base-space);
 
-    @media screen and (min-width: 60rem) {
+    @media screen and (min-width: 50rem) {
+      height: 100vh;
+      margin: 0 auto max(20rem, 8.75vh);
       grid-template-columns: 2fr 1fr;
 
       section :global(h1, p) {

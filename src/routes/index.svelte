@@ -1,16 +1,16 @@
 <script context="module">
-  import { fetchProjects } from '$lib/utils/projectList'
+  import { fetchSingleProject } from '$lib/utils/projectList'
   import type { Load } from '@sveltejs/kit'
 
   export const load: Load = async function ({}) {
-    const projects = (await fetchProjects()).filter(
-      project =>
-        project.slug === 'triptop' ||
-        project.slug === 'empower' ||
-        project.slug === 'bbwal' ||
-        project.slug === 'cube' ||
-        project.slug === 'devex'
-    )
+    const projects = await Promise.all([
+      fetchSingleProject('devex'),
+      fetchSingleProject('cube'),
+      fetchSingleProject('triptop'),
+      fetchSingleProject('empower'),
+      fetchSingleProject('bbwal'),
+    ])
+
     return {
       props: {
         projects,
@@ -45,7 +45,7 @@
 <section>
   <h1>Werk waar ik trots op ben</h1>
   <ProjectList {projects} animate="list">
-    <ProjectListCTA animate slot="cta" href="/projects">
+    <ProjectListCTA slot="cta" animate href="/projects">
       <svelte:fragment slot="heading">Maar dat was niet alles!</svelte:fragment>
       <svelte:fragment slot="button">Bekijk de rest</svelte:fragment>
     </ProjectListCTA>
