@@ -9,15 +9,10 @@ client: CMD Dataweek
 link: [visualisatie, https://dataweek.jonahgold.dev]
 ---
 
-De Blauwburgwal is een doodgewone wal in Amsterdam, met een onbekende en
-diepgaande geschiedenis. De Blauwburgwal is op 11 mei 1940 zwaar getroffen
-door een bombardement, die de een groot deel van de straat in puin
-achterliet, en 44 mensen het leven kostte.
+Deze datastory gaat over een doodgewone wal in Amsterdam, De Blauwburgwal, met een zeer ongewone geschiedenis. De wal is tijdens de bomaanslag op Amsterdam op 11 mei 1940 plat gebombardeerd. Dit is minimaal af te lezen van de gebouwen die er nu staan. Het enige wat ervan over is gebleven is een plakaat waar de namen van de omgekomen mensen op staan.
 
-Voor deze story zijn een aantal verhalen van het bombardement samengevoegd
-met de huidige (herfst 2020) staat van de wal. Je zou niet zeggen dat de wal
-zo'n diepgaande geschiedenis heeft. Het was zeker een eye-opener voor mij.
+<!-- TODO: Add screenshot -->
 
-De story is ontwikkeld samen met [Rosa Voogd](https://rosavoogd.nl). De verhalen komen uit een boekje van Fred Geukes Foppen, die alle verhalen
-van de mensen betrokken bij het bombardement heeft verzameld en
-samengevoegd. Grote dank aan de heer Geukes Foppen voor zijn werk.
+De interactieve datastory ontsluierd hoe de Blauwburgwal eruit zag vlak na het bombardement. Daarbij zijn er een aantal verhalen genomen uit [het boek van Fred Geukes Foppen][boek] die worden verteld op de plek waar ze plaatsvonden.
+
+[boek]: https://www.stadsboekwinkel.nl/product/in-memoriam-de-blauwburgwal/
