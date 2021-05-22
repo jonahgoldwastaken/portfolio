@@ -7,6 +7,7 @@
     list-style: none;
     display: flex;
     flex-flow: row wrap;
+    justify-content: var(--justify, initial);
     width: calc(2 * var(--margin, var(--half-space)) + 100%);
     margin: 0 0 0 calc(var(--margin, var(--half-space)) * -1);
     padding: 0;

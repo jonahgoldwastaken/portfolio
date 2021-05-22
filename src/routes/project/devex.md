@@ -23,15 +23,15 @@ DevEx biedt veel featuers die overeenkomen met andere platforms, zoals [Twitch][
 - Praat samen met andere kijkers en de streamer met de real-time chat.
 - Stream live met apps als [OBS][obs], en pas je stream aan met een titel en programmeertaal naar keuze.
 
-<Image format="caption" src="/devex/profile.png" caption="Op je profiel pagina kan je alles aan je stream veranderen." />
+<Image lazy format="caption" src="/devex/profile.png" caption="Op je profiel pagina kan je alles aan je stream veranderen." />
 
 Het is een app met veel verborgen functionaliteiten die op een bepaalde manier de spotlight moeten krijgen. Dit is gelukt door te focussen op de UI stack en onboarding sequences te introduceren voor first-timers van de app zelf en bepaalde pagina's die extra functionaliteiten aanbieden.
 
-<Image format="caption" src="/devex/zero-state.png" caption="Empty states zorgen ervoor dat er altijd wat te doen is." />
+<Image lazy format="caption" src="/devex/zero-state.png" caption="Empty states zorgen ervoor dat er altijd wat te doen is." />
 
 Deze pagina's worden aangemoedigd door lege states, bijvoorbeeld een lege Discovery pagina of Following tray, op te vullen met kleine stukjes tekst die tot actie aanmoedigen. Zo wordt app discovery aangemoedigd, en leren gebruikers stapsgewijs de app kennen.
 
-<Image format="caption" src="/devex/onboarding.png" caption="Onboardings verwelkomen gebruikers en introduceren belangrijke features van de site." />
+<Image lazy format="caption" src="/devex/onboarding.png" caption="Onboardings verwelkomen gebruikers en introduceren belangrijke features van de site." />
 
 DevEx draait op een infrastructuur bestaande uit 3 hoofdcomponenten:
 

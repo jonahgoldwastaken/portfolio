@@ -12,6 +12,7 @@
   export let src: string
   export let alt: string = ''
   export let caption: string = ''
+  export let lazy = false
 </script>
 
 <style lang="scss">
@@ -64,7 +65,7 @@
 </style>
 
 <figure class={format}>
-  <img {src} {alt} aria-hidden={!alt} />
+  <img loading={lazy ? 'lazy' : ''} {src} {alt} aria-hidden={!alt} />
   {#if format === 'caption'}
     <figcaption>
       {caption ?? ''}

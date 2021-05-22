@@ -23,13 +23,13 @@ ben uiteindelijk tot de conclusie gekomen dat je interactiviteit niet 100%
 werkend gaat krijgen zonder een soort geschiedenis van de draaiingen die
 zijn gemaakt.
 
-<Image format="caption" src="/cube/interactive.png" caption="De kubus is zo interactief als CSS dat toelaat. Je krijgt wel grappige vormen door ermee te spelen!"/>
+<Image lazy format="caption" src="/cube/interactive.png" caption="De kubus is zo interactief als CSS dat toelaat. Je krijgt wel grappige vormen door ermee te spelen!"/>
 
 Verder heb ik geëxperimenteerd met animaties op basis van viewport size, de
 grootte van de kubus veranderen op bredere schermen en heb ik een leuke
 screensaver gemaakt.
 
-<Image format="caption" src="/cube/screensaver.png" caption="Een van de experimenten is een screensaver die (zeer hypnotiserend) op verschillende manieren over de pagina heen beweegt." />
+<Image lazy format="caption" src="/cube/screensaver.png" caption="Een van de experimenten is een screensaver die (zeer hypnotiserend) op verschillende manieren over de pagina heen beweegt." />
 
 Dit project was erg leerzaam voor mij omdat ik nu beter begrijp waar de
 kracht van CSS ophoudt en het met JS aangevuld moet worden om de ervaring

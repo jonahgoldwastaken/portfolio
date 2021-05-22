@@ -15,7 +15,8 @@
     border-radius: 12px;
     overflow: hidden;
 
-    @media screen and (min-width: 50rem) {
+    @media screen and (min-width: 50rem),
+      (min-aspect-ratio: 1/1) and (min-width: 40rem) {
       grid-column: 2;
       grid-row: 1 / span 2;
     }

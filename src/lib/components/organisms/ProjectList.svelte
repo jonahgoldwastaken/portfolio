@@ -16,7 +16,8 @@
     padding: 0;
     margin: var(--base-space) calc(-1 * var(--half-space));
 
-    @media screen and (min-width: 50rem) {
+    @media screen and (min-width: 50rem),
+      (min-aspect-ratio: 1/1) and (min-width: 40rem) {
       grid-template-columns: 1fr 1fr;
     }
 
@@ -36,10 +37,11 @@
   li {
     display: block;
     height: min-content;
-    min-height: 20rem;
     margin: 0 var(--half-space) var(--base-space);
 
-    @media screen and (min-width: 50rem) {
+    @media screen and (min-width: 50rem),
+      (min-aspect-ratio: 1/1) and (min-width: 40rem) {
+      min-height: 20rem;
       &:nth-child(2) {
         margin-top: 50%;
       }

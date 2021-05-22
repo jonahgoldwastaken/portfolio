@@ -1,10 +1,11 @@
 <style lang="scss">
   svg {
-    height: var(--threefold-space);
+    height: var(--double-space);
     margin-right: var(--base-space);
 
-    @media screen and (min-width: 60rem) {
+    @media screen and (min-width: 50rem) {
       margin-right: var(--base-space);
+      height: var(--threefold-space);
     }
 
     &:hover g g polygon {

@@ -1,0 +1,13 @@
+diff --git a/node_modules/svelte/internal/index.mjs b/node_modules/svelte/internal/index.mjs
+index f111497..313f334 100644
+--- a/node_modules/svelte/internal/index.mjs
++++ b/node_modules/svelte/internal/index.mjs
+@@ -196,7 +196,7 @@ function insert(target, node, anchor) {
+     target.insertBefore(node, anchor || null);
+ }
+ function detach(node) {
+-    node.parentNode.removeChild(node);
++    node.parentNode?.removeChild(node);
+ }
+ function destroy_each(iterations, detaching) {
+     for (let i = 0; i < iterations.length; i += 1) {

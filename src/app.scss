@@ -161,20 +161,6 @@ strong {
   }
 }
 
-.w,
-[class^='ch-'] {
-  display: inline-block;
-}
-
-[class^='ch-'] {
-  opacity: 0;
-  animation: slide-in var(--base-time) var(--easing) forwards;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation-name: fade-in;
-  }
-}
-
 @keyframes fade-in {
   from {
     opacity: 0;

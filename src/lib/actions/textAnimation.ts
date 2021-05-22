@@ -1,8 +1,77 @@
-export function letterAnimation(node: HTMLElement, text: string) {
-  node.innerHTML = splitTextIntoLetterSpans(text)
+import './textAnimation.scss'
+
+import observer from './intersectionObserver'
+
+interface BaseTAProps {
+  text?: string
+  readonly delay?: boolean
+  readonly splitOn: 'letters' | 'words'
+  animate?: boolean
+}
+
+interface TAProps extends BaseTAProps {}
+
+interface iObservedTAProps extends BaseTAProps {
+  readonly threshold: number
+  animate?: never
+}
+
+export default function textAnimation(
+  node: HTMLElement,
+  { splitOn, text, delay, animate = true }: TAProps
+) {
+  const cssClasses = [
+    'text-animate',
+    delay ? 'delay' : '',
+    animate ? 'animate' : '',
+  ].filter(s => !!s)
+
+  node.classList.add(...cssClasses)
+
+  node.innerHTML =
+    splitOn === 'letters'
+      ? splitTextIntoLetterSpans(text || node.innerText)
+      : splitTextIntoWordSpans(text || node.innerText)
+
   return {
-    update(text: string) {
-      node.innerHTML = splitTextIntoLetterSpans(text)
+    update({ text }: TAProps) {
+      node.innerHTML =
+        splitOn === 'letters'
+          ? splitTextIntoLetterSpans(text || node.innerText)
+          : splitTextIntoWordSpans(text || node.innerText)
+    },
+
+    destroy() {
+      Array.from(node.children).forEach(node => node.remove())
+    },
+  }
+}
+
+export function iObservedTextAnimation(
+  node: HTMLElement,
+  { splitOn, threshold, delay, text }: iObservedTAProps
+) {
+  const cssClasses = ['text-animate', delay ? 'delay' : ''].filter(s => !!s)
+  node.classList.add(...cssClasses)
+  const iObserver = observer(node, (bool, amount) => {
+    if (node.classList.contains('animate')) return
+    if (bool && amount >= threshold) node.classList.add('animate')
+  })
+
+  node.innerHTML =
+    splitOn === 'letters'
+      ? splitTextIntoLetterSpans(text || node.innerText)
+      : splitTextIntoWordSpans(text || node.innerText)
+
+  return {
+    update({ text }: iObservedTAProps) {
+      node.innerHTML =
+        splitOn === 'letters'
+          ? splitTextIntoLetterSpans(text || node.innerText)
+          : splitTextIntoWordSpans(text || node.innerText)
+    },
+    destroy() {
+      iObserver.destroy()
     },
   }
 }
@@ -21,33 +90,14 @@ function splitTextIntoLetterSpans(text: string) {
   )
 }
 
-export function wordAnimation(node: HTMLElement, text: string) {
-  node.innerHTML = splitTextIntoWordSpans(text)
-  return {
-    update(text: string) {
-      node.innerHTML = splitTextIntoWordSpans(text)
-    },
-  }
-}
-
 function splitTextIntoWordSpans(text: string) {
   let currCh = 0
   return text.split(' ').reduce((acc, curr) => {
     if (!curr) return acc
-    return curr.includes('**')
-      ? acc +
-          `<strong class="ch-${++currCh}">${
-            curr.replace('**', '').split('**')[0]
-          }</strong>${
-            curr.replace('**', '').split('**').length === 2
-              ? `<span class="ch-${++currCh}">${
-                  curr.replace('**', '').split('**')[1]
-                }</span>
+    return (
+      acc +
+      `<span style="--index: ${++currCh};">${curr}</span>
 `
-              : ''
-          }`
-      : acc +
-          `<span class="ch-${++currCh}">${curr}</span>
-`
+    )
   }, '')
 }

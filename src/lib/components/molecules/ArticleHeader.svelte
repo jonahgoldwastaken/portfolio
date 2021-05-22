@@ -1,10 +1,10 @@
 <script lang="ts">
   import { iObservedRaf } from '$lib/actions/requestAnimationFrame'
   import { createRangeFromDomain } from '$lib/utils/numberRange'
-  import AnimatingHeading from '../atoms/AnimatingHeading.svelte'
-  import AnimatingSubheading from '../atoms/AnimatingSubheading.svelte'
+
   import Link from '../atoms/Link.svelte'
   import Image from '../atoms/Image.svelte'
+  import textAnimation from '$lib/actions/textAnimation'
 
   export let title: string
   export let description: string
@@ -34,8 +34,13 @@
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
 
-    :global(h1) {
+    h1 {
       font-size: var(--step-5);
+
+      &,
+      & + p {
+        text-align: center;
+      }
     }
 
     div {
@@ -47,14 +52,18 @@
     }
 
     p,
-    div :global(p) {
+    div p {
       margin: var(--half-space) 0 0;
       font-family: var(--font-heading);
       color: var(--primary);
       font-size: var(--step-1);
     }
 
-    p,
+    div p {
+      font-weight: 700;
+    }
+
+    div ~ p,
     :global(div:nth-of-type(2)) {
       grid-column: 1;
       justify-self: center;
@@ -69,7 +78,7 @@
       }
     }
 
-    p {
+    div ~ p {
       font-weight: 500;
       font-size: var(--step-0);
       margin-bottom: calc(var(--base-space) + var(--quadruple-space));
@@ -114,7 +123,7 @@
         align-self: center;
       }
 
-      p:nth-of-type(1) {
+      div ~ p {
         grid-row: 3;
         grid-column: 1;
         align-self: end;
@@ -128,7 +137,7 @@
         justify-self: end;
       }
 
-      p,
+      div ~ p,
       :global(div:nth-of-type(2)) {
         margin-bottom: 0;
       }
@@ -175,13 +184,26 @@
   }}
 >
   <div>
-    <AnimatingHeading aria-label="Titel" delay content={title} />
-    <AnimatingSubheading
+    <h1
+      aria-label="Titel"
+      use:textAnimation={{
+        splitOn: 'letters',
+        delay: true,
+        text: title,
+      }}
+    >
+      {title}
+    </h1>
+    <p
       aria-label="Beschrijving"
-      delay
-      animationType="words"
-      content={description}
-    />
+      use:textAnimation={{
+        splitOn: 'words',
+        delay: true,
+        text: description,
+      }}
+    >
+      {description}
+    </p>
   </div>
   <p>
     {client} • <time datetime={`${year}`}>{year}</time>

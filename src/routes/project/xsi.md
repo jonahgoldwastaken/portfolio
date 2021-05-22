@@ -18,7 +18,7 @@ vak Inleiding Programmeren ben ik helemaal losgegaan en heb ik in een maand
 tijd een kloon geschreven van de klassieke Space Invaders. Je weet wel, die
 ene met dat ruimteschip en die aliens die je neer moet knallen.
 
-<Image src="/play.png" format="inline" />
+<Image lazy src="/play.png" format="inline" />
 
 Het spel bevat volledige besturing van een eigen character, collision,
 moeilijkheidsgraden en geluidsinstellingen. Dit allemaal samen met een

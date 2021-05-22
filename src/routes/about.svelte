@@ -1,6 +1,6 @@
 <script>
   import observer from '$lib/actions/intersectionObserver'
-  import AnimatingHeading from '$lib/components/atoms/AnimatingHeading.svelte'
+  import { iObservedTextAnimation } from '$lib/actions/textAnimation'
   import ImageBlock from '$lib/components/atoms/ImageBlock.svelte'
   import Link from '$lib/components/atoms/Link.svelte'
   import HorizontalList from '$lib/components/molecules/HorizontalList.svelte'
@@ -115,7 +115,14 @@
 </svelte:head>
 
 <article>
-  <AnimatingHeading --alignment="left" observe content="Over" />
+  <h1
+    use:iObservedTextAnimation={{
+      threshold: 0.75,
+      splitOn: 'letters',
+    }}
+  >
+    Over
+  </h1>
   <main>
     <article
       use:observer={(bool, amnt) => {

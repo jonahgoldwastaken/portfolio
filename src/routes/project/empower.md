@@ -35,12 +35,12 @@ De toolkit bevat veel verschillende features:
 - Een interactieve gemeentekaart die keuzes, aanbevelingen, filters en zoekresultaten weerspiegeld met kleuren
 - Kleine samenvattingen die vertellen hoe goed een gemeente het doet op zichzelf.
 
-<Image src="/empower/selected.png" format="caption" caption="De kaart laat geselecteerde gemeentes in oranje zien, en aanbevolen gemeentes in blauw." />
+<Image lazy src="/empower/selected.png" format="caption" caption="De kaart laat geselecteerde gemeentes in oranje zien, en aanbevolen gemeentes in blauw." />
 
-<Image src="/empower/search.png" format="caption" caption="De kaart laat geselecteerde gemeentes in oranje zien, en aanbevolen gemeentes in blauw." />
+<Image lazy src="/empower/search.png" format="caption" caption="De kaart laat geselecteerde gemeentes in oranje zien, en aanbevolen gemeentes in blauw." />
 
 Je kiest dus maximaal drie verschillende gemeentes, waaronder je eigen gemeente. Na de keuzes gemaakt te hebben ga je naar de vergelijkingspagina die alle data van de gekozen gemeenten overzichtelijk voor je op een rijtje zet.
 
-<Image src="/empower/charts.png" format="caption" caption="De detailpagina laat op meerdere manieren zien hoe goed je het doet vergeleken met de andere gemeente(s) met overzichtelijke en afgezonderde grafieken." />
+<Image lazy src="/empower/charts.png" format="caption" caption="De detailpagina laat op meerdere manieren zien hoe goed je het doet vergeleken met de andere gemeente(s) met overzichtelijke en afgezonderde grafieken." />
 
 De app bevat veel micro-interacties en animaties, wat zorgt voor een verzorgde en prettige gebruikerservaring. Je ziet waar elementen vandaan komen, waar ze verdwijnen, wat belangrijke content is, en hoe je verder kunt gaan in de applicatie.

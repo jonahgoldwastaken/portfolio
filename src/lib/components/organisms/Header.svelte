@@ -1,5 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores'
+  import HamburgerNav from '$lib/components/molecules/HamburgerNav.svelte'
+  import Link from '../atoms/Link.svelte'
   import Logo from '../atoms/Logo.svelte'
   import ThemeChooser from '../atoms/ThemeChooser.svelte'
   import Navigation from '../molecules/Navigation.svelte'
@@ -16,23 +18,19 @@
     justify-content: space-between;
     background: var(--secondary);
     z-index: 10;
-    padding: var(--double-space) 0;
+    padding: var(--base-space) 0;
 
     &.transparent {
       background: linear-gradient(to bottom, #11181cff, #11181c00);
       position: absolute;
       left: 0;
       width: 100%;
-      padding: var(--double-space) var(--base-space);
+      padding: var(--base-space);
     }
 
     div {
       display: flex;
       align-items: center;
-    }
-
-    div:nth-child(2) {
-      display: none;
     }
 
     @media screen and (min-width: 50rem) {
@@ -44,10 +42,6 @@
         width: 100%;
         padding: var(--double-space) var(--quadruple-space);
       }
-
-      div:nth-child(2) {
-        display: flex;
-      }
     }
   }
 
@@ -56,6 +50,11 @@
     font-size: var(--step-1);
     font-family: var(--font-heading);
     white-space: nowrap;
+    color: transparent;
+
+    @media screen and (min-width: 50rem) {
+      color: var(--primary);
+    }
   }
 </style>
 
@@ -67,7 +66,40 @@
     <h1>Jonah Meijers</h1>
   </div>
   <div>
-    <Navigation />
+    <Navigation>
+      <li>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/projects">Projecten</Link>
+      </li>
+      <li>
+        <Link href="/about">Over</Link>
+      </li>
+      <li>
+        <Link href="mailto:jonahmeijers97@gmail.com">Contact</Link>
+      </li>
+      <li>
+        <Link href="https://github.com/theonejonahgold">GitHub</Link>
+      </li>
+    </Navigation>
+    <HamburgerNav>
+      <li>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/projects">Projecten</Link>
+      </li>
+      <li>
+        <Link href="/about">Over</Link>
+      </li>
+      <li>
+        <Link href="mailto:jonahmeijers97@gmail.com">Contact</Link>
+      </li>
+      <li>
+        <Link href="https://github.com/theonejonahgold">GitHub</Link>
+      </li>
+    </HamburgerNav>
     <ThemeChooser />
   </div>
 </header>
