@@ -4,7 +4,7 @@
   status = 200
 
 [build]
-  command = "npm run build"
+  command = "yarn build"
   publish = "build/"
   functions = "functions/"
-  environment = {NODE_VERSION = "15.8.0"}
+  environment = {NODE_VERSION = "16.2.0"}
