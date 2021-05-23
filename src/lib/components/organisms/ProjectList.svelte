@@ -41,7 +41,6 @@
 
     @media screen and (min-width: 50rem),
       (min-aspect-ratio: 1/1) and (min-width: 40rem) {
-      min-height: 20rem;
       &:nth-child(2) {
         margin-top: 50%;
       }

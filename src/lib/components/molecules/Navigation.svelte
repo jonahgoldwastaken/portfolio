@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Link from '../atoms/Link.svelte'
   import HorizontalList from './HorizontalList.svelte'
 </script>
 

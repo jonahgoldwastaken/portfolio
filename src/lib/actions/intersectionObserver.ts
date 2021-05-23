@@ -5,11 +5,11 @@ type observeObject = {
   cb: (isIntersecting: boolean, intersectionRatio: number) => void
 }
 
-const observeArray: observeObject[] = []
+const observeArray = new Set<observeObject>()
 
 function callback(entries: IntersectionObserverEntry[]): void {
   entries.forEach(entry => {
-    const obj = observeArray.find(
+    const obj = [...observeArray].find(
       obj => obj.el === entry.target
     ) as observeObject
 
@@ -28,13 +28,17 @@ export default function observer(
       threshold: [0, 0.25, 0.5, 0.75, 1],
       rootMargin: '0px',
     })
-  let i = observeArray.push({ cb, el }) - 1
+  const obj: observeObject = {
+    cb,
+    el,
+  }
+  observeArray.add(obj)
   iObserver.observe(el)
 
   return {
     destroy: () => {
       iObserver.unobserve(el)
-      observeArray.splice(i, 1)
+      observeArray.delete(obj)
     },
   }
 }

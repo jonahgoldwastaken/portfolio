@@ -77,10 +77,7 @@
         <Link href="/about">Over</Link>
       </li>
       <li>
-        <Link href="mailto:jonahmeijers97@gmail.com">Contact</Link>
-      </li>
-      <li>
-        <Link href="https://github.com/theonejonahgold">GitHub</Link>
+        <Link href="#contact">Contact</Link>
       </li>
     </Navigation>
     <HamburgerNav>
@@ -94,10 +91,7 @@
         <Link href="/about">Over</Link>
       </li>
       <li>
-        <Link href="mailto:jonahmeijers97@gmail.com">Contact</Link>
-      </li>
-      <li>
-        <Link href="https://github.com/theonejonahgold">GitHub</Link>
+        <Link href="#contact">Contact</Link>
       </li>
     </HamburgerNav>
     <ThemeChooser />

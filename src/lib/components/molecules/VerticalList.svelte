@@ -10,6 +10,10 @@
       list-style: none;
       padding: 0;
     }
+
+    :global(li + li) {
+      margin-top: var(--margin, var(--quarter-space));
+    }
   }
 </style>
 
