@@ -3,11 +3,15 @@ index: 5
 title: CSS Rubik's Cube
 slug: cube
 description: Verschillende HTML en CSS only experimenten met de wereldberoemde kubus.
-image: /cube.png
+image: /cube/banner.png
 year: 2021
-client: CMD Minor Web Design & Development
+client: CMD Minor WebDev
 link: [website, https://theonejonahgold.github.io/css-rubiks-cube]
 ---
+
+<script>
+  import Image from '$lib/components/atoms/Image.svelte'
+</script>
 
 Voor het vak CSS To The Rescue mochten we de kracht CSS onderzoeken en
 uitwerken in een van twee eindopdrachten. Een van de eindopdrachten was het
@@ -19,9 +23,13 @@ ben uiteindelijk tot de conclusie gekomen dat je interactiviteit niet 100%
 werkend gaat krijgen zonder een soort geschiedenis van de draaiingen die
 zijn gemaakt.
 
+<Image lazy format="caption" src="/cube/interactive.png" caption="De kubus is zo interactief als CSS dat toelaat. Je krijgt wel grappige vormen door ermee te spelen!"/>
+
 Verder heb ik geëxperimenteerd met animaties op basis van viewport size, de
 grootte van de kubus veranderen op bredere schermen en heb ik een leuke
 screensaver gemaakt.
+
+<Image lazy format="caption" src="/cube/screensaver.png" caption="Een van de experimenten is een screensaver die (zeer hypnotiserend) op verschillende manieren over de pagina heen beweegt." />
 
 Dit project was erg leerzaam voor mij omdat ik nu beter begrijp waar de
 kracht van CSS ophoudt en het met JS aangevuld moet worden om de ervaring

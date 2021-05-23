@@ -18,7 +18,7 @@
   article {
     color: var(--primary);
     transition: var(--interaction-transition);
-    height: clamp(30rem, 30vh, 40rem);
+    height: clamp(20rem, 30vmax, 30rem);
     background: var(--black);
     width: 100%;
     position: relative;
@@ -27,19 +27,12 @@
     display: grid;
     border-radius: 12px;
 
-    > :global(*) {
-      position: relative;
-      grid-row: 1;
-      grid-column: 1;
-      min-height: 0;
-    }
-
     &.animate {
       visibility: hidden;
     }
 
     &.slide {
-      animation: slide-in-subtle 0.4s var(--easing);
+      animation: slide-in-subtle var(--base-time) var(--easing);
       visibility: visible;
 
       @media (prefers-reduced-motion: reduce) {
@@ -48,15 +41,7 @@
     }
 
     h2,
-    p,
-    span {
-      transition: transform 0.2s var(--easing), opacity 0.2s var(--easing);
-    }
-
-    h2,
     p {
-      transform: scale(1);
-      opacity: 1;
       font-weight: 700;
       text-align: center;
     }
@@ -74,12 +59,46 @@
       align-items: center;
       justify-items: center;
       z-index: 1;
+      font-size: var(--step-1);
+      font-weight: 500;
 
       span {
+        display: block;
+      }
+    }
+
+    > :global(*) {
+      position: relative;
+      grid-column: 1;
+      grid-row: 1;
+      min-height: 0;
+    }
+
+    :global(figure) {
+      z-index: -1;
+      transition: transform var(--half-time) var(--easing);
+      opacity: 0.4;
+      --fit: cover;
+      --position: center center;
+    }
+
+    @media (pointer: coarse) {
+      a {
+        color: transparent;
+      }
+    }
+
+    @media (pointer: fine) {
+      h2,
+      p,
+      span {
+        transition: transform var(--half-time) var(--easing),
+          opacity var(--half-time) var(--easing);
+      }
+
+      a span {
         opacity: 0;
-        transform: translateY(10%) rotateX(-45deg) translateZ(0);
-        font-size: var(--step-1);
-        font-weight: 500;
+        transform: translateY(20%) rotateX(45deg) translateZ(0);
 
         &:before {
           content: '';
@@ -89,38 +108,30 @@
           width: 100%;
           height: 100%;
           background: linear-gradient(to right, var(--primary), var(--primary))
-            no-repeat bottom left/0 1px;
-          transition: background-size 0.2s 0.1s var(--easing);
+            no-repeat bottom left/0 2px;
+          transition: background-size var(--half-time) var(--easing);
         }
       }
-    }
 
-    :global(figure) {
-      z-index: -1;
-      transition: transform 0.2s var(--easing);
-      opacity: 0.4;
-      --fit: cover;
-      --position: center center;
-    }
+      &:hover,
+      &:focus {
+        h2,
+        p {
+          transform: translateY(-20%) rotateX(-45deg);
+          opacity: 0;
+        }
 
-    &:hover,
-    &:focus {
-      h2,
-      p {
-        transform: translateY(-10%) rotateX(-45deg);
-        opacity: 0;
-      }
+        :global(figure) {
+          transform: scale(1.1) translateZ(0);
+        }
 
-      :global(figure) {
-        transform: scale(1.1) translateZ(0);
-      }
+        a span {
+          transform: translateY(0) rotateX(0deg) translateZ(0);
+          opacity: 1;
 
-      a span {
-        transform: translateY(0) rotateX(0deg) translateZ(0);
-        opacity: 1;
-
-        &:before {
-          background-size: 100% 2px;
+          &:before {
+            background-size: 100% 2px;
+          }
         }
       }
     }

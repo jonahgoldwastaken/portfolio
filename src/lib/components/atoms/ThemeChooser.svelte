@@ -22,8 +22,9 @@
   button {
     appearance: none;
     border: none;
-    width: var(--step-0);
-    height: var(--step-0);
+    width: var(--base-space);
+    height: var(--base-space);
+    padding: 0;
     border-radius: 50%;
     overflow: hidden;
     color: transparent;
@@ -70,6 +71,6 @@
       ? 'var(--yellow)'
       : 'var(--light-blue)'}; --dark: {theme === 'blue'
       ? 'var(--orange)'
-      : 'var(--blue)'}">Change theme</button
+      : 'var(--blue)'}">Verander thema</button
   >
 {/if}

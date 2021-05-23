@@ -1,41 +1,27 @@
 <script lang="ts">
-  import Link from '../atoms/Link.svelte'
+  import HorizontalList from './HorizontalList.svelte'
 </script>
 
 <style lang="scss">
-  ul {
-    list-style: none;
-    display: grid;
-    grid-auto-columns: auto;
-    grid-auto-flow: column;
-    grid-gap: var(--half-space);
+  nav {
+    @media (pointer: coarse), (pointer: fine) and (max-width: 40rem) {
+      display: none;
+    }
   }
 
-  li {
-    font-size: var(--step-0);
+  :global {
+    li {
+      font-size: var(--step-0);
 
-    :global(a) {
-      --weight: normal;
+      a {
+        --weight: normal;
+      }
     }
   }
 </style>
 
 <nav>
-  <ul>
-    <li>
-      <Link href="/">Home</Link>
-    </li>
-    <li>
-      <Link href="/projects">Projecten</Link>
-    </li>
-    <li>
-      <Link href="/about">Over</Link>
-    </li>
-    <li>
-      <Link href="mailto:jonahmeijers97@gmail.com">Contact</Link>
-    </li>
-    <li>
-      <Link href="https://github.com/theonejonahgold">GitHub</Link>
-    </li>
-  </ul>
+  <HorizontalList noWrap --margin="var(--quarter-space)">
+    <slot />
+  </HorizontalList>
 </nav>

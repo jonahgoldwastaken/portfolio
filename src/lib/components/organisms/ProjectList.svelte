@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Image from '../atoms/Image.svelte'
   import ProjectListCTA from '../molecules/ProjectListCTA.svelte'
   import ProjectTile from '../molecules/ProjectTile.svelte'
 
@@ -13,19 +12,24 @@
     list-style: none;
     display: grid;
     grid-template-columns: 1fr;
-    width: 100%;
+    width: calc(var(--base-space) + 100%);
+    padding: 0;
     margin: var(--base-space) calc(-1 * var(--half-space));
 
-    @media screen and (min-width: 80rem) {
+    @media screen and (min-width: 50rem),
+      (min-aspect-ratio: 1/1) and (min-width: 40rem) {
       grid-template-columns: 1fr 1fr;
     }
-    @media screen and (min-width: 120rem) {
+
+    @media screen and (min-width: 100rem) {
       grid-template-columns: 1fr 1fr 1fr;
     }
-    @media screen and (min-width: 180rem) {
+
+    @media screen and (min-width: 150rem) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    @media screen and (min-width: 240rem) {
+
+    @media screen and (min-width: 200rem) {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
   }
@@ -33,31 +37,31 @@
   li {
     display: block;
     height: min-content;
-    min-height: 20rem;
     margin: 0 var(--half-space) var(--base-space);
 
-    @media screen and (min-width: 80rem) {
+    @media screen and (min-width: 50rem),
+      (min-aspect-ratio: 1/1) and (min-width: 40rem) {
       &:nth-child(2) {
-        margin-top: 20rem;
+        margin-top: 50%;
       }
 
       &:nth-child(2n + 3) {
-        margin-top: -20rem;
+        margin-top: -50%;
       }
     }
 
-    @media screen and (min-width: 120rem) {
+    @media screen and (min-width: 100rem) {
       &:nth-child(2n + 3) {
         margin-top: 0;
       }
 
       &:nth-child(3n + 4),
       &:nth-child(3n + 6) {
-        margin-top: -20rem;
+        margin-top: -50%;
       }
     }
 
-    @media screen and (min-width: 180rem) {
+    @media screen and (min-width: 150rem) {
       &:nth-child(3n + 4),
       &:nth-child(3n + 6) {
         margin-top: 0;
@@ -65,15 +69,15 @@
 
       &:nth-child(2),
       &:nth-child(4) {
-        margin-top: 20rem;
+        margin-top: 50%;
       }
 
       &:nth-child(2n + 5) {
-        margin-top: -20rem;
+        margin-top: -50%;
       }
     }
 
-    @media screen and (min-width: 240rem) {
+    @media screen and (min-width: 200rem) {
       &:nth-child(3n + 5),
       &:nth-child(3n + 7) {
         margin-top: 0;
@@ -81,11 +85,11 @@
 
       &:nth-child(2),
       &:nth-child(4) {
-        margin-top: 20rem;
+        margin-top: 50%;
       }
 
       &:nth-child(2n + 6) {
-        margin-top: -20rem;
+        margin-top: -50%;
       }
     }
   }

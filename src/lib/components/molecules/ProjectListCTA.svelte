@@ -17,7 +17,6 @@
 <style lang="scss">
   article {
     width: 100%;
-    height: 20rem;
     color: var(--primary);
     transition: var(--interaction-transition);
     display: flex;
@@ -33,7 +32,7 @@
     }
 
     &.slide {
-      animation: slide-in-subtle 0.4s var(--easing);
+      animation: slide-in-subtle var(--base-time) var(--easing);
       visibility: visible;
 
       @media (prefers-reduced-motion: reduce) {

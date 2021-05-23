@@ -1,23 +1,24 @@
 ---
 index: 3
-title: De Blauwburgwal - toen en nu
+title: De Blauwburgwal
 slug: bbwal
-description: Een visualisatie die een vergeten bombardement aan het licht brengt.
-image: /dataweek.png
+description: Een vergeten bombardement aan het licht gebracht.
+image: /bbwal/banner.png
 year: 2020
 client: CMD Dataweek
 link: [visualisatie, https://dataweek.jonahgold.dev]
 ---
 
-De Blauwburgwal is een doodgewone wal in Amsterdam, met een onbekende en
-diepgaande geschiedenis. De Blauwburgwal is op 11 mei 1940 zwaar getroffen
-door een bombardement, die de een groot deel van de straat in puin
-achterliet, en 44 mensen het leven kostte.
+<script>
+  import Image from '$lib/components/atoms/Image.svelte'
+</script>
 
-Voor deze story zijn een aantal verhalen van het bombardement samengevoegd
-met de huidige (herfst 2020) staat van de wal. Je zou niet zeggen dat de wal
-zo'n diepgaande geschiedenis heeft. Het was zeker een eye-opener voor mij.
+Deze datastory gaat over een doodgewone wal in Amsterdam, De Blauwburgwal, met een zeer ongewone geschiedenis. De wal is tijdens de bomaanslag op Amsterdam op 11 mei 1940 plat gebombardeerd. Dit is minimaal af te lezen van de gebouwen die er nu staan. Het enige wat ervan over is gebleven is een plakaat waar de namen van de omgekomen mensen op staan.
 
-De story is ontwikkeld samen met [Rosa Voogd](https://rosavoogd.nl). De verhalen komen uit een boekje van Fred Geukes Foppen, die alle verhalen
-van de mensen betrokken bij het bombardement heeft verzameld en
-samengevoegd. Grote dank aan de heer Geukes Foppen voor zijn werk.
+<Image lazy src="/bbwal/split.png" format="caption" caption="Met de slider kan je het verschil zien tussen de staat vlak na het bombardement en nu. De pins zijn klikbaar." />
+
+<Image lazy src="/bbwal/popup.png" format="caption" caption="Achter elke pin op de foto ligt een verhaal van een slachtoffer. De pins liggen op de plek waar het verhaal zich ongeveer plaatsvindt in de foto." />
+
+De interactieve datastory ontsluierd hoe de Blauwburgwal eruit zag vlak na het bombardement. Daarbij zijn er een aantal verhalen genomen uit [het boek van Fred Geukes Foppen][boek] die worden verteld op de plek waar ze plaatsvonden.
+
+[boek]: https://www.stadsboekwinkel.nl/product/in-memoriam-de-blauwburgwal/

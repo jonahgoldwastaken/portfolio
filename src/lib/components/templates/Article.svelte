@@ -15,34 +15,18 @@
 </script>
 
 <style lang="scss">
-  article {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-gap: var(--base-space);
-    grid-template-areas: ' header' 'main';
-    justify-items: center;
-  }
-
-  @media screen and (min-width: 90rem) {
-    article {
-      grid-template-columns: 1fr 60rem 1fr;
-      grid-template-areas: 'header header header' 'main main main';
-    }
+  article > :global(header) {
+    margin-bottom: var(--base-space);
   }
 
   main {
-    grid-area: main;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  main :global(:first-child) {
-    margin-top: 0;
-  }
-
-  main > :global(:not(img)) {
-    max-width: 60rem;
+  main > :global(:not(figure)) {
+    max-width: 80ch;
     width: 100%;
   }
 
@@ -50,9 +34,8 @@
     margin-top: var(--base-space);
   }
 
-  main :global(ul),
-  main :global(ol) {
-    padding: initial;
+  main :global(ul, ol) {
+    padding-left: 1.5em;
   }
 </style>
 

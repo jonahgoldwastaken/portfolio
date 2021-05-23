@@ -13,8 +13,8 @@
 </script>
 
 <script>
-  import AnimatingHeading from '$lib/components/atoms/AnimatingHeading.svelte'
   import ProjectList from '$lib/components/organisms/ProjectList.svelte'
+  import textAnimation from '$lib/actions/textAnimation'
 
   export let projects: ProjectMetadata[]
 </script>
@@ -28,6 +28,12 @@
 </svelte:head>
 
 <main>
-  <AnimatingHeading --alignment="left" animate content={'Projecten'} />
+  <h1
+    use:textAnimation={{
+      splitOn: 'letters',
+    }}
+  >
+    Projecten
+  </h1>
   <ProjectList {projects} animate="both" />
 </main>

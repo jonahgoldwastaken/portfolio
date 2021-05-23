@@ -12,6 +12,7 @@
   export let src: string
   export let alt: string = ''
   export let caption: string = ''
+  export let lazy = false
 </script>
 
 <style lang="scss">
@@ -19,7 +20,7 @@
     display: block;
     margin: 0;
 
-    &:not(.full-width):not(.banner) img {
+    &:not(.full-width):not(.banner):not(.basic) img {
       border-radius: 12px;
     }
   }
@@ -48,20 +49,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-
-    img {
-      --fit: cover;
-    }
+    --fit: cover;
   }
 
   .inline,
   .caption {
-    max-width: 60rem;
-  }
-
-  .basic {
-    width: 100%;
-    height: 100%;
+    font-size: var(--step-0);
+    max-width: 80ch;
   }
 
   figcaption {
@@ -71,7 +65,7 @@
 </style>
 
 <figure class={format}>
-  <img {src} {alt} aria-hidden={!alt} />
+  <img loading={lazy ? 'lazy' : ''} {src} {alt} aria-hidden={!alt} />
   {#if format === 'caption'}
     <figcaption>
       {caption ?? ''}

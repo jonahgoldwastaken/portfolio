@@ -1,4 +1,5 @@
 import { browser } from '$app/env'
+import observer from './intersectionObserver'
 
 const rafCallbacks = new Set<() => void>()
 
@@ -6,17 +7,17 @@ let id = browser ? requestAnimationFrame(rafLoop) : null
 
 interface rafProps {
   cb: () => void
-  animate: boolean
+  enabled: boolean
 }
 
 export function raf(
   _: HTMLElement,
-  { cb, animate }: rafProps
+  { cb, enabled }: rafProps
 ): { update: (update: rafProps) => void; destroy: () => void } {
   let updatedCb = cb
-  if (animate) rafCallbacks.add(cb)
+  if (enabled) rafCallbacks.add(cb)
   return {
-    update({ cb: newCb, animate }) {
+    update({ cb: newCb, enabled: animate }) {
       if (!animate) {
         rafCallbacks.delete(updatedCb)
         return updateRafLoop()
@@ -28,6 +29,38 @@ export function raf(
     },
     destroy() {
       rafCallbacks.delete(updatedCb)
+    },
+  }
+}
+
+export function iObservedRaf(
+  node: HTMLElement,
+  cb: () => void
+): { update: (cb: () => void) => void; destroy: () => void } {
+  node.classList.add('raf')
+  node.classList.add('visible')
+  let enabled = true
+  let callback = cb
+  const rafAction = raf(node, { cb, enabled })
+  const observeAction = observer(node, bool => {
+    if (bool !== enabled) {
+      enabled = bool
+      node.classList[enabled ? 'add' : 'remove']('visible')
+      rafAction.update({ cb: callback, enabled })
+      return
+    }
+  })
+  return {
+    update(cb) {
+      callback = cb
+      rafAction.update({
+        enabled,
+        cb: callback,
+      })
+    },
+    destroy() {
+      rafAction.destroy()
+      observeAction.destroy()
     },
   }
 }
