@@ -194,22 +194,28 @@
     >
       {title}
     </h1>
-    <p
-      aria-label="Beschrijving"
-      use:textAnimation={{
-        splitOn: 'words',
-        delay: true,
-        text: description,
-      }}
-    >
-      {description}
-    </p>
+    {#if description}
+      <p
+        aria-label="Beschrijving"
+        use:textAnimation={{
+          splitOn: 'words',
+          delay: true,
+          text: description,
+        }}
+      >
+        {description}
+      </p>
+    {/if}
   </div>
-  <p>
-    {client} • <time datetime={`${year}`}>{year}</time>
-  </p>
-  <Link href={link[1]}>
-    Open {link[0] || 'website'}
-  </Link>
+  {#if client && year}
+    <p>
+      {client} • <time datetime={`${year}`}>{year}</time>
+    </p>
+  {/if}
+  {#if link}
+    <Link href={link[1]}>
+      Open {link[0] || 'website'}
+    </Link>
+  {/if}
   <Image format="banner" --scroll={scroll} {src} />
 </header>
