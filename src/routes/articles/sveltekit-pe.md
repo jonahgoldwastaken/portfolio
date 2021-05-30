@@ -2,7 +2,7 @@
 index: 10
 title: Waarom Svelte(Kit) hét framework is voor Progressively enhanced web-apps
 slug: sveltekit-pe
-image: /bbwal/banner.png
+image: /svelte-kit-machine.png
 ---
 
 Progressive Enhancement is een web-development term waar steeds meer aandacht aan moet worden besteedt. Sinds veel mensen in het afgelopen decennium op eigen houtje de web-development wereld in zijn gestapt, missen ze veel van de basis die wel op school wordt aangeleerd. Met de opkomst van toegankelijkheid op het web, is progressive enhancement een zo'n basis-element waar geen aandacht aan wordt besteed door velen, wat eigenlijk niet zou moeten zijn. Frameworks maken het (té) makkelijk voor beginnende web-developers om gelijk in hun ecosysteem te stappen, zonder de gevolgen daarvan in te zien.
