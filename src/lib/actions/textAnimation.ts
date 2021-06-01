@@ -83,7 +83,7 @@ function splitTextIntoLetterSpans(text: string) {
       acc +
       `<span class="w">${curr
         .split('')
-        .map(ch => `<span class="ch-${++currCh}">${ch}</span>`)
+        .map(ch => `<span style="--index: ${++currCh};">${ch}</span>`)
         .join('')}</span>
 `,
     ''
