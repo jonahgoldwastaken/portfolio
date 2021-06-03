@@ -37,6 +37,10 @@
   main :global(ul, ol) {
     padding-left: 1.5em;
   }
+
+  main :global(pre) {
+    font-size: var(--step-0);
+  }
 </style>
 
 <svelte:head>
@@ -44,6 +48,7 @@
     {title} - Jonah Meijers
   </title>
   <meta name="description" content={description} />
+  <link rel="stylesheet" href="/prism-theme.css" />
 </svelte:head>
 
 <article>

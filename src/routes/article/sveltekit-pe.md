@@ -24,15 +24,15 @@ Soms wil je echter dat je Svelte pagina's pas worden gerenderd wanneer iemand ze
 <script context="module">
   <!-- Prerender deze pagina naar HTML en CSS -->
   export let prerender = true
-  
+
   <!-- Stuur de gecompileerde JS code voor deze pagina niet mee -->
   export let hydrate = false
-  
+
   <!-- Stuur de SvelteKit router mee om client-side routing aan te zetten -->
   export let router = true
 </script>
 
-<!-- Je Svelte component komt hier -->
+<!-- Je Svelte component komt hieronder -->
 ```
 
 Deze ingebouwde features, plus `adapter-static`, maakt het heel makkelijk om vanuit een progressive enhancement optiek te werk te gaan. Je kan ook heel makkelijk testen of je app zonder JavaScript werkt door het vanuit de app uit te schakelen. Scheelt een hele hoop instellingen checken per device waarop je test.
