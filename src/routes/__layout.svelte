@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-  {#if !path.startsWith('/project/') && !path.startsWith(‘/articles/‘) && path !== '/'}
+  {#if !path.startsWith('/project/') && !path.startsWith('/article/') && path !== '/'}
     <style type="text/css">
       @media screen and (min-width: 50rem) {
         #svelte {
