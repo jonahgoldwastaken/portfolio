@@ -5,7 +5,6 @@ import vpHeightFix from 'postcss-100vh-fix'
 import autoPreprocess from 'svelte-preprocess'
 import adapter from '@sveltejs/adapter-static'
 import { createRequire } from 'module'
-import 'prism-svelte'
 
 const require = createRequire(import.meta.url)
 const pkg = require('./package.json')
