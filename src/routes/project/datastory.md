@@ -1,7 +1,7 @@
 ---
 index: 2
 title: Representatie in parkeerplekken
-slug: datastory
+slug: project/datastory
 description: Is er genoeg plek om bij jouw favoriete plek te parkeren?
 image: /datastory/banner.png
 client: CMD Tech Track

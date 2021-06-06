@@ -1,7 +1,8 @@
 ---
 index: 1
-title: Waarom Svelte(Kit) hét framework is voor Progressively enhanced web-apps
-slug: sveltekit-pe
+title: Progessive Enhancement in SvelteKit
+description: en hoe jij dit zelf vandaag kan toepassen.
+slug: article/sveltekit-pe
 image: /svelte-kit-machine.png
 ---
 

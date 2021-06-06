@@ -1,8 +1,8 @@
 <script lang="ts">
-  import ProjectListCTA from '../molecules/ProjectListCTA.svelte'
-  import ProjectTile from '../molecules/ProjectTile.svelte'
+  import TileListCTA from '../molecules/TileListCTA.svelte'
+  import Tile from '../molecules/Tile.svelte'
 
-  export let projects: ProjectMetadata[]
+  export let items: ArticleMetadata[]
   export let animate: 'heading' | 'list' | 'both'
   export let limit = 0
 </script>
@@ -96,28 +96,28 @@
 </style>
 
 <ol>
-  {#each projects.slice(0, limit > 0 ? limit : projects.length) as project, i (project.title + i)}
+  {#each items.slice(0, limit > 0 ? limit : items.length) as item, i (item.title + i)}
     <li>
-      <ProjectTile
+      <Tile
         animate={animate === 'list' || animate === 'both'}
-        href="/project/{project.slug}"
-        image={project.image}
+        href="/{item.slug}"
+        image={item.image}
       >
-        <svelte:fragment slot="title">{project.title}</svelte:fragment>
+        <svelte:fragment slot="title">{item.title}</svelte:fragment>
         <svelte:fragment slot="description">
-          {project.description}
+          {item.description}
         </svelte:fragment>
-      </ProjectTile>
+      </Tile>
     </li>
   {/each}
   <li>
     <slot name="cta">
-      <ProjectListCTA animate={animate === 'list' || animate === 'both'}>
+      <TileListCTA animate={animate === 'list' || animate === 'both'}>
         <svelte:fragment slot="heading">
           Hiertussen staan als stagebedrijf?
         </svelte:fragment>
         <svelte:fragment slot="button">Neem contact op!</svelte:fragment>
-      </ProjectListCTA>
+      </TileListCTA>
     </slot>
   </li>
 </ol>

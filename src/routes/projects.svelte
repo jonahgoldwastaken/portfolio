@@ -1,22 +1,22 @@
 <script context="module">
-  import { fetchProjects } from '$lib/utils/projectList'
+  import { fetchProjects } from '$lib/utils/tileList'
   import type { Load } from '@sveltejs/kit'
 
   export const load: Load = async function ({}) {
-    const projects = await fetchProjects()
+    const items = await fetchProjects()
     return {
       props: {
-        projects,
+        items,
       },
     }
   }
 </script>
 
 <script>
-  import ProjectList from '$lib/components/organisms/ProjectList.svelte'
+  import TileList from '$lib/components/organisms/TileList.svelte'
   import textAnimation from '$lib/actions/textAnimation'
 
-  export let projects: ProjectMetadata[]
+  export let items: ArticleMetadata[]
 </script>
 
 <svelte:head>
@@ -35,5 +35,5 @@
   >
     Projecten
   </h1>
-  <ProjectList {projects} animate="both" />
+  <TileList {items} animate="both" />
 </main>

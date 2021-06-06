@@ -1,8 +1,9 @@
 ---
 index: 2
-title: Hoe mijn portfolio-animaties smooth werken.
-slug: optimised-animations
-image: /svelte-kit-machine.png
+title: Over geoptimaliseerde animaties
+description: en hoe dit mogelijk is in Svelte.
+slug: article/optimised-animations
+image: /animation.webm
 ---
 
 Dit artikel gaat ervan uit dat je kennis hebt van [`IntersectionObserver`s][intersection-observer] en [`requestAnimationFrame`][raf] (ofwel `rAF`). Deze technologieën worden lichtelijk besproken in dit artikel. Meer informatie kan je vinden achter de links in deze paragraaf.

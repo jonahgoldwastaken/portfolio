@@ -1,7 +1,7 @@
 ---
 index: 7
 title: DevEx
-slug: devex
+slug: project/devex
 description: Deel jouw code sessies met de dev community.
 image: /devex/banner.png
 year: 2021

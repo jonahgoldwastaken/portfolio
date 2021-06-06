@@ -1,7 +1,7 @@
 ---
 index: 1
 title: Extreme Space Invaders
-slug: xsi
+slug: project/xsi
 description: Een Space Invaders kloon gemaakt met 4 weken JS kennis.
 image: /xpi.png
 client: CMD Inleiding Programmeren

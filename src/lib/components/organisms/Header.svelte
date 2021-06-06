@@ -8,7 +8,8 @@
 
   let innerHeight: number
 
-  $: transparent = $page.path.startsWith('/project/') || $page.path.startsWith('/article/')
+  $: transparent =
+    $page.path.startsWith('/project/') || $page.path.startsWith('/article/')
 </script>
 
 <style lang="scss">
@@ -72,6 +73,9 @@
       </li>
       <li>
         <Link href="/projects">Projecten</Link>
+      </li>
+      <li>
+        <Link href="/articles">Artikelen</Link>
       </li>
       <li>
         <Link href="/about">Over</Link>

@@ -12,7 +12,7 @@
     padding: var(--double-space) 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, 25rem);
-    grid-template-rows: [sections] auto auto [copyright] min-content;
+    grid-template-rows: [sections] auto auto auto [copyright] min-content;
     row-gap: var(--base-space);
     column-gap: var(--base-space);
 
@@ -41,6 +41,26 @@
       <li><Link href="/project/triptop">Triptop</Link></li>
       <li><Link href="/project/empower">EMPOWER 2.0</Link></li>
       <li><Link href="/project/bbwal">De Blauwburgwal</Link></li>
+    </VerticalList>
+  </section>
+  <section>
+    <h2
+      use:iObservedTextAnimation={{ splitOn: 'letters', threshold: 0.5 }}
+      class="h3"
+    >
+      Nieuwste artikelen
+    </h2>
+    <VerticalList markers={false}>
+      <li>
+        <Link href="/article/optimised-animations"
+          >Geoptimaliseerde animaties in Svelte</Link
+        >
+      </li>
+      <li>
+        <Link href="/project/sveltekit-pe"
+          >Progressive Enhancement in SvelteKit</Link
+        >
+      </li>
     </VerticalList>
   </section>
   <section id="contact">

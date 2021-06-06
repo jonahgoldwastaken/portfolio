@@ -1,7 +1,7 @@
 ---
 index: 6
 title: Triptop
-slug: triptop
+slug: project/triptop
 description: Bouw de perfecte playlist voor je roadtrip.
 image: /triptop/banner.png
 year: 2021

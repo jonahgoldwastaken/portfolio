@@ -1,7 +1,7 @@
 ---
 index: 5
 title: CSS Rubik's Cube
-slug: cube
+slug: project/cube
 description: Verschillende HTML en CSS only experimenten met de wereldberoemde kubus.
 image: /cube/banner.png
 year: 2021

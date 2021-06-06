@@ -1,17 +1,16 @@
 <script lang="ts">
   import { iObservedRaf } from '$lib/actions/requestAnimationFrame'
-  import { createRangeFromDomain } from '$lib/utils/numberRange'
-
-  import Link from '../atoms/Link.svelte'
-  import Image from '../atoms/Image.svelte'
   import textAnimation from '$lib/actions/textAnimation'
+  import { createRangeFromDomain } from '$lib/utils/numberRange'
+  import Link from '../atoms/Link.svelte'
+  import Media from '../atoms/Media.svelte'
 
   export let title: string
   export let description: string
   export let client: string
   export let year: number
   export let src: string
-  export let link: ProjectMetadata['link']
+  export let link: ArticleMetadata['link']
 
   let innerHeight: number
   let scroll: number = 0
@@ -33,7 +32,7 @@
     padding: 0 var(--quadruple-space);
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    
+
     &.visible :global(figure) {
       will-change: transform, opacity;
     }
@@ -220,5 +219,5 @@
       Open {link[0] || 'website'}
     </Link>
   {/if}
-  <Image format="banner" --scroll={scroll} {src} />
+  <Media format="banner" --scroll={scroll} {src} />
 </header>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import observer from '../../actions/intersectionObserver'
-  import Image from '../atoms/Image.svelte'
+  import Media from '../atoms/Media.svelte'
 
   export let animate = false
   export let href: string
@@ -152,10 +152,12 @@
   class:slide={!js || (animate && slide)}
   class:animate
 >
-  <Image src={image} />
+  <Media src={image} />
   <div>
     <h2><slot name="title" /></h2>
-    <p><slot name="description" /></p>
+    {#if $$slots.description}
+      <p><slot name="description" /></p>
+    {/if}
   </div>
   <a {href}><span>Bekijk project</span></a>
 </article>

@@ -1,7 +1,7 @@
 ---
 index: 4
 title: EMPOWER 2.0
-slug: empower
+slug: project/empower
 description: Krijg inzicht in hernieuwbare energie als gemeente.
 image: /empower.png
 year: 2021

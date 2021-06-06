@@ -1,7 +1,7 @@
 ---
 index: 3
 title: De Blauwburgwal
-slug: bbwal
+slug: project/bbwal
 description: Een vergeten bombardement aan het licht gebracht.
 image: /bbwal/banner.png
 year: 2020

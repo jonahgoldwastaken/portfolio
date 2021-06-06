@@ -13,12 +13,12 @@
     display: block;
     margin: 0;
 
-    &:not(.full-width):not(.banner):not(.basic) img {
+    &:not(.full-width):not(.banner):not(.basic) video {
       border-radius: 12px;
     }
   }
 
-  img {
+  video {
     display: block;
     width: 100%;
     height: 100%;
@@ -58,7 +58,15 @@
 </style>
 
 <figure class={format}>
-  <img loading={lazy ? 'lazy' : ''} {src} {alt} aria-hidden={!alt} />
+  <video
+    autoplay
+    muted
+    loop
+    loading={lazy ? 'lazy' : ''}
+    {src}
+    {alt}
+    aria-hidden={!alt}
+  />
   {#if format === 'caption'}
     <figcaption>
       {caption ?? ''}

@@ -1,9 +1,9 @@
 <script context="module">
-  import { fetchSingleProject } from '$lib/utils/projectList'
+  import { fetchSingleProject } from '$lib/utils/tileList'
   import type { Load } from '@sveltejs/kit'
 
   export const load: Load = async function ({}) {
-    const projects = await Promise.all([
+    const items = await Promise.all([
       fetchSingleProject('devex'),
       fetchSingleProject('cube'),
       fetchSingleProject('triptop'),
@@ -13,18 +13,18 @@
 
     return {
       props: {
-        projects,
+        items,
       },
     }
   }
 </script>
 
 <script lang="ts">
-  import ProjectListCTA from '$lib/components/molecules/ProjectListCTA.svelte'
+  import ProjectListCTA from '$lib/components/molecules/TileListCTA.svelte'
   import Hero from '$lib/components/organisms/Hero.svelte'
-  import ProjectList from '$lib/components/organisms/ProjectList.svelte'
+  import ProjectList from '$lib/components/organisms/TileList.svelte'
 
-  export let projects: ProjectMetadata[]
+  export let items: ArticleMetadata[]
 </script>
 
 <style lang="scss">
@@ -44,7 +44,7 @@
 <Hero />
 <section>
   <h1>Werk waar ik trots op ben</h1>
-  <ProjectList {projects} animate="list">
+  <ProjectList {items} animate="list">
     <ProjectListCTA slot="cta" animate href="/projects">
       <svelte:fragment slot="heading">Maar dat was niet alles!</svelte:fragment>
       <svelte:fragment slot="button">Bekijk de rest</svelte:fragment>
