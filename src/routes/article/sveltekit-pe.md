@@ -1,5 +1,5 @@
 ---
-index: 10
+index: 1
 title: Waarom Svelte(Kit) hét framework is voor Progressively enhanced web-apps
 slug: sveltekit-pe
 image: /svelte-kit-machine.png

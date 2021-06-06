@@ -33,6 +33,10 @@
     padding: 0 var(--quadruple-space);
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
+    
+    &.visible :global(figure) {
+      will-change: transform, opacity;
+    }
 
     h1 {
       font-size: var(--step-5);
@@ -102,7 +106,6 @@
         translate3d(0, 0, 0);
       animation: zoom-in var(--base-time) var(--easing);
       opacity: calc((1 - var(--scroll, 0)) * 0.4);
-      will-change: transform, opacity;
 
       @media (prefers-reduced-motion: reduce) {
         animation-name: image-fade-in;
