@@ -15,6 +15,8 @@
 </script>
 
 <style lang="scss">
+  @use 'sass:color';
+
   article > :global(header) {
     margin-bottom: var(--base-space);
   }
@@ -40,6 +42,14 @@
 
   main :global(pre) {
     font-size: var(--step-0);
+  }
+
+  main :global(a code),
+  main :global(p code),
+  main :global(ul code) {
+    background: #2e3440;
+    border-radius: 0.25em;
+    padding: 0 0.25em;
   }
 </style>
 

@@ -15,7 +15,9 @@ const config = {
   preprocess: [
     mdsvex(mdsvexConfig),
     autoPreprocess({
-      scss: true,
+      scss: {
+        renderSync: true,
+      },
       typescript: true,
       postcss: {
         plugins: [vpHeightFix(), autoprefixer()],
