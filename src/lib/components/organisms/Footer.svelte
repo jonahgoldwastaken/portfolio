@@ -57,7 +57,7 @@
         >
       </li>
       <li>
-        <Link href="/project/sveltekit-pe"
+        <Link href="/article/sveltekit-pe"
           >Progressive Enhancement in SvelteKit</Link
         >
       </li>

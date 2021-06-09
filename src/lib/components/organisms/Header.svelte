@@ -92,6 +92,9 @@
         <Link href="/projects">Projecten</Link>
       </li>
       <li>
+        <Link href="/articles">Artikelen</Link>
+      </li>
+      <li>
         <Link href="/about">Over</Link>
       </li>
       <li>
