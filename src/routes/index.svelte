@@ -20,9 +20,9 @@
 </script>
 
 <script lang="ts">
-  import ProjectListCTA from '$lib/components/molecules/TileListCTA.svelte'
+  import TileListCTA from '$lib/components/molecules/TileListCTA.svelte'
   import Hero from '$lib/components/organisms/Hero.svelte'
-  import ProjectList from '$lib/components/organisms/TileList.svelte'
+  import TileList from '$lib/components/organisms/TileList.svelte'
 
   export let items: ArticleMetadata[]
 </script>
@@ -44,10 +44,10 @@
 <Hero />
 <section>
   <h1>Werk waar ik trots op ben</h1>
-  <ProjectList {items} animate="list">
-    <ProjectListCTA slot="cta" animate href="/projects">
+  <TileList {items} animate="list">
+    <TileListCTA slot="cta" animate href="/projects">
       <svelte:fragment slot="heading">Maar dat was niet alles!</svelte:fragment>
       <svelte:fragment slot="button">Bekijk de rest</svelte:fragment>
-    </ProjectListCTA>
-  </ProjectList>
+    </TileListCTA>
+  </TileList>
 </section>
