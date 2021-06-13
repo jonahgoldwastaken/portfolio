@@ -54,7 +54,7 @@ Al deze edge cases heb ik stapsgewijs uit moeten werken, gezien ze bijna allemaa
 
 ## Conclusie
 
-GitHub Actions bouwen is een goudmijn voor automatisering. Je hebt toegang tot heel veel informatie en events waardoor je heel makkelijk in kan haken op momenten waarop een klein beetje automisering een hoop handmatig werk wegneemt. Ik heb het idee dat ik nog maar de tip van de ijsberg heb meegemaakt in wat er mogelijk is met GitHub Actions, en ben heel benieuwd wat er nog te leren valt.
+GitHub Actions bouwen is een goudmijn voor automatisering. Je hebt toegang tot heel veel informatie en events waardoor je heel makkelijk in kan haken op momenten waarop een klein beetje automisering een hoop handmatig werk wegneemt. Ik heb het idee dat ik nog maar de tip van de ijsberg heb meegemaakt in wat er mogelijk is met GitHub Actions, en ben heel benieuwd wat er nog te leren valt. Het heeft ons in ieder geval heel erg geholpen om een gestroomlijnde workflow te creëeren waar we ons makkelijker aan kunnen houden dan niet, en daar ben ik persoonlijk wel blij mee.
 
 [wzdb]: https://github.com/theonejonahgold/wat-zegt-deze-brief
 [actions]: https://github.com/marketplace?category=&query=&type=actions
