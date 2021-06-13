@@ -33,6 +33,10 @@
     margin: 0 auto;
   }
 
+  main > :global(*) {
+    width: 100%;
+  }
+
   main > :global(*:not(:first-child)) {
     margin-top: var(--base-space);
   }
