@@ -68,8 +68,11 @@ body {
   #svelte {
     width: 100%;
     min-height: 100vh;
-    min-height: -webkit-fill-available;
     overflow-x: hidden;
+
+    @supports (-webkit-touch-callout: none) {
+      min-height: -webkit-fill-available;
+    }
   }
 }
 
