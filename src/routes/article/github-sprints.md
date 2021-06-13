@@ -2,8 +2,8 @@
 index: 3
 title: Agile werken op GitHub
 description: met milestones, projects en actions.
-slug: optimised-animations
-image: /svelte-kit-machine.png
+slug: article/github-sprints
+image: /gh-action.png
 ---
 
 De afgelopen tijd ben ik projectleider geweest voor een [schoolproject][wzdb] waarvoor we iteratief een prototype bouwen. We doen alles op GitHub; van documentatie tot aan project management. De tools die GitHub biedt zijn erg flexibel, maar je moet wel veel zelf doen om een gestroomlijnde workflow te krijgen op basis van sprints. De workflow die ik op wilde bouwen ging als volgt.
