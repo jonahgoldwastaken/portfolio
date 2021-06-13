@@ -27,9 +27,10 @@
     align-items: center;
   }
 
-  main > :global(:not(figure)) {
+  main {
     max-width: 80ch;
     width: 100%;
+    margin: 0 auto;
   }
 
   main > :global(*:not(:first-child)) {
@@ -40,16 +41,19 @@
     padding-left: 1.5em;
   }
 
-  main :global(pre) {
-    font-size: var(--step-0);
-  }
-
   main :global(a code),
   main :global(p code),
   main :global(ul code) {
+    font-size: calc(var(--step-0) * 0.8);
     background: #2e3440;
     border-radius: 0.25em;
-    padding: 0 0.25em;
+    padding: 0.125em 0.25em;
+  }
+
+  main :global(a:hover code) {
+    background-clip: none;
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: initial;
   }
 </style>
 

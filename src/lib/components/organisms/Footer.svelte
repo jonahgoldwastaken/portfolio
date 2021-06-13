@@ -52,6 +52,9 @@
     </h2>
     <VerticalList markers={false}>
       <li>
+        <Link href="/article/github-sprints">GitHub Sprints</Link>
+      </li>
+      <li>
         <Link href="/article/optimised-animations"
           >Geoptimaliseerde animaties in Svelte</Link
         >
