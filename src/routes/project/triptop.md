@@ -23,4 +23,4 @@ Met deze playlist hoef je niet gelijk klaar te zijn, je kan nummers toevoegen, v
 
 Nu even de nerdy kant van het verhaal. De app is vanaf nul opgebouwd, met alleen de templating als een externe dependency (namelijk [Handlebars](https://handlebarsjs.com)). De router, state management en alles wat daaromheen komt kijken is volledig custom. Dit heeft veel inzicht geboden in hoe een framework under the hood zou kunnen werken, en wat de tekortkomingen zijn bij frameworks als Vue en React.
 
-Bekijk de [GitHub repository](https://github.com/theonejonahgold/web-app-from-scratch-2021) als je het proces en de aanpak wilt bekijken. Misschien steek je er zelf ook wat van op!
+Bekijk de [GitHub repository](https://github.com/jonahgoldwastaken/web-app-from-scratch-2021) als je het proces en de aanpak wilt bekijken. Misschien steek je er zelf ook wat van op!

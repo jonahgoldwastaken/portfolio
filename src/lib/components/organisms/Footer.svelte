@@ -74,7 +74,7 @@
       Contact
     </h2>
     <VerticalList markers={false}>
-      <li><Link href="https://github.com/theonejonahgold">GitHub</Link></li>
+      <li><Link href="https://github.com/jonahgoldwastaken">GitHub</Link></li>
       <li><Link href="mailto:jonahmeijers97@gmail.com">Email</Link></li>
     </VerticalList>
   </section>

@@ -47,5 +47,5 @@ Op de [GitHub repository][repo] vind je uitgebreide technische informatie en een
 [obs]: https://obsproject.com
 [rtmp]: https://en.wikipedia.org/wiki/Real-Time_Messaging_Protocol
 [hls]: https://en.wikipedia.org/wiki/HTTP_Live_Streaming
-[repo]: https://github.com/theonejonahgold/devex
+[repo]: https://github.com/jonahgoldwastaken/devex
 [nms]: https://github.com/illuspas/Node-Media-Server

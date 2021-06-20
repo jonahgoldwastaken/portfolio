@@ -6,7 +6,7 @@ description: Verschillende HTML en CSS only experimenten met de wereldberoemde k
 image: /cube/banner.png
 year: 2021
 client: CMD Minor WebDev
-link: [website, https://theonejonahgold.github.io/css-rubiks-cube]
+link: [website, https://jonahgoldwastaken.github.io/css-rubiks-cube]
 ---
 
 <script>
