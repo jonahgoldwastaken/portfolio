@@ -41,8 +41,11 @@
     margin-top: var(--base-space);
   }
 
-  main :global(ul, ol) {
-    padding-left: 1.5em;
+  main :global {
+    ul,
+    ol {
+      padding-left: 1.5em;
+    }
   }
 
   main :global(a code),

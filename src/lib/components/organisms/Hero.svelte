@@ -19,8 +19,11 @@
       (min-aspect-ratio: 1/1) and (min-width: 40rem) {
       grid-template-columns: 2fr 1fr;
 
-      section :global(h1, p) {
-        grid-column: 1;
+      section :global {
+        h1,
+        p {
+          grid-column: 1;
+        }
       }
     }
 
