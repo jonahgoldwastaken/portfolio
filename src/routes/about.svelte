@@ -2,7 +2,6 @@
   import observer from '$lib/actions/intersectionObserver'
   import { iObservedTextAnimation } from '$lib/actions/textAnimation'
   import ImageBlock from '$lib/components/atoms/ImageBlock.svelte'
-  import Link from '$lib/components/atoms/Link.svelte'
   import HorizontalList from '$lib/components/molecules/HorizontalList.svelte'
   import { onMount } from 'svelte'
 
@@ -133,32 +132,24 @@
     >
       <h2>Wie is Jonah?</h2>
       <p>
-        Jonah is een Interaction Designer en (voornamelijk) Web Developer die de
-        puntjes op de i zet. Zijn projecten zijn gebouwd voor een specifiek
-        doel, namelijk om het doel van de gebruiker in zo'n kort mogelijke tijd
-        te bereiken. Het vergt veel creativiteit, aandacht, empathie en
+        Ik ben een Interaction Designer en (voornamelijk) Web Developer die de
+        puntjes op de i zet. Ik bouw mijn projecten voor een specifiek doel,
+        namelijk om het doel van de gebruiker in zo'n kort mogelijke tijd te
+        bereiken. Het vergt veel creativiteit, aandacht, empathie en
         doorzettingsvermogen om tot strak uitgewerkte applicaties te komen waar
         mensen echt wat aan hebben.
       </p>
       <p>
-        Op zijn opleiding, Communication &amp; Multimedia Design, komt deze
-        skillset zeer goed van pas. Jonah bedenkt concept na concept waar de
-        docenten van onder de indruk zijn. Hij zit daar echt op zijn plek.
+        Op mijn opleiding, Communication &amp; Multimedia Design, komt deze
+        skillset zeer goed van pas. Ik bedenk concept na concept waar de
+        docenten van onder de indruk zijn. Ik zit dus echt goed op mijn plek.
       </p>
       <p>
-        Naast zijn studie maakt Jonah tijd om nieuwe muziek te ontdekken, een
-        lekker potje te gamen en af en toe ook lekker te niksen. Dat laatste
-        doet hij niet al te vaak, want hij werkt ook graag eigen concepten uit.
-        Hierover kan binnenkort hopelijk meer over verteld worden.
-      </p>
-      <p>
-        Op dit moment is hij vooral druk op zoek naar een stage. Mocht je nog
-        een stageplek vrij hebben, <Link
-          noGradient
-          href="mailto:jonahmeijers97@gmail.com"
-        >
-          neem dan vooral contact op</Link
-        >!
+        Naast mijn studie maak ik tijd om nieuwe muziek te ontdekken en te
+        draaien, een lekker potje te gamen en af en toe ook lekker te niksen.
+        Dat laatste doe ik niet al te vaak, mijn brein maalt namelijk graag door
+        over ideeën die ik uit kan werken. Hopelijk kan ik over deze ideeën
+        binnenkort meer delen.
       </p>
     </article>
     <article

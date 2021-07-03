@@ -37,7 +37,7 @@
 </style>
 
 <svelte:head>
-  <title>STAGE GEZOCHT - Jonah Meijers</title>
+  <title>Jonah Meijers</title>
   <meta name="description" content="De portfolio van Jonah Meijers" />
 </svelte:head>
 

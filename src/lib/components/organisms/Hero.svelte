@@ -52,19 +52,19 @@
     use:textAnimation={{
       splitOn: 'words',
       text: easterEgg
-        ? 'Jonah poept soms op tulpen...'
-        : 'Jonah bouwt producten voor mensen.',
+        ? 'Ik poep soms op tulpen...'
+        : 'Ik bouw producten voor mensen.',
     }}
   >
-    Jonah bouwt producten voor mensen.
+    Ik bouw producten voor mensen.
   </h1>
   <p
     use:textAnimation={{
       splitOn: 'words',
     }}
   >
-    Hij ontwerpt en bouwt doelgerichte websites en applicaties, en is op zoek
-    naar een stage!
+    Ik ontwerp en ontwikkel websites en applicaties die helpen je doelen te
+    bereiken.
   </p>
   <HeroImage bind:easterEgg />
 </section>

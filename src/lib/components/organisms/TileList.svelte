@@ -112,12 +112,7 @@
   {/each}
   <li>
     <slot name="cta">
-      <TileListCTA animate={animate === 'list' || animate === 'both'}>
-        <svelte:fragment slot="heading">
-          Hiertussen staan als stagebedrijf?
-        </svelte:fragment>
-        <svelte:fragment slot="button">Neem contact op!</svelte:fragment>
-      </TileListCTA>
+      <TileListCTA animate={animate === 'list' || animate === 'both'} />
     </slot>
   </li>
 </ol>
