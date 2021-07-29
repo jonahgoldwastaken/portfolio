@@ -14,9 +14,7 @@
   export let year = new Date().getFullYear()
 </script>
 
-<style lang="scss">
-  @use 'sass:color';
-
+<style>
   article > :global(header) {
     margin-bottom: var(--base-space);
   }
@@ -41,11 +39,9 @@
     margin-top: var(--base-space);
   }
 
-  main :global {
-    ul,
-    ol {
-      padding-left: 1.5em;
-    }
+  main :global(ul),
+  main :global(ol) {
+    padding-left: 1.5em;
   }
 
   main :global(a code),
