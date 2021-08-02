@@ -2,7 +2,7 @@
 /// <reference types="svelte" />
 /// <reference types="vite/client" />
 
-interface ArticleMetadata {
+type ArticleMetadata = {
   index: number
   title: string
   slug: string

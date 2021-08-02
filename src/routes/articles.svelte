@@ -1,9 +1,8 @@
 <script context="module">
-  import { fetchArticles } from '$lib/utils/tileList'
   import type { Load } from '@sveltejs/kit'
 
-  export const load: Load = async function ({}) {
-    const items = await fetchArticles()
+  export const load: Load = async function ({ fetch }) {
+    const items = await fetch('/article/all.json').then(res => res.json())
     return {
       props: {
         items,

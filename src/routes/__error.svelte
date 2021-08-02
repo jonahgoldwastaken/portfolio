@@ -12,6 +12,8 @@
 <script lang="ts">
   export let status: number
   export let error: any
+
+  $: console.error(error)
 </script>
 
 <svelte:head>
