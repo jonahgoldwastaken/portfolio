@@ -12,6 +12,8 @@
       },
     }).then(res => res.json())
 
+    console.log(projects)
+
     return {
       props: {
         projects,

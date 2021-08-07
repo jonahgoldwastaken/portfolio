@@ -1,4 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit'
+import { fetchProjects } from './_api'
 
 export const get: RequestHandler<null, string[], ArticleMetadata[]> = async ({
   query,
@@ -7,7 +8,7 @@ export const get: RequestHandler<null, string[], ArticleMetadata[]> = async ({
   try {
     return {
       status: 200,
-      body: await Promise.all(projectNames.map(fetchSingleProject)),
+      body: await fetchSelectProjects(projectNames),
     }
   } catch (err) {
     return {
@@ -17,9 +18,10 @@ export const get: RequestHandler<null, string[], ArticleMetadata[]> = async ({
   }
 }
 
-async function fetchSingleProject(name: string) {
-  const { metadata }: { metadata: ArticleMetadata } = await import(
-    `./${name}.md`
+async function fetchSelectProjects(names: string[]) {
+  const projects = await fetchProjects()
+  console.log(projects)
+  return projects.filter(project =>
+    names.includes(project.slug.replace('project/', ''))
   )
-  return metadata
 }
