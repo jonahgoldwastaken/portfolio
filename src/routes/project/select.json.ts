@@ -20,7 +20,6 @@ export const get: RequestHandler<null, string[], ArticleMetadata[]> = async ({
 
 async function fetchSelectProjects(names: string[]) {
   const projects = await fetchProjects()
-  console.log(projects)
   return projects.filter(project =>
     names.includes(project.slug.replace('project/', ''))
   )
