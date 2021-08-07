@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@iarna/toml@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
+  integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
+
 "@rollup/pluginutils@^4.1.1":
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.1.1.tgz#1d4da86dd4eded15656a57d933fda2b9a08d47ec"
@@ -10,23 +15,26 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@sveltejs/adapter-netlify@^1.0.0-next.27":
+  version "1.0.0-next.27"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-netlify/-/adapter-netlify-1.0.0-next.27.tgz#e4f7cb0e1ad72d4255bb4c3d3c3ea478106aa19c"
+  integrity sha512-t3kU2tJdCWmHwTBf+BRzzvYaM8ApxL+DEKtU1dUMI3bA8AgkpwkSHYiqZ75U2C+whi4mde+z15PeUFaUWzlKXA==
+  dependencies:
+    "@iarna/toml" "^2.2.5"
+    esbuild "^0.12.5"
+
 "@sveltejs/adapter-node@^1.0.0-next.17":
-  version "1.0.0-next.35"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-1.0.0-next.35.tgz#de1ad3deb2c5cf0be0a4807e2bfead3211ae3d05"
-  integrity sha512-IUn1WTyA5DlUBj6oHkk25v42JFwLq9g0fvqmujYFavJLoJ38WBAvHOOiirI5w0y1E7lXUn3HFlEjCfc3JsScPg==
+  version "1.0.0-next.39"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-1.0.0-next.39.tgz#e43483815e3766a1f01d2a691a393caddd81611a"
+  integrity sha512-5esWwnomzO3Oq6Ie5HQ64lpTTESvlPfN/MS9DtyjkVEna2pgNp2/Pi+6eIunAYyPzkvaq2Ac6ngqQJ3QU1ESEA==
   dependencies:
     esbuild "^0.12.5"
     tiny-glob "^0.2.9"
 
-"@sveltejs/adapter-static@^1.0.0-next.7":
-  version "1.0.0-next.13"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.13.tgz#5cba8f2905a5a7b956c2663d73ac02f7eb6da7c4"
-  integrity sha512-zaXJlWK9JfrjrE6nG5etB8kf4DSkbE3H8Ql6gmCk3WjdvpY85a60TMYBU9OK2iunkqpHnPYiMUGEnOGYmWlLYA==
-
 "@sveltejs/kit@^1.0.0-next.95":
-  version "1.0.0-next.139"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.139.tgz#1459cfccfd7058a0a454eb91b183708ca971bc93"
-  integrity sha512-V/OG9FIuq8Fzh08x0VZx1ZX5MjCM8lD/vpk/cM/RyGJSky+KKYgch7mWSY6XP28vUsl1HUg+HMuho/rKqmwe9A==
+  version "1.0.0-next.142"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.142.tgz#00da0c9fce8433e63e84189cdb2f1a50668324e9"
+  integrity sha512-MxoQz/kxlYOXVHETlxh8+wIvfZ4N2EScDqyuaWwFHqWg6fj6FHADJfZ7JCniqvAe8ME2jA9Om/gVR8e1oY04+w==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.14"
     cheap-watch "^1.0.3"
@@ -425,9 +433,9 @@ entities@^2.0.0:
   integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
 
 esbuild@^0.12.5, esbuild@^0.12.8:
-  version "0.12.17"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.17.tgz#5816f905c2905de0ebbc658860df7b5b48afbcd3"
-  integrity sha512-GshKJyVYUnlSXIZj/NheC2O0Kblh42CS7P1wJyTbbIHevTG4jYMS9NNw8EOd8dDWD0dzydYHS01MpZoUcQXB4g==
+  version "0.12.18"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.18.tgz#e5db16372188c2b4d395f7f55fdade27f6a119fa"
+  integrity sha512-arWhBQSy+oiBAp8VRRCFvAU+3jyf0gGacABLO3haMHboXCDjzq4WUqyQklst2XRuFS8MXgap+9uvODqj9Iygpg==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -1128,9 +1136,9 @@ rimraf@^2.6.3:
     glob "^7.1.3"
 
 rollup@^2.38.5:
-  version "2.55.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.55.1.tgz#66a444648e2fb603d8e329e77a61c608a6510fda"
-  integrity sha512-1P9w5fpb6b4qroePh8vHKGIvPNxwoCQhjJpIqfZGHLKpZ0xcU2/XBmFxFbc9697/6bmHpmFTLk5R1dAQhFSo0g==
+  version "2.56.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.56.0.tgz#daa832955d2b58f1ed52a3c4c85b7d1adaf076d0"
+  integrity sha512-weEafgbjbHCnrtJPNyCrhYnjP62AkF04P0BcV/1mofy1+gytWln4VVB1OK462cq2EAyWzRDpTMheSP/o+quoiA==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -1142,9 +1150,9 @@ sade@^1.7.4:
     mri "^1.1.0"
 
 sass@^1.32.8:
-  version "1.37.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.37.0.tgz#f1b03a9d072ee9053a29d125c8130c78e92827c2"
-  integrity sha512-B+Tu6cSAG8ffs/cqsZl/bgSH2pCmavDaPTYAoW8QA1qNHh/RqndNfVKuABKYkLjUQ5aq/BnCENVpE80cqdSM1w==
+  version "1.37.5"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.37.5.tgz#f6838351f7cc814c4fcfe1d9a20e0cabbd1e7b3c"
+  integrity sha512-Cx3ewxz9QB/ErnVIiWg2cH0kiYZ0FPvheDTVC6BsiEGBTZKKZJ1Gq5Kq6jy3PKtL6+EJ8NIoaBW/RSd2R6cZOA==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
 
@@ -1234,10 +1242,10 @@ svelte-preprocess@^4.7.0:
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
 
-svelte@3.38.3:
-  version "3.38.3"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.38.3.tgz#e15a1da98ee4b10162a6c8cb4c80aa86b2b589ed"
-  integrity sha512-N7bBZJH0iF24wsalFZF+fVYMUOigaAUQMIcEKHO3jstK/iL8VmP9xE+P0/a76+FkNcWt+TDv2Gx1taUoUscrvw==
+svelte@^3.38.3:
+  version "3.42.1"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.42.1.tgz#d4b4d9068cce911835f7c6b8ff1d290e1a0b5657"
+  integrity sha512-XtExLd2JAU3T7M2g/DkO3UNj/3n1WdTXrfL63OZ5nZq7nAqd9wQw+lR4Pv/wkVbrWbAIPfLDX47UjFdmnY+YtQ==
 
 svgo@^2.3.0:
   version "2.3.1"

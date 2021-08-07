@@ -1,8 +1,8 @@
 diff --git a/node_modules/svelte/internal/index.mjs b/node_modules/svelte/internal/index.mjs
-index ef86268..1235213 100644
+index 59116ca..dd08a6d 100644
 --- a/node_modules/svelte/internal/index.mjs
 +++ b/node_modules/svelte/internal/index.mjs
-@@ -304,7 +304,7 @@ function insert(target, node, anchor) {
+@@ -370,7 +370,7 @@ function insert_hydration(target, node, anchor) {
      }
  }
  function detach(node) {

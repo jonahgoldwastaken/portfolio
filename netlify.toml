@@ -1,10 +1,5 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 [build]
   command = "yarn build"
-  publish = "build/"
-  functions = "functions/"
+  publish = "build/publish/"
+  functions = "build/functions/"
   environment = {NODE_VERSION = "16.2.0"}

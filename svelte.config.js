@@ -3,7 +3,7 @@ import { mdsvexConfig } from './mdsvex.config.js'
 import autoprefixer from 'autoprefixer'
 import vpHeightFix from 'postcss-100vh-fix'
 import autoPreprocess from 'svelte-preprocess'
-import adapter from '@sveltejs/adapter-static'
+import adapter from '@sveltejs/adapter-netlify'
 import { createRequire } from 'module'
 
 const require = createRequire(import.meta.url)
