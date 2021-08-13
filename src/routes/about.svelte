@@ -146,10 +146,10 @@
       </p>
       <p>
         Naast mijn studie maak ik tijd om nieuwe muziek te ontdekken en te
-        draaien, een lekker potje te gamen en af en toe ook lekker te niksen.
-        Dat laatste doe ik niet al te vaak, mijn brein maalt namelijk graag door
-        over ideeën die ik uit kan werken. Hopelijk kan ik over deze ideeën
-        binnenkort meer delen.
+        draaien, af en toe een potje te gamen en vooral veel te ondernemen. Als
+        deel van de activiteitencommissie in mijn studentenflat organiseer ik
+        veel verschillende activiteiten samen met andere studenten voor iedereen
+        in het gebouw.
       </p>
     </article>
     <article
