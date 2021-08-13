@@ -25,6 +25,8 @@ Door iteratief en nauw samen te werken met Eric heb ik uiteindelijk een chat app
 
 Deze drie inputs zijn individueel aan en uit te zetten. Typsnelheid en woordgebruik worden met een snelle onboarding gekalibreerd naar hoe snel de gebruiker typt en hoe schuin hun woordenschat is.
 
+<!-- TODO: Screenshots van inputs bij onboarding toevoegen -->
+
 De manier waarop emoties worden getoond is ook in te stellen op verschillende manieren:
 
 1. Achtergrondkleur voor de chatbubbels, de chatachtergrond of beide.
@@ -32,8 +34,16 @@ De manier waarop emoties worden getoond is ook in te stellen op verschillende ma
 3. De tekstberichten op een verhalende wijze vertellen.
 4. Een emoji die past bij de emotie toevoegen aan chatberichten.
 
+<!-- TODO: Screenshot van output onboarding toevoegen toevoegen -->
+
 Al deze inputs en outputs zijn tot stand gekomen door te kijken hoe Eric omgaat met zijn computer en hoe hij is als persoon. Speelse elementen als animaties passen goed bij zijn gevoel voor humor. Ik heb hem meerdere keren aan het lachen gekregen bij het testen!
 
-Als allerlaatste heb ik ook nog achievements toegevoegd. Eric houdt namelijk van spelletjes spelen in zijn vrije tijd. Gamification past dus ook goed bij zijn persoonlijkheid, en maakt Body chat alleen maar leuker voor hem om te gebruiken.
+Ook heb ik ook nog achievements toegevoegd. Eric houdt namelijk van spelletjes spelen in zijn vrije tijd. Gamification past dus ook goed bij zijn persoonlijkheid, en maakt Body chat alleen maar leuker voor hem om te gebruiken.
+
+<!-- TODO: Screenshot van achievements toevoegen -->
+
+Als allerlaatste toevoeging heb ik een proof-of-concept gemaakt van een chat waarbij emoties reageren op elkaar door extra animaties te gebruiken. Het is volledig gestaged, maar wel een interessant idee om verder te onderzoeken in een volgende iteratie (mocht die er zijn).
+
+<!-- TODO: Screenshot toevoegen van proof-of-concept chat -->
 
 Het was een aangename ervaring om voor één persoon een concept te bedenken en te testen. Het heeft me doen beseffen hoe belangrijk het is om in contact te zijn met je doelgroep en hoe waardevol de feedback is die ze geven, positief en negatief. Ik ga deze kennis zeker toepassen in mijn carrière als CMD'er. Hoe het proces precies in zijn werk is gegaan kan je [hier in mijn procesverslag vinden](https://github.com/jonahgoldwastaken/human-centered-design-2021).
