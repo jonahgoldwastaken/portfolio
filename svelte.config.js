@@ -22,10 +22,6 @@ const config = {
       postcss: {
         plugins: [vpHeightFix(), autoprefixer()],
       },
-      defaults: {
-        script: 'typescript',
-        style: 'scss',
-      },
     }),
   ],
   kit: {
@@ -33,7 +29,7 @@ const config = {
     target: '#svelte',
     prerender: {
       enabled: true,
-      pages: ['*'],
+      entries: ['*'],
     },
     vite: {
       ssr: {
