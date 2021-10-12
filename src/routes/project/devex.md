@@ -6,7 +6,7 @@ description: Deel jouw code sessies met de dev community.
 image: /devex/banner.png
 year: 2021
 client: CMD Real-Time Web
-link: [de app, https://devex.jonahgold.dev]
+link: [github project, https://github.com/jonahgoldwastaken/devex]
 ---
 
 <script>
