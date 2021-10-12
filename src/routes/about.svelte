@@ -50,7 +50,7 @@
 				@keyframes swipe-up {
 					from {
 						opacity: 0;
-						transform: translateY(40px);
+						transform: translateY(20px);
 					}
 					to {
 						opacity: 1;
