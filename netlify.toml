@@ -2,7 +2,3 @@
   command = "yarn build"
   publish = "build"
   environment = {NODE_VERSION = "16.2.0"}
-
-[functions]
-  directory = "functions"
-  node_bundler = "esbuild"
