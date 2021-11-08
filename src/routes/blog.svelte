@@ -2,7 +2,7 @@
 	import type { Load } from '@sveltejs/kit'
 
 	export const load: Load = async function ({ fetch }) {
-		const items = await fetch('/article/all.json').then(res => res.json())
+		const items = await fetch('/article/all').then(res => res.json())
 		return {
 			props: {
 				items,
