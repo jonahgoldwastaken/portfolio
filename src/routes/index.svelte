@@ -6,11 +6,9 @@
 		const params = new URLSearchParams(
 			projectNames.map(project => ['projects', project])
 		)
-		const projects = await fetch(`/project/select.json?${params.toString()}`, {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		}).then(res => res.json())
+		const projects = await fetch(`/project/select?${params.toString()}`)
+			.then(res => res.json())
+			.catch(console.error)
 
 		return {
 			props: {
