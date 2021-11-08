@@ -45,6 +45,6 @@ Nu alles klaar staat, kunnen we vertrekken! In het navigatie-overzicht staat kun
 
 Het navigatie-scherm heeft wat vernufte features; je kan makkelijk de muziek beheren vanuit het overzicht doordat Spotify de mogelijkheid biedt haar app te bedienen vanuit een andere app en met de Mapbox zoekfunctie kan gezocht worden naar het dichtstbijzijnde tankstation. De interface is net even wat groter, zodat je ook als bestuurder makkelijk de knoppen kan bedienen zonder te hoeven turen of té lang je ogen van de weg te houden.
 
-## De ideale oplossing
+## De ideale oplossing {#de-ideale-oplossing}
 
 Door je op deze manier te begeleiden door het gehele proces is Triptop de ideale reisgenoot voor je volgende roadtrip. Bekijk [het mobile-only prototype hier](https://framer.com/share/Triptop--yA1ZJP7lLE8f6xCrZJc7/m0DDcPgo1) en [het desktop-first, mobile-second prototype hier](https://framer.com/share/Triptop--yA1ZJP7lLE8f6xCrZJc7/NJdM1UrYd).
