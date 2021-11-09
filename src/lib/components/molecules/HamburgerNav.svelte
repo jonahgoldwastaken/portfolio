@@ -11,8 +11,7 @@
 
 <style lang="scss">
 	nav {
-		height: var(--base-space);
-
+		--height: calc(var(--base-space) * 0.75);
 		@media (pointer: fine) and (min-width: 40rem) {
 			display: none;
 		}
@@ -21,7 +20,7 @@
 			appearance: none;
 			margin: 0;
 			width: var(--base-space);
-			height: var(--base-space);
+			height: var(--height);
 			position: relative;
 			z-index: 11;
 
@@ -29,19 +28,20 @@
 			&:after {
 				content: '';
 				position: absolute;
-				width: 100%;
+				width: var(--base-space);
 				height: 2px;
 				background: var(--primary);
-				transform-origin: center;
 				transition: transform 0.2s var(--easing);
 			}
 
 			&:before {
 				top: 0;
+				transform-origin: center;
 			}
 
 			&:after {
-				bottom: 2px;
+				transform-origin: center;
+				bottom: 0;
 			}
 
 			&:focus {
@@ -82,12 +82,11 @@
 
 		input:checked {
 			&:before {
-				transform: translateY(calc(var(--half-space) - 50%)) rotate(45deg);
+				transform: translateY(calc(var(--height) * 0.5 - 1px)) rotate(45deg);
 			}
 
 			&:after {
-				transform: translateY(calc(-1 * var(--half-space) + 100%))
-					rotate(-45deg);
+				transform: translateY(calc(var(--height) * -0.5 + 1px)) rotate(-45deg);
 			}
 
 			+ :global(ul) {

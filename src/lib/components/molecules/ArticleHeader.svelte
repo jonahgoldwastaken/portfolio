@@ -67,7 +67,8 @@
 		}
 
 		div ~ p,
-		:global(div:nth-of-type(2)) {
+		:global(div:nth-of-type(2)),
+		> :global(a) {
 			grid-column: 1;
 			justify-self: center;
 			align-self: end;
@@ -87,11 +88,13 @@
 			margin-bottom: calc(var(--base-space) + var(--quadruple-space));
 		}
 
-		:global(div:nth-of-type(2)) {
+		:global(div:nth-of-type(2)),
+		> :global(a) {
 			margin-bottom: var(--double-space);
 		}
 
-		:global(div:not(:first-of-type)) {
+		:global(div:not(:first-of-type)),
+		> :global(a) {
 			font-size: var(--step-0);
 		}
 
@@ -132,7 +135,8 @@
 				justify-self: start;
 			}
 
-			:global(div:not(:first-of-type)) {
+			:global(div:not(:first-of-type)),
+			> :global(a) {
 				grid-row: 3;
 				grid-column: 2;
 				align-self: end;
@@ -140,7 +144,8 @@
 			}
 
 			div ~ p,
-			:global(div:nth-of-type(2)) {
+			:global(div:nth-of-type(2)),
+			> :global(a) {
 				margin-bottom: 0;
 			}
 		}
