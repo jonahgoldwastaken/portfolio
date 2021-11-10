@@ -35,7 +35,7 @@
 		width: 100%;
 	}
 
-	main > :global(*:not(:first-child)) {
+	main > :global(*:not(:first-child):not(:first-child)) {
 		margin-top: var(--base-space);
 	}
 
