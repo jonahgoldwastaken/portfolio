@@ -41,44 +41,44 @@ let id = browser ? requestAnimationFrame(rafLoop) : null
 
 // De Svelte action, die een `_` HTML element, `cb` callback function en een `enabled` boolean meekrijgt
 export function raf(_, { cb, enabled }) {
-  let updatedCb = cb
-  if (enabled) rafCallbacks.add(cb)
+	let updatedCb = cb
+	if (enabled) rafCallbacks.add(cb)
 
-  return {
-    update({ cb: newCb, enabled: animate }) {
-      if (!animate) {
-        rafCallbacks.delete(updatedCb)
-        return updateRafLoop()
-      }
+	return {
+		update({ cb: newCb, enabled: animate }) {
+			if (!animate) {
+				rafCallbacks.delete(updatedCb)
+				return updateRafLoop()
+			}
 
-      rafCallbacks.delete(updatedCb)
-      updatedCb = newCb
-      rafCallbacks.add(updatedCb)
-      updateRafLoop()
-    },
-    destroy() {
-      rafCallbacks.delete(updatedCb)
-    },
-  }
+			rafCallbacks.delete(updatedCb)
+			updatedCb = newCb
+			rafCallbacks.add(updatedCb)
+			updateRafLoop()
+		},
+		destroy() {
+			rafCallbacks.delete(updatedCb)
+		},
+	}
 }
 
 // De function die elke rAF loop draait.
 function rafLoop() {
-  rafCallbacks.forEach(cb => cb())
-  updateRafLoop()
-  if (!id) return
-  requestAnimationFrame(rafLoop)
+	rafCallbacks.forEach(cb => cb())
+	updateRafLoop()
+	if (!id) return
+	requestAnimationFrame(rafLoop)
 }
 
 // Zet de rAF aan of uit op basis van of er callback functions in de `rafCallbacks` Set zitten
 function updateRafLoop() {
-  if (rafCallbacks.size && !id) {
-    id = requestAnimationFrame(rafLoop)
-    return
-  }
-  if (rafCallbacks.size && id) return
-  cancelAnimationFrame(id)
-  id = null
+	if (rafCallbacks.size && !id) {
+		id = requestAnimationFrame(rafLoop)
+		return
+	}
+	if (rafCallbacks.size && id) return
+	cancelAnimationFrame(id)
+	id = null
 }
 ```
 
@@ -86,28 +86,28 @@ De `raf` function kan ik nu importeren in een Svelte component, en aan een HTML 
 
 ```svelte
 <script>
-  import raf from './requestAnimationFrame.js'
+	import raf from './requestAnimationFrame.js'
 
-  let x = 0
+	let x = 0
 </script>
 
 <style>
-  p {
-    transform: translateX(var(--x));
-  }
+	p {
+		transform: translateX(var(--x));
+	}
 </style>
 
 <!-- Deze <p> tag schijft van links naar rechts als je scrollt. -->
 <p
-  use:raf={{
-    enabled: true,
-    cb: () => {
-      x = window.pageYOffset
-    },
-  }}
-  style="--x: {x}"
+	use:raf={{
+		enabled: true,
+		cb: () => {
+			x = window.pageYOffset
+		},
+	}}
+	style="--x: {x}"
 >
-  Hallo daar!
+	Hallo daar!
 </p>
 ```
 
@@ -124,63 +124,63 @@ const observeArray = new Set()
 
 // De functie die wordt gecalled wanneer een item (stopt met) intersect(en)
 function callback(entries) {
-  entries.forEach(entry => {
-    const obj = [...observeArray].find(obj => obj.el === entry.target)
-    obj.cb(entry.isIntersecting, entry.intersectionRatio)
-  })
+	entries.forEach(entry => {
+		const obj = [...observeArray].find(obj => obj.el === entry.target)
+		obj.cb(entry.isIntersecting, entry.intersectionRatio)
+	})
 }
 
 // De action die de IntersectionObserver initialiseert en elementen toevoegt of verwijdert.
 export default function observer(el, cb) {
-  if (!iObserver)
-    iObserver = new IntersectionObserver(callback, {
-      threshold: [0, 0.25, 0.5, 0.75, 1],
-      rootMargin: '0px',
-    })
-  const obj = {
-    cb,
-    el,
-  }
-  observeArray.add(obj)
-  iObserver.observe(el)
+	if (!iObserver)
+		iObserver = new IntersectionObserver(callback, {
+			threshold: [0, 0.25, 0.5, 0.75, 1],
+			rootMargin: '0px',
+		})
+	const obj = {
+		cb,
+		el,
+	}
+	observeArray.add(obj)
+	iObserver.observe(el)
 
-  return {
-    destroy: () => {
-      iObserver.unobserve(el)
-      observeArray.delete(obj)
-    },
-  }
+	return {
+		destroy: () => {
+			iObserver.unobserve(el)
+			observeArray.delete(obj)
+		},
+	}
 }
 ```
 
 ```svelte
 <script>
-  import observer from './intersectionObserver.js'
+	import observer from './intersectionObserver.js'
 
-  let show = false
+	let show = false
 </script>
 
 <style>
-  p {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: 0.2s ease-in-out;
-  }
+	p {
+		transform: translateX(-100%);
+		opacity: 0;
+		transition: 0.2s ease-in-out;
+	}
 
-  p.show {
-    transform: translateX(0);
-    opacity: 1;
-  }
+	p.show {
+		transform: translateX(0);
+		opacity: 1;
+	}
 </style>
 
 // Deze p tag animeert in en uit van links als deze intersect met de viewport.
 <p
-  use:observer={(isIntersecting, intersectionAmount) => {
-    show = isIntersecting
-  }}
-  class:show
+	use:observer={(isIntersecting, intersectionAmount) => {
+		show = isIntersecting
+	}}
+	class:show
 >
-  Hallo daar!
+	Hallo daar!
 </p>
 ```
 
@@ -192,36 +192,36 @@ import observer from './intersectionObserver.js'
 
 // De action combineert de 'raf' en 'observer' actions om samen een 'iObservedRaf' te creeëren, oftewel een 'rAF' loop die alleen draait als het element in zicht is.
 export function iObservedRaf(
-  node: HTMLElement,
-  cb: () => void
+	node: HTMLElement,
+	cb: () => void
 ): { update: (cb: () => void) => void, destroy: () => void } {
-  node.classlist.add('raf')
-  node.classlist.add('visible')
-  let enabled = true
-  let callback = cb
-  const rafAction = raf(node, { cb, enabled })
-  const observeAction = observer(node, bool => {
-    if (bool !== enabled) {
-      enabled = bool
-      node.classList[enabled ? 'add' : 'remove']('visible')
-      rafAction.update({ cb: callback, enabled })
-      return
-    }
-  })
+	node.classlist.add('raf')
+	node.classlist.add('visible')
+	let enabled = true
+	let callback = cb
+	const rafAction = raf(node, { cb, enabled })
+	const observeAction = observer(node, bool => {
+		if (bool !== enabled) {
+			enabled = bool
+			node.classList[enabled ? 'add' : 'remove']('visible')
+			rafAction.update({ cb: callback, enabled })
+			return
+		}
+	})
 
-  return {
-    update(cb) {
-      callback = cb
-      rafAction.update({
-        enabled,
-        cb: callback,
-      })
-    },
-    destroy() {
-      rafAction.destroy()
-      observeAction.destroy()
-    },
-  }
+	return {
+		update(cb) {
+			callback = cb
+			rafAction.update({
+				enabled,
+				cb: callback,
+			})
+		},
+		destroy() {
+			rafAction.destroy()
+			observeAction.destroy()
+		},
+	}
 }
 ```
 
@@ -229,25 +229,25 @@ Zoals je waarschijnlijk al had opgemerkt werkt deze action met de CSS classes `r
 
 ```svelte
 <script>
-  import { iObservedRaf } from './requestAnimationFrame.js'
+	import { iObservedRaf } from './requestAnimationFrame.js'
 
-  let scale = 0
+	let scale = 0
 </script>
 
 <style global>
-  p.visible {
-    transform: scale(var(--scale));
-  }
+	p.visible {
+		transform: scale(var(--scale));
+	}
 </style>
 
 <p
-  style="--scale: {scale}"
-  use:iObservedRaf={() => {
-    // Dit zou voor geen meter werken omdat de schaling niet klopt, maar even als voorbeeldje.
-    scale = window.pageYOffset / window.innerHeight
-  }}
+	style="--scale: {scale}"
+	use:iObservedRaf={() => {
+		// Dit zou voor geen meter werken omdat de schaling niet klopt, maar even als voorbeeldje.
+		scale = window.pageYOffset / window.innerHeight
+	}}
 >
-  Hallo daar!
+	Hallo daar!
 </p>
 ```
 

@@ -1,33 +1,33 @@
 @use 'sass:selector';
 
 .text-animate {
-  span,
-  strong {
-    display: inline-block;
-  }
+	span,
+	strong {
+		display: inline-block;
+	}
 
-  span:not(.w) {
-    opacity: 0;
-    animation-delay: calc(var(--index) * 1s / 60);
+	span:not(.w) {
+		opacity: 0;
+		animation-delay: calc(var(--index) * 1s / 60);
 
-    @at-root #{selector.replace(&,'.text-animate', '.text-animate.delay')} {
-      animation-delay: calc(0.2s + (var(--index) * 1s / 60));
-    }
-  }
+		@at-root #{selector.replace(&,'.text-animate', '.text-animate.delay')} {
+			animation-delay: calc(0.2s + (var(--index) * 1s / 60));
+		}
+	}
 
-  .w span {
-    animation-delay: calc((var(--index) * 1s / 120));
+	.w span {
+		animation-delay: calc((var(--index) * 1s / 120));
 
-    @at-root #{selector.replace(&,'.text-animate', '.text-animate.delay')} {
-      animation-delay: calc(0.2s + (var(--index) * 1s / 120));
-    }
-  }
+		@at-root #{selector.replace(&,'.text-animate', '.text-animate.delay')} {
+			animation-delay: calc(0.2s + (var(--index) * 1s / 120));
+		}
+	}
 
-  &.animate span:not(.w) {
-    animation: slide-in var(--base-time) var(--easing) forwards;
+	&.animate span:not(.w) {
+		animation: slide-in var(--base-time) var(--easing) forwards;
 
-    @media (prefers-reduced-motion: reduce) {
-      animation-name: fade-in;
-    }
-  }
+		@media (prefers-reduced-motion: reduce) {
+			animation-name: fade-in;
+		}
+	}
 }
